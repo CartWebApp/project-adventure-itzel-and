@@ -34,6 +34,7 @@ p {
     color: black;
     font-family: "Shantell Sans", cursive;
     font-size: 2vw;
+    font-weight: 500;
 }
 
 /*there will be multiple containers for different colors... you use fp for 'Forced Path'  */
@@ -54,6 +55,7 @@ p {
     margin: 0 auto;
     background-color: hsla(0, 0%, 100%, 0.85);
     bottom: 0;
+    border: 5px solid black;
 
     height: 20vh;
     /* height: 13.888vw; this is the mathed out one but it looks too large*/
@@ -79,6 +81,7 @@ p {
 }
 .name p{
     font-size: 1.5vw;
+    font-weight: 500;
 }
 
 /* make sure to put the class triangle inside the container... like at the bottom would do */

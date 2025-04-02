@@ -30,6 +30,7 @@ p {
     color: black;
     font-family: "Shantell Sans", cursive;
     font-size: 2vw;
+    font-weight: 500;
 }
 .container{
     display: flex;
