@@ -1,0 +1,12 @@
+every section in the story has to be stored in an object
+each choice has to be stored in array(s) that are apart of the main story object
+
+all adventyre mechanics should use objects and methods
+
+use classes for items,characters, npc's... ect
+
+maintain a record or list of the choices the user makes and display it at the end of the game
+
+NOT use the  prompt, alert, or confirm methods to gather or display information. 
+
+Perform all operations within functions. Only bindings should be at the Global level.

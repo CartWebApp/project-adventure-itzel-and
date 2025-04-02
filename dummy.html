@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Multiverse Paradox</title>
+    <!-- <link rel="stylesheet" href="../CSS/fp1.css"> -->
+    <link rel="stylesheet" href="../CSS/fp1.css">
+</head>
+
+<body>
+    <div class="container">
+        <p class="text" data-fulltext="Andy is a senior in high school who is a 5’ 2” short king that is anti-social, not strong, nor brave, gets picked on easily, and not very smart. Alright, we’ll just stop there, no need to keep bashing the main character. Just see for yourself.">
+        </p>
+        <div class="triangle"></div>
+    </div>
+    
+</body>
+
+</html>
+<script src="../../main.js"></script>
+
+<script>
+
+
+
+function nextPage() {
+    document.body.classList.remove("loaded"); // Start fade-out
+
+    setTimeout(() => {
+        window.location.href = "fp2.html"; // Redirect after fade-out
+    }, 500); // Match CSS transition duration
+}
+
+// Ensure fade-in when the page loads
+window.addEventListener("DOMContentLoaded", () => {
+    document.body.classList.add("loaded");
+});
+</script>

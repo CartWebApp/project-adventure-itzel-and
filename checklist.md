@@ -1,0 +1,7 @@
+- [ ] code for the forced userflow
+- [ ] code for the branch (how does it work?)
+- [ ] figure out how to keep track of Andys paths
+- [ ] should be done with images for Forced UF
+- [ ] copy and paste
+- [ ] done with half the images
+- [ ] done with all assets
