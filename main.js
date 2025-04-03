@@ -11,15 +11,95 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         "fp2": {
             "name": "Narrator", 
-            "text": "Andy wakes up from his bed and sluggishly makes his way to his closet."
+            "text": "Andy wakes up from his bed and sluggishly makes his way to his closet"
         },
         "fp3": {
-            "name": "Teacher", 
-            "text": "He changes into his school clothes, noting the mustard stain on his shirt."
+            "name": "Narrator", 
+            "text": "He changes into his school clothes, noting the mustard stain on his shirt. "
         },
         "fp4": {
             "name": "Narrator", 
-            "text": "It was late at night, and the school hallways felt eerily empty. Andy could swear he heard footsteps behind him, but when he turned around—nothing."
+            "text": "Despite the stain, he realized he was out of time and books it to school."
+        },
+        "fp5": {
+            "name": "Narrator", 
+            "text": "When Andy finally makes it to school, he is greeted by a 6’ 4” handsome fella, who wears a jock jacket. He plays football for the Muddogs at Sierra Vista High."
+        },
+        "fp6": {
+            "name": "Derik", 
+            "text": "Hey there little guy, how's that stain doin’ for ya? Did your mommy forget to wash it out for you? Boo hoo"
+        },
+        "fp7": {
+            "name": "Andy", 
+            "text": "Actually, m… my mom did forget to do the laundry last night."
+        },
+        "fp8": {
+            "name": "Derik", 
+            "text": "Well at least my mom’s still alive. Ha! It feels good to be me."
+        },
+        "fp9": {
+            "name": "Narrator", 
+            "text": "I guess he’s not very smart either… School funding must be on a tight budget these days."
+        },
+        "fp10": {
+            "name": "Narrator", 
+            "text": "Andy walks to the cafeteria to get his breakfast."
+        },
+        "fp11": {
+            "name": "Narrator", 
+            "text": "He goes to the lunch line and eagerly waits to get his 8 cartons of white milk. Andy gets the milk, downs 4 of them while he stores the rest in his backpack. "
+        },
+        "fp12": {
+            "name": "Narrator", 
+            "text": "Andy now has 16 cartons of White milk in his backpack but that's not very far from his backpack's maximum capacity of 20."
+        },
+        "fp13": {
+            "name": "Narrator", 
+            "text": "Andy goes outside to find a tree as lonely as him and sits criss-cross applesauce under it, waiting for the school day to start. When the bell rings, he starts heading to his first class, Statistics."
+        },
+        "fp14": {
+            "name": "Mr. Hankey", 
+            "text": "Remember class, I’m only giving you time today to study in class. The test is tomorrow, so be prepared!"
+        },
+        "fp15": {
+            "name": "Narrator", 
+            "text": "Andy gets out his study guide but realizes he didn’t finish filling it out. He takes a longer look at it, slams his head on the desk and sleeps for the entire period."
+        },
+        "fp16": {
+            "name": "Narrator", 
+            "text": "When the bell rings, he wakes up groggily and heads to his next class."
+        },
+        "fp17": {
+            "name": "Narrator", 
+            "text": "Instead of listening to the teacher's lecture, he dozes off again so that he can continue that good dream he had, which was rudely interrupted."
+        },
+        "fp18": {
+            "name": "Narrator", 
+            "text": "For the rest of his classes, he continues this process until it reaches his favorite period, lunch."
+        },
+        "fp19": {
+            "name": "Narrator", 
+            "text": "Andy heads over to the school cafeteria once more, he gets 8 cartons of white milk (as he usually would)"
+        },
+        "fp20": {
+            "name": "Narrator", 
+            "text": "You see this? That means Andy’s backpack has reached full capacity for his white milk! He needs to go dump it out at his locker.”"
+        },
+        "fp21": {
+            "name": "Narrator", 
+            "text": "Andy goes to his locker and drops off all 20 of his milk cartons. Now that his backpack is empty … NEW MISSION UNLOCKED: Acquire as much milk as you can"
+        },
+        "fp22": {
+            "name": "Narrator", 
+            "text": "Andy goes back to the cafetera and asks people for their milk."
+        },
+        "fp23": {
+            "name": "Andy", 
+            "text": "Do you have any white milk to spare?"
+        },
+        "fp24": {
+            "name": "Andy", 
+            "text": "Milk? Does anybody have white milk for good ole Andy"
         }
     };
 
