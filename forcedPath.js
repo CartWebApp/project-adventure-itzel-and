@@ -2,7 +2,7 @@
 
 document.addEventListener("DOMContentLoaded", function () {
     let currentSceneNumber = 1; // Always start at scene 1
-    const maxScenes = 100;
+    const maxScenes = 100; //works for the forced path of the game
 
     const scenes = {
         1: {
@@ -582,7 +582,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function goToNextScene() {
         currentSceneNumber++;
         if (currentSceneNumber > maxScenes) {
-            window.location.href = "index.html";
+            window.location.href = `branch-to-three.html`;
         } else {
             // Load the next scene directly
             scene = scenes[currentSceneNumber];

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Your Adventure Recap</h1>
+    <ul id="recap"></ul>
+    <button onclick="restartGame()">Play Again</button>
+
+    <script>
+        function restartGame() {
+            localStorage.removeItem("playerChoices");
+            window.location.href = "start.html"; // replace with your start page
+        }
+    </script>
+    
+    <script>
+        // Get stored choices
+        let choices = JSON.parse(localStorage.getItem("playerChoices")) || [];
+
+        // Show them on the page
+        const recapList = document.getElementById("recap");
+        choices.forEach(choice => {
+            const li = document.createElement("li");
+            li.textContent = choice;
+            recapList.appendChild(li);
+        });
+
+        // Optional: Clear memory if you want to restart the game fresh
+        // localStorage.removeItem("playerChoices");
+    </script>
+</body>
+
+</html>

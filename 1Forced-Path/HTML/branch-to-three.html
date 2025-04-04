@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Multiverse Paradox</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .school{
+            background-image: url(../../branched/imgs/school.png);
+            background-size: cover; 
+            background-position: center;
+            background-attachment: fixed;
+            margin: 0;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+        .option1{
+            position: absolute;
+            border: 2px solid green;
+            height: 50vh;
+            width: 50vw;
+            bottom: 0;
+            transition: all 1s ease;
+        }
+
+        .andy{
+            /* background-image: url(imgs/andy.png); */
+            height: 40vh;
+            width: 30vw;
+            position: absolute;
+            left: 10%;
+        }
+        .andy-img{
+            background-image: url(../../branched/imgs/andy.png);
+            height: 80%;
+            width: auto;
+            /* width: 100%; */
+        }
+
+        .andy p{
+            /* position: absolute; */
+            top: 0%;
+            /* height: 10%; */
+            padding: 1vw;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: .3vw;
+        }
+
+        .arrow{
+            background-image: url(../../branched/imgs/arrow.png);
+            height: 10vh;
+            width: 10vw;
+            position: absolute;
+            right: 0;
+            top: 20%;
+
+        }
+        .artifact{
+            background-image: url(../../branched/imgs/atrtifact.png);
+            height: 20vh;
+            width: 20vw;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%);
+        }
+        .bully{
+            background-image: url(../../branched/imgs/bully.png);
+            height: 40vh;
+            width: 10vw;
+            position: absolute;
+            right: 10%;
+            bottom: 10%;
+        }
+
+
+        .option1:hover{
+            transform: translateY(-2vh);
+
+        }
+        
+        
+     
+</style>
+<body>
+    <div class="school">
+        <a href="path1.html" class="option1" data-choice="Picked up the artifact">
+            <!-- if user takes the first option, they will pick up the artifact -->
+            <div class="andy">
+                <p>kekler</p>
+                <div class="andy-img"></div>
+            </div>
+            <div class="arrow"></div>
+        </a>
+    
+        <a href="path2.html" class="artifact" data-choice="omega signa">
+            <!-- if user takes the first option, they will walk by it -->
+        </a>
+
+        <a href="path3.html" class="bully" data-choice="Watched the bully pick up the artifact">
+            <!-- if user takes the first option, they will watch the bully pick up the artifact -->
+        </a>
+    </div>
+
+    <script>
+        // Get previously saved choices or create a new list
+        let choices = JSON.parse(localStorage.getItem("playerChoices")) || [];
+
+        // Attach listeners to all anchor links
+        document.querySelectorAll(".school a").forEach(link => {
+            link.addEventListener("click", function () {
+                // Grab the data-choice value
+                const choice = link.getAttribute("data-choice");
+
+                // Add it to the array
+                choices.push(choice);
+
+                // Save it in localStorage
+                localStorage.setItem("playerChoices", JSON.stringify(choices));
+            });
+        });
+    </script>
+</body>
+
+</html>
