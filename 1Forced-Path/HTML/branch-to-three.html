@@ -11,7 +11,7 @@
         padding: 0;
     }
     .school{
-            background-image: url(../../branched/imgs/school.png);
+            background-image: url(../../main-branch-off/school.png);
             background-size: cover; 
             background-position: center;
             background-attachment: fixed;
@@ -19,6 +19,8 @@
             height: 100vh;
             position: relative;
             overflow: hidden;
+            /* transform: translateY(-10px); */
+            /* scale: .6; */
         }
         .option1{
             position: absolute;
@@ -37,10 +39,11 @@
             left: 10%;
         }
         .andy-img{
-            background-image: url(../../branched/imgs/andy.png);
-            height: 80%;
+            background-image: url(../../main-branch-off/andy.png);
+            height: 120%;
             width: auto;
             /* width: 100%; */
+            background-repeat: no-repeat;
         }
 
         .andy p{
@@ -62,27 +65,29 @@
 
         }
         .artifact{
-            background-image: url(../../branched/imgs/atrtifact.png);
+            background-image: url(../../main-branch-off/rock.png);
             height: 20vh;
             width: 20vw;
             position: absolute;
             bottom: 0;
             left: 50%;
             transform: translate(-50%);
+            background-repeat: no-repeat;
         }
         .bully{
-            background-image: url(../../branched/imgs/bully.png);
+            background-image: url(../../main-branch-off/derik.png);
             height: 40vh;
             width: 10vw;
             position: absolute;
             right: 10%;
             bottom: 10%;
+            background-repeat: no-repeat;
         }
 
 
-        .option1:hover{
-            transform: translateY(-2vh);
-
+        .hover:hover{
+            transform: translatey(-10px);
+            transition: all .2s ease-in-out;
         }
         
         
@@ -94,38 +99,21 @@
             <!-- if user takes the first option, they will pick up the artifact -->
             <div class="andy">
                 <p>kekler</p>
-                <div class="andy-img"></div>
+                <div class="andy-img hover"><img src="../../main-branch-off/andy.png" alt=""></div>
             </div>
             <div class="arrow"></div>
         </a>
     
-        <a href="path2.html" class="artifact" data-choice="omega signa">
+        <a href="game-end.html" class="artifact hover" data-choice="omega signa">
             <!-- if user takes the first option, they will walk by it -->
         </a>
 
-        <a href="path3.html" class="bully" data-choice="Watched the bully pick up the artifact">
+        <a href="game-end.html" class="bully hover" data-choice="Watched the bully pick up the artifact">
             <!-- if user takes the first option, they will watch the bully pick up the artifact -->
         </a>
     </div>
 
-    <script>
-        // Get previously saved choices or create a new list
-        let choices = JSON.parse(localStorage.getItem("playerChoices")) || [];
-
-        // Attach listeners to all anchor links
-        document.querySelectorAll(".school a").forEach(link => {
-            link.addEventListener("click", function () {
-                // Grab the data-choice value
-                const choice = link.getAttribute("data-choice");
-
-                // Add it to the array
-                choices.push(choice);
-
-                // Save it in localStorage
-                localStorage.setItem("playerChoices", JSON.stringify(choices));
-            });
-        });
-    </script>
+    <script src="../js/recordChoices.js"></script>
 </body>
 
 </html>

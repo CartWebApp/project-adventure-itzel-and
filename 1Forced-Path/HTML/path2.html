@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    body{
+            background-image: url();
+            background-size: cover; 
+            background-position: center;
+            background-attachment: fixed;
+            margin: 0;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+</style>
+
+
+    <style>
+        /* this will be used to mark what is used in just about all the scenes */
+@import url('https://fonts.googleapis.com/css2?family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+/* font-family: "Shantell Sans", cursive; */
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "Shantell Sans", cursive;
+}
+
+/* Fade In / Out Effect */
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+}
+
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+}
+
+body.loaded {
+    opacity: 1;
+}
+
+body{
+    height: 100vh;
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+    background-color: black;
+}
+
+
+p {
+    color: black;
+    font-family: "Shantell Sans", cursive;
+    font-size: 2vw;
+    font-weight: 500;
+}
+
+/*there will be multiple containers for different colors... you use fp for 'Forced Path'  */
+.container{
+    width: 80vw;
+    /* margin: 0 auto; */
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 5%;
+    position: absolute;
+    /* margin-top: 99vh; */
+}
+
+
+.containerfp{
+    display: flex;
+}
+.name{
+    display: flex;
+    justify-content: center;
+    line-height: 5vh;
+
+    /* height: 2vw; */
+    width: 10vw;
+    height: 5vh;
+
+    text-align: center;
+    font-size: 1vw;
+    background-color: #fff;
+}
+.name p{
+    font-size: 1.5vw;
+    font-weight: 500;
+}
+
+/* make sure to put the class triangle inside the container... like at the bottom would do */
+.triangle {
+    position: absolute;
+    rotate: 270deg;
+    bottom: 10%;
+    right: 2%;
+    border-left: 1vw solid transparent;
+    border-right: 1vw solid transparent;
+    border-top: 1.5vw solid rgb(255, 255, 255); /* Triangle color */
+    opacity: 1;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+.two{
+    /* position: absolute; */
+
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    background-color: hsla(0, 0%, 100%, 0.85);
+    bottom: 0;
+    border: 5px solid black;
+
+    height: 20vh;
+    /* height: 13.888vw; this is the mathed out one but it looks too large*/
+    /* change with proper one ^ */
+
+    width: 80vw;
+    padding: 1vw 1vw;
+    overflow: hidden;
+    position: relative;
+}
+    </style>
+</head>
+<body data-path="pathOne" data-scene="1">
+    <div class="container">
+        <div class="name"><p></p></div>
+            <div class="containerfp one">
+            <p id="character-description" class="two" data-fulltext=""></p>
+            <p id="character-description2" class="two" data-fulltext=""></p>
+            <div class="triangle"></div>
+        </div>
+    </div>
+</body>
+</html>
+<script src="../../two-textBox.js"></script> <!--exicutes all the scripts-->
+<!-- <script src="../js/nextPage.js"></script> goes to the next page -->
+<script src="../js/fadeIn.js"></script> <!--ensures the text in js loads before the typewriter works-->
+
+
+
+<script>
+    document.getElementById("character-description").addEventListener("click", function() {
+        window.location.href = "anotherPage.html";  // Replace with your relative file path
+    });
+
+    document.getElementById("character-description2").addEventListener("click", function() {
+        window.location.href = "anotherasdPage.html";  // Replace with your relative file path
+    });
+</script>
