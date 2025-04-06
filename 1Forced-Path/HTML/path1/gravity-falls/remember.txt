@@ -1,0 +1,5 @@
+in the file duct-tective.html, it will add a value that will alter the ending of the story
+
+that value is then used in walking-with-fort.html
+
+(remember to use this for the ending in the first one)

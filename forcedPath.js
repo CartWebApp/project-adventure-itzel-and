@@ -1223,7 +1223,7 @@ document.addEventListener("DOMContentLoaded", function () {
             },
             
             
-        redirectLink: "../../game-end.html"
+        redirectLink: "../../game-over.html"
         },
 
 
@@ -1673,7 +1673,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 text: "Well kids, we’re off. We’ll be back… hopefully in one piece",
                 background: "",
             },
-            
+            redirectLink: "walking-with-fort.html"
         },
         gravityFallsWaistTime: {
             1: {
@@ -1927,7 +1927,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 text: "Yes, what about them",
                 background: "",
             },
-            
+            redirectLink: "battle-weapons.html"
         },
         gravityFallsSmallTalkWithFortNoEQ: //doesetn have equipment
         {
@@ -2116,7 +2116,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 text: "You pick up the artifact and get teleported to universe 3",
                 background: "",
             },
-            
+            redirectLink: "../the-amazing-world-of-gumball/the-amazing-world-of-gumball.html"
             
         },
         gravityFallsChoseYourWeapon: {
@@ -2368,7 +2368,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 text: "You open the doors to the school and decide to go in… but something's blocking the path.",
                 background: "",
             },
-            
+            redirectLink: "centar-choice1.html"
             
         },
         theAmazingWorldOfGumballQuestionTheCentar:{
@@ -2428,7 +2428,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 text: "lol what a weak way to go out… a centaur had too much Taco Bell and let it all out on you… this job pays me TOO much for how much I'm enjoying it.",
                 background: "",
             },
-            
+            redirectLink: "game-over.html"
             
         },
 
@@ -2468,7 +2468,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 text: "The centaur gives you a sticky note that reads ‘↑ ↑ ↓ ↓ ← → ← → BA Start’.",
                 background: "",
             },
-            
+            redirectLink: "sticky-note-options.html"
             
         },
         theAmazingWorldOfGumballStickyNoteOptions: {
@@ -2501,7 +2501,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 background: "",
             },
             
-            
+            redirectLink: "game-over.html"
             
         },
         theAmazingWorldOfGumballGoesToHouse: {
@@ -2515,7 +2515,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 text: "You head inside the house.",
                 background: "",
             },
-            
+            redirectLink: "inside-the-kitchen.html"
             
         },
         theAmazingWorldOfGumballKonamiCode: {
@@ -2569,7 +2569,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 text: "You throw away the piece of cardboard that did absolutely nothing and go inside.",
                 background: "",
             },
-            
+            redirectLink: "inside-the-kitchen.html"
             
         },
 
@@ -2584,7 +2584,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 text: "You start to hear something… it is a voice but you don't see who it is… who could it be?",
                 background: "",
             },
-            
+            redirectLink: "choose-your-orange.html"
         },
 
         theAmazingWorldOfGumballDecideOrange: {
@@ -2619,13 +2619,20 @@ document.addEventListener("DOMContentLoaded", function () {
                 text: "You head outside and see some banana about to get pranked?",
                 background: "",
             },
-            
+            redirectLink: "nicole-shows-up.html"
         },
         theAmazingWorldOfGumballPlaneOleOrange: {
             //from here out, its all forced... no real options... just death lol
+            
+            1: {
+                name: "Narrator",
+                text: "You head outside and see some banana about to get pranked?",
+                background: "",
+            },
+            redirectLink: "nicole-shows-up.html"
         },
 
-        theAmazingWorldOfGumballSecretJoe: {
+        theAmazingWorldOfGumballSecretJoe: /*havent tested yet*/{
             1: {
                 name: "Andy",
                 text: "Woah, what's going on?",
@@ -2791,7 +2798,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 text: "You press the power button and it takes you back to the house, now that you think about it, the house you are in looks a lot like the one Rob was talking about just earlier.",
                 background: "",
             },
-            
+            redirectLink: "nicole-shows-up.html"
         },
 
         theAmazingWorldOfGumballBlueWomen: {
@@ -2815,7 +2822,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 text: "Let the popcorn eating commence.",
                 background: "",
             },
-            
+            redirectLink: "choice-with-nicole.html"
             
         },
 
@@ -2881,7 +2888,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 text: "You go in to notice the bag close to your feet on the floor.",
                 background: "",
             },
-            
+            redirectLink: "bag-options.html"
         },
 
         theAmazingWorldOfGumballEarplugsChoice: {
@@ -2900,6 +2907,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 text: "+1 pair of earplugs",
                 background: "",
             }, 
+            redirectLink: "get-kicked-to-school.html"
         },
         theAmazingWorldOfGumballLeaveEarplugs: {
             1: {
@@ -2907,6 +2915,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 text: "what have you done… you chose so incredibly wrong",
                 background: "",
             }, 
+            redirectLink: "get-kicked-to-school.html"
         },
 
         theAmazingWorldOfGumballBookIt: {
@@ -2964,8 +2973,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 name: "Narrator",
                 text: "Game Over",
                 background: "",
-            }
-            
+            },
+            redirectLink: "game-over.html"
         },
 
         theAmazingWorldOfGumballNicoleKicksPlayerBackToSchool: {
@@ -2979,7 +2988,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 text: "Nicole kicks you back to the school.",
                 background: "",
             },
-            
+            redirectLink: "give-centar-the-orange.html"
         },
 
         theAmazingWorldOfGumballGivesCentarAnnoyingOrange: {
@@ -3008,7 +3017,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 text: "Taste the Rainbow Achievement",
                 background: "",
             },
-            
+            redirectLink: "you-see-molly.html"
         },
         theAmazingWorldOfGumballGivesCentarRegularOrange: {
             1: {
@@ -3020,11 +3029,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 name: "Narrator",
                 text: "The centaur turns around and lights you on fire using his butt.",
                 background: "",
-            }
-            
+            },
+            redirectLink: "game-over.html"
         },
 
-        theAmazingWorldOfGumballYouSeeMolly: {
+        theAmazingWorldOfGumballYouSeeMolly: /*progam here*/{
             1: {
                 name: "Narrator",
                 text: "You see a large grey creature in front of you… they seem friendly.",
@@ -3047,14 +3056,161 @@ document.addEventListener("DOMContentLoaded", function () {
             },
             5: {
                 name: "Molly",
-                text: "“Ok. It all began a really long time ago. Like at my house long ago. Like it was so long ago it was before I even came to school.”",
+                text: "“Ok. It all began a really long time ago. Like at my house long ago. Like it was so long ago it was yesterday.”",
                 background: "",
-            }
-            
+            },
+            redirectLink: "mollys-story.html"
         },
         //if the user obtained earplugs, they could skip this
         //else, else but the path is like really long
+        theAmazingWorldOfGumballMollysStory: {
+            1: {
+                name: "Molly",
+                text: "Okay, so this morning I woke up really early. The alarm went off, and I just didn’t want to get out of bed.",
+                background: "",
+            },
+            2: {
+                name: "Molly",
+                text: "The sky outside was all gray, like a blanket of clouds had covered everything. It felt... quiet. Too quiet.",
+                background: "",
+            },
+            3: {
+                name: "Molly",
+                text: "I finally dragged myself to the kitchen. I grabbed my cereal, the one with stars on the box, even though they’re fake.",
+                background: "",
+            },
+            4: {
+                name: "Molly",
+                text: "I poured the milk, and of course, it spilled. I didn’t care. It always spills. I just wiped it up and moved on.",
+                background: "",
+            },
+            5: {
+                name: "Molly",
+                text: "After breakfast, I realized I forgot to pack my lunch. So I rushed back to the kitchen and threw together a sandwich.",
+                background: "",
+            },
+            6: {
+                name: "Molly",
+                text: "It was just peanut butter and jelly, nothing fancy. But I put way too much peanut butter on it. Oops.",
+                background: "",
+            },
+            7: {
+                name: "Molly",
+                text: "I ate it anyway and then rushed to get my backpack. I almost forgot my art supplies, but grabbed them at the last second.",
+                background: "",
+            },
+            8: {
+                name: "Molly",
+                text: "As I was walking out, I noticed a brown crayon lying in the hallway. Just there, in the middle of the floor.",
+                background: "",
+            },
+            9: {
+                name: "Molly",
+                text: "I picked it up. It seemed so random, but something about it felt... important, like it was calling to me.",
+                background: "",
+            },
+            10: {
+                name: "Molly",
+                text: "I thought about leaving it, but I took it with me. Maybe I could use it for something. It felt like a sign.",
+                background: "",
+            },
+            11: {
+                name: "Molly",
+                text: "On my way to school, I kept looking at the crayon in my hand. I wondered what I could do with it today.",
+                background: "",
+            },
+            12: {
+                name: "Molly",
+                text: "Maybe it could help me make a beautiful drawing for art class. Or maybe it’d be another boring day. Who knew?",
+                background: "",
+            },
+            13: {
+                name: "Molly",
+                text: "I got to school, and the bell rang. Everyone was already drawing, but I was still unsure what to do with the crayon.",
+                background: "",
+            },
+            14: {
+                name: "Molly",
+                text: "I sat down and stared at my paper. Then, I looked at the crayon again. Maybe I should start simple. Just a line.",
+                background: "",
+            },
+            15: {
+                name: "Molly",
+                text: "I drew a little square. It wasn’t perfect, but it felt... okay. The brown color felt calming in a way.",
+                background: "",
+            },
+            16: {
+                name: "Molly",
+                text: "The more I drew, the more I started to like how the crayon felt. It wasn’t too hard or too soft, just right.",
+                background: "",
+            },
+            17: {
+                name: "Molly",
+                text: "I added a few more lines, then a circle. I was starting to create something. I didn’t know what, but it was mine.",
+                background: "",
+            },
+            18: {
+                name: "Molly",
+                text: "I looked at it for a moment, and I realized something—I was actually enjoying it. The crayon was working.",
+                background: "",
+            },
+            19: {
+                name: "Molly",
+                text: "It was only a few simple shapes, but it felt so nice to see them come together. I felt proud of it, strangely.",
+                background: "",
+            },
+            20: {
+                name: "Molly",
+                text: "As I finished the drawing, I thought, ‘Maybe I’m not as bad at art as I thought.’ I smiled, even though it wasn’t perfect.",
+                background: "",
+            },
+            21: {
+                name: "Molly",
+                text: "I looked around. No one seemed to notice my picture, but that didn’t matter. I made something all on my own.",
+                background: "",
+            },
+            22: {
+                name: "Molly",
+                text: "The bell rang, and I started to pack up. But I couldn’t leave my drawing. I just wanted to keep looking at it.",
+                background: "",
+            },
+            23: {
+                name: "Molly",
+                text: "I picked up the brown crayon, and I thought about how this one simple crayon made my day feel a little better.",
+                background: "",
+            },
+            24: {
+                name: "Molly",
+                text: "I put the crayon in my backpack and thought, ‘Maybe I’ll use it again tomorrow. Maybe we’ll make more things.’",
+                background: "",
+            },
+            25: {
+                name: "Molly",
+                text: "And that’s how my morning went. Quiet, simple, but a little special, all thanks to a brown crayon.",
+                background: "",
+            },
+            
 
+            redirectLink: "ending.html"
+        },
+        theAmazingWorldOfGumballNarratorSkipsMollysStory: {
+            1: {
+                name: "Narrator",
+                text: "You see I don't want to hear the story so I'll just place these in your ears",
+                background: "",
+            },
+            2: {
+                name: "Narrator",
+                text: "I'm talking about the ear plugs of course",
+                background: "",
+            },
+            3: {
+                name: "Narrator",
+                text: "You ended up skipping 5 minutes of epic gameplay due to this",
+                background: "",
+            },
+            redirectLink: "ending.html"
+        },
         theAmazingWorldOfGumballEnding: {
             1: {
                 name: "Narrator",
@@ -3076,7 +3232,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 text: "You pick up the artifact and get transported to the fourth and final universe.",
                 background: "",
             },
-            
+            redirectLink: "../../adventure-time/adventure-time.html"
         },
 
 
@@ -3155,8 +3311,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 name: "Fin",
                 text: "“Ahhhhh”",
                 background: "",
-            }
-            
+            },
+            redirectLink: "first-choice.html"
         },
             
 
@@ -3173,464 +3329,456 @@ document.addEventListener("DOMContentLoaded", function () {
 
         adventureTimeExplainYourself: {
             1: {
-                name: "Andy",
-                text: "“Wait wait wait… I'm here to help”",
-                background: "",
-            },
-            2: {
                 name: "Fin",
                 text: "“Help…? Help how?”",
                 background: "",
             },
-            3: {
+            2: {
                 name: "Andy",
                 text: "“Well from what I've been told and what I've experienced so far, there is some type of final boss I need to defeat to get back home”",
                 background: "",
             },
-            4: {
+            3: {
                 name: "Andy",
                 text: "“Could it be that something is going wrong with your world?”",
                 background: "",
             },
-            5: {
+            4: {
                 name: "Jake",
                 text: "“Wait… so you're not from here…?”",
                 background: "",
             },
-            6: {
+            5: {
                 name: "Andy",
                 text: "“That's right, this isn't my home, but I would love to live here”",
                 background: "",
             },
-            7: {
+            6: {
                 name: "Narrator",
                 text: "You look around in the large tree house.",
                 background: "",
             },
-            8: {
+            7: {
                 name: "Fin",
                 text: "“Ok… how about this…”",
                 background: "",
             },
-            9: {
+            8: {
                 name: "Fin",
                 text: "“Tell us about the adventures you've had and we'll determine if you are telling the truth or not”",
                 background: "",
             },
-            10: {
+            9: {
                 name: "Andy",
                 text: "“Yeah. Ok. Sure. Should be easy enough”",
                 background: "",
             },
-            11: {
+            10: {
                 name: "Narrator",
                 text: "Time to test your memory.",
                 background: "",
             },
-            12: {
+            11: {
                 name: "Andy",
                 text: "“So… ugh”",
                 background: "",
             },
-            13: {
+            12: {
                 name: "Andy",
                 text: "“In the first universe, I met some animals and a gumball machine to take on a green ogre”",
                 background: "",
             },
-            14: {
+            13: {
                 name: "Andy",
                 text: "“Hmmm”",
                 background: "",
             },
-            15: {
+            14: {
                 name: "Andy",
                 text: "“In the second universe, I had to take on a tower of gnomes”",
                 background: "",
             },
-            16: {
+            15: {
                 name: "Andy",
                 text: "“And finally…”",
                 background: "",
             },
-            17: {
+            16: {
                 name: "Andy",
                 text: "“The last universe I was in I had to take on a centaur”",
                 background: "",
             },
-            18: {
+            17: {
                 name: "Jake",
                 text: "“Wow dude you seem pretty cool.”",
                 background: "",
             },
-            19: {
+            18: {
                 name: "Andy",
                 text: "“Back to my question earlier real quick”",
                 background: "",
             },
-            20: {
+            19: {
                 name: "Jake",
                 text: "“Oh right… something is wrong with our world, is it?”",
                 background: "",
             },
-            21: {
+            20: {
                 name: "Jake",
                 text: "“Yeah man, there's all kinds of things that are wrong with this world”",
                 background: "",
             },
-            22: {
+            21: {
                 name: "Fin",
                 text: "“You have the Ice King kidnapping princesses”",
                 background: "",
             },
-            23: {
+            22: {
                 name: "Jake",
                 text: "“Giant slugs that try to find romance”",
                 background: "",
             },
-            24: {
+            23: {
                 name: "BMO",
                 text: "“Don't forget about the lich”",
                 background: "",
             },
-            25: {
+            24: {
                 name: "Fin",
                 text: "“And Jake... THE LICH”",
                 background: "",
             },
-            26: {
+            25: {
                 name: "Jake",
                 text: "“That could be it for sure”",
                 background: "",
             },
-            27: {
+            26: {
                 name: "Andy",
                 text: "“Who's the lich?”",
                 background: "",
             },
-            28: {
+            27: {
                 name: "Jake",
                 text: "“Long story short, it's something that's made of pure evil. It is said that even the purest of those can't get close to him without turning a little evil”",
                 background: "",
             },
-            29: {
+            28: {
                 name: "Andy",
                 text: "“Scary… but if it means I get to go back home… I'm all in for it”",
                 background: "",
             },
-            30: {
+            29: {
                 name: "Jake",
                 text: "“So am I”",
                 background: "",
             },
-            31: {
+            30: {
                 name: "Fin",
                 text: "“Me too, we’re going to need all the help we can get”",
                 background: "",
             },
-            32: {
+            31: {
                 name: "BMO",
                 text: "“Yes. I will round up all the troops”",
                 background: "",
             },
-            33: {
+            32: {
                 name: "Narrator",
                 text: "You notice the little robot throw itself out of the window.",
                 background: "",
             },
-            34: {
+            33: {
                 name: "Andy",
                 text: "“That's nominal I'm assuming…?”",
                 background: "",
             },
-            35: {
+            34: {
                 name: "Fin",
                 text: "“Nope, he's just really happy to finally have someone else to talk to”",
                 background: "",
             },
-            36: {
+            35: {
                 name: "Jake",
                 text: "“Anyways… more sandwich for Jake”",
                 background: "",
             },
-            37: {
+            36: {
                 name: "Fin",
                 text: "“Dude… weak”",
                 background: "",
             },
-            38: {
+            37: {
                 name: "Jake",
                 text: "“What? I can't fight on an empty stomach”",
                 background: "",
             },
-            39: {
+            38: {
                 name: "Fin",
                 text: "“No dude… don't be rude… share with our guest…”",
                 background: "",
             },
-            40: {
+            39: {
                 name: "Jake",
                 text: "“Oh yeah huh… sorry”",
                 background: "",
             },
-            41: {
+            40: {
                 name: "Jake",
                 text: "“Here, you want some Perfect Sandwich”",
                 background: "",
             },
-            42: {
+            41: {
                 name: "Andy",
                 text: "“If you're offering, then sure”",
                 background: "",
             },
-            43: {
+            42: {
                 name: "Narrator",
                 text: "Jake gives you a piece of the sandwich.",
                 background: "",
             },
-            44: {
+            43: {
                 name: "Andy",
                 text: "“Hey, this is pretty good-”",
                 background: "",
             },
-            45: {
+            44: {
                 name: "Narrator",
                 text: "As you eat the sandwich, you start to feel tingling.",
                 background: "",
             },
-            46: {
+            45: {
                 name: "Narrator",
                 text: "NEW Power: Regeneration",
                 background: "",
             },
-            47: {
+            46: {
                 name: "Andy",
                 text: "“Woah, I got a regen power…? Nice”",
                 background: "",
             },
-            48: {
+            47: {
                 name: "Jake",
                 text: "“Yeah, that's thanks to the lobster soul I added”",
                 background: "",
             },
-            49: {
+            48: {
                 name: "Andy",
                 text: "“I ate a… soul… I think I'm going to be sick…”",
                 background: "",
             },
-            50: {
+            49: {
                 name: "Narrator",
                 text: "You think for a little about the fact that you just ate a lobster-infused sandwich.",
                 background: "",
             },
-            51: {
+            50: {
                 name: "Andy",
                 text: "“Okay, I think I'm fine now…”",
                 background: "",
             },
-            52: {
+            51: {
                 name: "Jake",
                 text: "“Alright, let's get headed to PB’s kingdom”",
                 background: "",
             },
-            53: {
+            52: {
                 name: "Andy",
                 text: "“PB’s kingdom…?”",
                 background: "",
             },
-            54: {
+            53: {
                 name: "Fin",
                 text: "“Princess Bubblegum's Kingdom”",
                 background: "",
             },
-            55: {
+            54: {
                 name: "Andy",
                 text: "“Before we continue, can I get some names? Just so I'm not lost in the dark here…?”",
                 background: "",
             },
-            56: {
+            55: {
                 name: "Fin",
                 text: "“Oh shoot, yeah. Yeah sure. Sorry about that”",
                 background: "",
             },
-            57: {
+            56: {
                 name: "Fin",
                 text: "“I'm Fin the Human”",
                 background: "",
             },
-            58: {
+            57: {
                 name: "Jake",
                 text: "“I'm Jake the Dog”",
                 background: "",
             },
-            59: {
+            58: {
                 name: "Fin",
                 text: "“The little robot that left through the window is BMO”",
                 background: "",
             },
-            60: {
+            59: {
                 name: "Fin",
                 text: "“Um, who else…”",
                 background: "",
             },
-            61: {
+            60: {
                 name: "Fin",
                 text: "“Oh. PB is Princess Bubblegum if you didn't get it by now”",
                 background: "",
             },
-            62: {
+            61: {
                 name: "Jake",
                 text: "“Don't forget about Ice King”",
                 background: "",
             },
-            63: {
+            62: {
                 name: "Fin",
                 text: "“Oh yeah. Ice King. He's… how do I put it… a bit off… Long story short, he's annoying in this state but deep down he's a nice guy.”",
                 background: "",
             },
-            64: {
+            63: {
                 name: "Andy",
                 text: "“Noted… is he a bad guy…?”",
                 background: "",
             },
-            65: {
+            64: {
                 name: "Fin",
                 text: "“Well technically yes”",
                 background: "",
             },
-            66: {
+            65: {
                 name: "Andy",
                 text: "“Okay”",
                 background: "",
             },
-            67: {
+            66: {
                 name: "Narrator",
                 text: "You three go outside.",
                 background: "",
             },
-            68: {
+            67: {
                 name: "Andy",
                 text: "“Do we have to walk… I don't see any sort of kingdom from here”",
                 background: "",
             },
-            69: {
+            68: {
                 name: "Andy",
                 text: "“Isn't it going to be far too…”",
                 background: "",
             },
-            70: {
+            69: {
                 name: "Jake",
                 text: "“Don't worry, I'm a magical dog. I can grow and shrink any part of my body”",
                 background: "",
             },
-            71: {
+            70: {
                 name: "Narrator",
                 text: "You see Jake grow really large and fall to the ground.",
                 background: "",
             },
-            72: {
+            71: {
                 name: "Andy",
                 text: "“Woah, you were not kidding”",
                 background: "",
             },
-            73: {
+            72: {
                 name: "Narrator",
                 text: "Jake picks up you and Fin then takes off to the Candy Kingdom.",
                 background: "",
             },
-            74: {
+            73: {
                 name: "Narrator",
                 text: "You arrive at the entrance and see two large gumball machines. They look almost like guards with their spears.",
                 background: "",
             },
-            75: {
+            74: {
                 name: "Narrator",
                 text: "Jake stretches and now you guys are inside the palace.",
                 background: "",
             },
-            76: {
+            75: {
                 name: "Andy",
                 text: "“Hey look, it's the Ice King”",
                 background: "",
             },
-            77: {
+            76: {
                 name: "Narrator",
                 text: "The Ice King is in a cage…",
                 background: "",
-            }
+            },
             
+            redirectLink: "decide-if-you-slap-ik.html"
         },
         adventureTimeWheresTheTrouble: {
             1: {
-                name: "Andy",
-                text: "“Calm down, where's the trouble? I can take care of it”",
-                background: "",
-            },
-            2: {
                 name: "Fin",
                 text: "“No…? I've been doing that my whole life”",
                 background: "",
             },
-            3: {
+            2: {
                 name: "Andy",
                 text: "“Time to give it up… come on… let it go”",
                 background: "",
             },
-            4: {
+            3: {
                 name: "Fin",
                 text: "“No. I won't. You can't make me”",
                 background: "",
             },
-            5: {
+            4: {
                 name: "Andy",
                 text: "“I don't need to make you. I just need you to tell me where the danger is”",
                 background: "",
             },
-            6: {
+            5: {
                 name: "Fin",
                 text: "“How about I kick you out and you find trouble on your own”",
                 background: "",
             },
-            7: {
+            6: {
                 name: "Andy",
                 text: "“Sure, why not? I've been doing this for 3 universes now… what's one more”",
                 background: "",
             },
-            8: {
+            7: {
                 name: "Narrator",
                 text: "You get kicked outside by Fin and are greeted by a giant slug.",
                 background: "",
             },
-            9: {
+            8: {
                 name: "Andy",
                 text: "“Alright… what do I have to take you on…”",
                 background: "",
             },
-            10: {
+            9: {
                 name: "Narrator",
                 text: "You open your backpack.",
                 background: "",
             },
-            11: {
+            10: {
                 name: "Narrator",
                 text: "You see the slug approaching you.",
                 background: "",
             },
-            12: {
+            11: {
                 name: "Narrator",
                 text: "The slug does not seem to be slowing down.",
                 background: "",
             },
-            13: {
+            12: {
                 name: "Narrator",
                 text: "The slug is now on top of you, crushing your body.",
                 background: "",
             },
-            14: {
+            13: {
                 name: "Narrator",
                 text: "Game Over",
                 background: "",
-            }
+            },
             
+            redirectLink: "game-over.html"
         },
 
         adventureTimeDecideIfSlapIK: {
@@ -3639,255 +3787,247 @@ document.addEventListener("DOMContentLoaded", function () {
                 background: "",
                 text: {
                     dialog: "you don't slap The Ice King",
-                    dialog2: "you walk in his direction and slap The Ice Kind",
+                    dialog2: "you walk in his direction and slap The Ice King",
                 }
             },
         },
         adventureTimeDontSlapIK: {
             1: {
-                name: "Narrator",
-                text: "You don't slap the Ice King.",
-                background: "",
-            },
-            2: {
                 name: "Fin",
                 text: "“PB, you’ve got to help us, Andy’s stuck until we defeat the final boss”",
                 background: "",
             },
-            3: {
+            2: {
                 name: "Princess Bubblegum",
                 text: "“Final boss…? What, does this look like a game to you?”",
                 background: "",
             },
-            4: {
+            3: {
                 name: "Fin",
                 text: "“He's a right princess. He needs our help”",
                 background: "",
             },
-            5: {
+            4: {
                 name: "Princess Bubblegum",
                 text: "“I don't know about this guy”",
                 background: "",
             },
-            6: {
+            5: {
                 name: "Fin",
                 text: "“Please princess… he's here to help also… you know… with that issue…”",
                 background: "",
             },
-            7: {
+            6: {
                 name: "Princess Bubblegum",
                 text: "“What issue… OH right yeah yeah yeah. I remember now”",
                 background: "",
             },
-            8: {
+            7: {
                 name: "Andy",
                 text: "“Sorry to interrupt but why is the Ice King in jail?”",
                 background: "",
             },
-            9: {
+            8: {
                 name: "Princess Bubblegum",
                 text: "“Ice King is in Jail because one of his penguins stole one of my swords”",
                 background: "",
             },
-            10: {
+            9: {
                 name: "Ice King",
                 text: "“Then arrest him, not me”",
                 background: "",
             },
-            11: {
+            10: {
                 name: "Princess Bubblegum",
                 text: "“Oh yeah huh… well too late”",
                 background: "",
             },
-            12: {
+            11: {
                 name: "Princess Bubblegum",
                 text: "“Anyways, this isn't your guy”",
                 background: "",
             },
-            13: {
+            12: {
                 name: "Princess Bubblegum",
                 text: "“Wait, what's your name?”",
                 background: "",
             },
-            14: {
+            13: {
                 name: "Andy",
                 text: "“Andy… it's been a crazy day…? Week…? I'm not too sure anymore”",
                 background: "",
             },
-            15: {
+            14: {
                 name: "Andy",
                 text: "“I got transported to 3 other universes before this one and let me tell you it hasn't been fun…”",
                 background: "",
             },
-            16: {
+            15: {
                 name: "Andy",
                 text: "“I wonder if people are looking for me back at home…”",
                 background: "",
             },
-            17: {
+            16: {
                 name: "Narrator",
                 text: "*I wouldn't if I were anybody back home*",
                 background: "",
             },
-            18: {
+            17: {
                 name: "Narrator",
                 text: "*crickets*",
                 background: "",
-            }
+            },
             
+            redirectLink: "random-snail.html"
         },
         adventureTimeSlapIK: {
             1: {
-                name: "Narrator",
-                text: "You walk in his direction and slap him.",
-                background: "",
-            },
-            2: {
                 name: "Ice King",
                 text: "“What was that for?”",
                 background: "",
             },
-            3: {
+            2: {
                 name: "Andy",
                 text: "“You're a bad guy and you deserve it”",
                 background: "",
             },
-            4: {
+            3: {
                 name: "Jake",
                 text: "“Not cool man, he was just hanging out”",
                 background: "",
             },
-            5: {
+            4: {
                 name: "Andy",
                 text: "“Yeah but-”",
                 background: "",
             },
-            6: {
+            5: {
                 name: "Princess Bubblegum",
                 text: "“You come into my castle and you slap one of my prisoners?”",
                 background: "",
             },
-            7: {
+            6: {
                 name: "Andy",
                 text: "“Well I was told that he was an issue”",
                 background: "",
             },
-            8: {
+            7: {
                 name: "Fin",
                 text: "“Not what we meant man”",
                 background: "",
             },
-            9: {
+            8: {
                 name: "Andy",
                 text: "“Regardless, I need to defeat the bad guy to get back home”",
                 background: "",
             },
-            10: {
+            9: {
                 name: "Princess Bubblegum",
                 text: "“I had a feeling something like this was to happen”",
                 background: "",
             },
-            11: {
+            10: {
                 name: "Princess Bubblegum",
                 text: "“...”",
                 background: "",
             },
-            12: {
+            11: {
                 name: "Princess Bubblegum",
                 text: "“And on my day off too!”",
                 background: "",
             },
-            13: {
+            12: {
                 name: "Fin",
                 text: "“Hehe sorry”",
                 background: "",
             },
-            14: {
+            13: {
                 name: "Jake",
                 text: "“Sorry about that, princess”",
                 background: "",
             },
-            15: {
+            14: {
                 name: "Narrator",
                 text: "*You see the little robot climb through the castle window and it looks like he's carrying something*",
                 background: "",
             },
-            16: {
+            15: {
                 name: "BMO",
                 text: "“BMO brought help”",
                 background: "",
             },
-            17: {
+            16: {
                 name: "Narrator",
                 text: "*BMO brought hot dogs*",
                 background: "",
             },
-            18: {
+            17: {
                 name: "Andy",
                 text: "“How are they supposed to help us…?”",
                 background: "",
             },
-            19: {
+            18: {
                 name: "Fin",
                 text: "“BMO! No, you weren't supposed to bring them”",
                 background: "",
             },
-            20: {
+            19: {
                 name: "Jake",
                 text: "“Bad BMO. Take the hot dogs back… they are supposed to be guarding hot dog princess”",
                 background: "",
             },
-            21: {
+            20: {
                 name: "Andy",
                 text: "“Hot dog princess…?”",
                 background: "",
             },
-            22: {
+            21: {
                 name: "Princess Bubblegum",
                 text: "“Yes and what about her? Got a problem?”",
                 background: "",
             },
-            23: {
+            22: {
                 name: "Andy",
                 text: "“No no no ma'am”",
                 background: "",
             },
-            24: {
+            23: {
                 name: "Princess Bubblegum",
                 text: "“Good”",
                 background: "",
             },
-            25: {
+            24: {
                 name: "Narrator",
                 text: "*You see BMO climb the wall and out the window he goes*",
                 background: "",
             },
-            26: {
+            25: {
                 name: "Andy",
                 text: "“So… why couldn't it be the Ice King that would be the final boss?”",
                 background: "",
             },
-            27: {
+            26: {
                 name: "Princess Bubblegum",
                 text: "“For starters… he's been here for the past 3 days and I have 24/7 cameras on him”",
                 background: "",
             },
-            28: {
+            27: {
                 name: "Ice King",
                 text: "“Oooo so even-”",
                 background: "",
             },
-            29: {
+            28: {
                 name: "Narrator",
                 text: "*You see Princess Bubblegum hit his cage*",
                 background: "",
             },
-            30: {
+            29: {
                 name: "Princess Bubblegum",
                 text: "“I also know when he does bad things or has encounters with bad people, I run tests on him so it couldn't be him. As far as this conversation goes, he's innocent”",
                 background: "",
-            }
+            },
             
+            redirectLink: "random-snail.html"
         },
 
         adventureTimeRandomeSnail: {
@@ -4210,8 +4350,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 name: "Narrator",
                 text: "*Billy stands up and starts approaching you…*",
                 background: "",
-            }
-            
+            },
+            redirectLink: "billy-aproaches-you.html"
         },
 
         adventureTimeIfPlayerHasFlashlight: {
@@ -4309,8 +4449,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 name: "Narrator",
                 text: "*You crushed Billy with a Red M&M*",
                 background: "",
-            }
-            
+            },
+            redirectLink: "uses-regin-potion.html"
         },
         adventureTimeIfPlayerDoesentHaveFlashlight: {
             1: {
@@ -4358,7 +4498,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 text: "“Ummm what am I drawing…?”",
                 background: "",
             },
-        //remember, the end path should be a choice of 3 images (check the doc)            
+        //remember, the end path should be a choice of 3 images (check the doc)  
+            redirectLink: "choose-a-face.html" 
         },
 
         adventureTimeUserSelectsCorrectFace: {
@@ -4367,28 +4508,31 @@ document.addEventListener("DOMContentLoaded", function () {
                 text: "“Great! Now hurry and splash that thing with milk”",
                 background: "",
             },
+            redirectLink: "takes-out-milk.html" 
         },
         adventureTimeUserSelectsWrongFace: {
             1: {
-                name: "Narrator",
-                text: "Billy ended up winning in the end, and you never made it home… all thanks to you now knowing which is the proper face",
-                background: ""
-            },
-            2: {
-                name: "Narrator",
-                text: "Game Over",
-                background: ""
-            },
-            3: {
                 name: "Jake",
                 text: "Ummm that doesn't look like the right one…",
                 background: ""
             },
-            4: {
+            2: {
                 name: "Billy",
                 text: "Times up",
                 background: ""
-            }
+            },
+            3: {
+                name: "Narrator",
+                text: "Billy ended up winning in the end, and you never made it home… all thanks to you now knowing which is the proper face",
+                background: ""
+            },
+            4: {
+                name: "Narrator",
+                text: "Game Over",
+                background: ""
+            },
+            
+            redirectLink: "game-over.html" 
         },
 
         adventureTimeAndyTakesOutAllHisMilk: {
@@ -4427,7 +4571,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 text: "“WOAH. You guys are in trouble that's for sure”",
                 background: "",
             },
-            
+            redirectLink: "abadeer-options.html" 
         },
 
         adventureTimeAbadeerOptions: {
@@ -4448,7 +4592,7 @@ document.addEventListener("DOMContentLoaded", function () {
             },
             2: {
                 name: "Hunson Abadeer",
-                text: "Do what? Become the ruler of the underworld?",
+                text: "Do what? Become the ruler of the Nightosphere?",
                 background: "",
             },
             3: {
@@ -4521,7 +4665,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 text: "Hunson Abadeer vanishes into thin air",
                 background: "",
             },
-            
+            redirectLink: "uses-regin-potion.html"
         },
         adventureTimeTreatsAbadeerLikeAPokeymon: {
             1: {
@@ -4569,7 +4713,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 text: "Game Over",
                 background: "",
             },
-            
+            redirectLink: "game-over.html"
         },
 
         adventureTimeShouldUseReginPower: {
@@ -4758,7 +4902,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 text: "You guys don't stop, do you? No matter, I'm in no rush to end the Multiverse",
                 background: "",
             },
-            
+            redirectLink: "annoy-the-lich.html"
         },
 
         adventureTimeForcedIfUserHasGrapplingHook: {
@@ -4767,6 +4911,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 text: "you decide to take out your grappling hook and aim it at the lich to stop him from attacking anymore",
                 background: "",
             },
+            redirectLink: "fight-in-pb-room.html"
         },
         adventureTimeForcedIfUserDosentHaveGrabblingHook: {
             1: {
@@ -4774,6 +4919,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 text: "You remember that Red Skittle and throw it at the Lich",
                 background: "",
             },
+            redirectLink: "fight-in-pb-room.html"
         },
 
         adventureTimeLitchFightInPBRoom: {
@@ -4901,8 +5047,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 name: "Narrator",
                 text: "They all wave to you as you touch the artifact",
                 background: "",
-            },
-            
+            }, 
+            redirectLink: "adventure-time-ending.html"
         },
 
 
@@ -4958,7 +5104,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 text: "And so, you find yourself with a year-long detention, but at least you survived another bizarre day.",
                 background: "",
             },
-            
+            redirectLink: "../ending-for-path1.html"
         },
         adventureTimeForcedENdingIfNoFlashlight: {
             1: {
@@ -4991,9 +5137,118 @@ document.addEventListener("DOMContentLoaded", function () {
                 text: "The bully, a common nuisance among the nerds, shows up and eliminates MC with ease. The end.",
                 background: "",
             },
-            
+            redirectLink: "../ending-for-path1.html"
+
         },
 
+
+
+        forcedEndingIfHasFlashlight: {
+            1: {
+                name: "Narrator",
+                text: "*You teleport back outside where he picked up the first artifact.",
+                background: "",
+            },
+            2: {
+                name: "Narrator",
+                text: "*You look around to see if anything has changed in the world. Everything looks the same as how you left it.",
+                background: "",
+            },
+            3: {
+                name: "Narrator",
+                text: "*You realize you still need to go to school and go to your first-period class (Stats).",
+                background: "",
+            },
+            4: {
+                name: "Narrator",
+                text: "*You have a math test (worth 80% of your grade) and your teacher asks the class to bring out their calculators.",
+                background: "",
+            },
+            5: {
+                name: "Narrator",
+                text: "*You search through your bag trying to find the Ti 84 calculator.",
+                background: "",
+            },
+            6: {
+                name: "Narrator",
+                text: "*You end up touching what feels like the calculator, you bring out the flashlight Dipper gave you.",
+                background: "",
+            },
+            7: {
+                name: "Narrator",
+                text: "*The teacher asks where your materials are.",
+                background: "",
+            },
+            8: {
+                name: "Narrator",
+                text: "*You say out loud 'I got this!' and begin to read the math problems.",
+                background: "",
+            },
+            9: {
+                name: "Narrator",
+                text: "*You use reading skills, do the mental math, and BARELY fail the test.",
+                background: "",
+            },
+            10: {
+                name: "Narrator",
+                text: "*Another student makes fun of you saying how dumb you are for failing the test.",
+                background: "",
+            },
+            11: {
+                name: "Narrator",
+                text: "*You defend yourself and tell them that you only failed because you were too busy enjoying life.",
+                background: "",
+            },
+            12: {
+                name: "Narrator",
+                text: "*The teacher gave you detention for the rest of the school year for failing the math test.",
+                background: "",
+            },
+            redirectLink: "credits.html"
+        },
+        forcedEndingIfDoesNotHaveFlashlight: {
+            1: {
+                name: "Narrator",
+                text: "*Andy teleported outside where he first found the original artifact and realized school was still in session.",
+                background: "",
+            },
+            2: {
+                name: "Narrator",
+                text: "*Andy checks things out and realizes it's lunch.",
+                background: "",
+            },
+            3: {
+                name: "Narrator",
+                text: "*Eager, he gets his food, pays, and sits down by himself…",
+                background: "",
+            },
+            4: {
+                name: "Narrator",
+                text: "*because who would hang out with someone that drinks a gallon of milk a day with school lunch.",
+                background: "",
+            },
+            5: {
+                name: "Narrator",
+                text: "*Andy opens his backpack and is ready to down those 16 cartons of WHITE milk after a long day...",
+                background: "",
+            },
+            6: {
+                name: "Narrator",
+                text: "*The milk isn't there... Andy freaks out and makes a scene… 'MY MILK.... MY MILK!!!!!!'",
+                background: "",
+            },
+            7: {
+                name: "Narrator",
+                text: "*Derik shows up and eliminates MC.",
+                background: "",
+            },
+            8: {
+                name: "Narrator",
+                text: "*The end.",
+                background: "",
+            },
+            redirectLink: "credits.html"
+        },
 
         TEMPLATE1: {
             1: {

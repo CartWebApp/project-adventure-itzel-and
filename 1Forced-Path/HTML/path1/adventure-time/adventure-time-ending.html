@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Multiverse Paradox</title>
-    <link rel="stylesheet" href="../../../CSS/dialogOne.css">
+    <link rel="stylesheet" href="../../CSS/dialogOne.css">
     <style>
         body{
             background-image: url();
@@ -20,7 +20,7 @@
         
     </style>
 </head>
-<body data-path="gravityFallsDuctTectiveHasATwinBrother" data-scene="1">
+<body data-path="adventureTimeForcedENdingIfNoFlashlight" data-scene="1">
     <div class="container">
         <div class="name"><p></p></div>
             <div class="containerfp one">
@@ -34,12 +34,15 @@
 </html>
 
 
-<script src="../../../../forcedPath.js"></script> <!--exicutes all the scripts-->
+<script src="../../../forcedPath.js"></script> <!--exicutes all the scripts-->
 <!-- <script src="../js/nextPage.js"></script> goes to the next page -->
 <script src="../../../js/fadeIn.js"></script> <!--ensures the text in js loads before the typewriter works-->
 
 <script>
-    // Set the hidden value | use for later
-localStorage.setItem("hasGrapplinHookAndFlashlight", "true");
+    const hasItems = localStorage.getItem("hasGrapplinHookAndFlashlight");
+
+if (hasItems === "true") {
+    document.body.dataset.path = "adventureTimeForcedEndingIfHasFlashlight";
+}
 
 </script>

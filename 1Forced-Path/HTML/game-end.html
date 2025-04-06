@@ -3,35 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Your Adventure Recap</title>
 </head>
 <body>
     <h1>Your Adventure Recap</h1>
     <ul id="recap"></ul>
-    <button onclick="restartGame()">Play Again</button>
-
-    <script>
-        function restartGame() {
-            localStorage.removeItem("playerChoices");
-            window.location.href = "start.html"; // replace with your start page
-        }
-    </script>
     
-    <script>
-        // Get stored choices
-        let choices = JSON.parse(localStorage.getItem("playerChoices")) || [];
+    <!-- Restart options -->
+    <button onclick="restartGame()">Play Again (Soft Reset)</button>
+    <button onclick="fullReset()">Full Reset (Wipe All)</button>
 
-        // Show them on the page
+    <script>
+        // Display choices from localStorage
+        const choices = JSON.parse(localStorage.getItem("playerChoices")) || [];
         const recapList = document.getElementById("recap");
+
         choices.forEach(choice => {
             const li = document.createElement("li");
             li.textContent = choice;
             recapList.appendChild(li);
         });
 
-        // Optional: Clear memory if you want to restart the game fresh
-        // localStorage.removeItem("playerChoices");
+        // Soft reset (just clears the progress, not equipment/items)
+        function restartGame() {
+            localStorage.removeItem("playerChoices");
+            window.location.href = "start.html"; // Replace with your actual start page
+        }
+
+        // Full reset (clears *everything*, like items too)
+        function fullReset() {
+            localStorage.clear();
+            alert("All progress and items have been reset.");
+            window.location.href = "start.html"; // Replace with your actual start page
+        }
     </script>
 </body>
-
 </html>
