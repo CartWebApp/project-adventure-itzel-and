@@ -30,11 +30,12 @@ body{
 }
 
 
-p {
+a {
     color: black;
     font-family: "Shantell Sans", cursive;
     font-size: 2vw;
     font-weight: 500;
+    text-decoration: none;
 }
 
 /*there will be multiple containers for different colors... you use fp for 'Forced Path'  */
@@ -51,20 +52,19 @@ p {
     /* position: absolute; */
 
     display: flex;
-    justify-content: center;
+    /* justify-content: center;
     margin: 0 auto;
     background-color: hsla(0, 0%, 100%, 0.85);
     bottom: 0;
     border: 5px solid black;
 
     height: 20vh;
-    /* height: 13.888vw; this is the mathed out one but it looks too large*/
-    /* change with proper one ^ */
+
 
     width: 80vw;
     padding: 1vw 1vw;
     overflow: hidden;
-    position: relative;
+    position: relative; */
 }
 .name{
     display: flex;
@@ -82,6 +82,21 @@ p {
 .name p{
     font-size: 1.5vw;
     font-weight: 500;
+}
+
+
+.two{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    background-color: hsla(0, 0%, 100%, 0.85);
+    bottom: 0;
+    border: 5px solid black;
+    height: 20vh;
+    width: 80vw;
+    padding: 1vw 1vw;
+    overflow: hidden;
+    position: relative;
 }
 
 /* make sure to put the class triangle inside the container... like at the bottom would do */
