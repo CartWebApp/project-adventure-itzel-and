@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Multiverse Paradox</title>
+    <link rel="stylesheet" href="../../CSS/dialogOne.css">
+    <style>
+        body{
+            background-image: url();
+            background-size: cover; 
+            background-position: center;
+            background-attachment: fixed;
+            margin: 0;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+       
+        
+    </style>
+</head>
+<body data-path="" data-scene="1">
+    <div class="container">
+        <div class="name"><p></p></div>
+            <div class="containerfp one">
+            <p id="character-description" class="text two three" data-fulltext=""></p>
+            <p id="character-description2" class="text two three" data-fulltext=""></p>
+            <p id="character-description3" class="text three" data-fulltext=""></p>
+            <div class="triangle"></div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+<script src="../../../forcedPath.js"></script> <!--exicutes all the scripts-->
+<!-- <script src="../js/nextPage.js"></script> goes to the next page -->
+<script src="../../../js/fadeIn.js"></script> <!--ensures the text in js loads before the typewriter works-->
+
+<!--
+TIMING BAR GAME:
+This code sets up a timing bar that moves back and forth. The goal is to stop the bar as close to the 50% mark as possible. 
+The game starts when the "Start" button is clicked, and the button changes to "Stop" during the game. After stopping, it displays the result and changes back to "Restart".
+ const timingBar = document.getElementById('progress');
+ const startButton = document.getElementById('startButton');
+ const resultDisplay = document.getElementById('result');
+ let intervalId;
+ let progress = 0;
+ let movingRight = true;
+
+ function updateBar() {
+  if (movingRight) {
+   progress += 1;
+  } else {
+   progress -= 1;
+  }
+
+  if (progress >= 100) {
+   movingRight = false;
+  } else if (progress <= 0) {
+   movingRight = true;
+  }
+  timingBar.style.width = progress + '%';
+ }
+
+ function startGame() {
+  progress = 0;
+  movingRight = true;
+  timingBar.style.width = '0%';
+  resultDisplay.textContent = '';
+  intervalId = setInterval(updateBar, 20);
+
+  startButton.textContent = 'Stop';
+  startButton.onclick = stopGame;
+ }
+
+ function stopGame() {
+  clearInterval(intervalId);
+  const target = 50;
+  const accuracy = Math.abs(target - progress);
+
+  if (accuracy <= 5) {
+   resultDisplay.textContent = 'Perfect Timing!';
+  } else if (accuracy <= 15) {
+   resultDisplay.textContent = 'Good Timing!';
+  } else {
+   resultDisplay.textContent = 'Try Again!';
+  }
+
+  startButton.textContent = 'Restart';
+  startButton.onclick = startGame;
+ }
+
+ startButton.onclick = startGame;
+-->
