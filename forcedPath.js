@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
             dialog2: "He stretches and yawns, still groggy from sleep.",
             dialog3: "The morning light creeps in through the blinds."
         }*/
-        forcedPath: /*dialog checked*/{
+        forcedPath: /*re-do the images for this one... check if it ligns up or not*/{
             1: {
                 name: "Narrator", 
                 text: "Andy is a senior in high school who is a 5’ 2” short king who is antisocial, not strong or brave, gets picked on easily, and is not very smart. Alright, we’ll just stop there. There is no need to keep bashing the main character. Just see for yourself.",
