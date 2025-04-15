@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text Adventure Start</title>
+  <link rel="stylesheet" href="intro-styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Rammetto+One&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+      font-family: Arial, sans-serif;
+    }
+
+    .background-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 862.5rem; /* 2 x 431.25rem */
+      height: 100%;
+      display: flex;
+      z-index: -1;
+      animation: scrollBackground 30s linear infinite;
+    }
+
+    .background-loop {
+      width: 431.25rem; /* 4315px converted to rem */
+      height: 100%;
+      background-image: url('images/game-background.png');
+      background-repeat: repeat;
+      background-size: contain;
+      background-position: top left;
+    }
+
+    @keyframes scrollBackground {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    .title-container {
+      position: absolute;
+      top: 25%;
+      left: 50%;
+      transform: translate(-50%, -30%);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+
+    .game-title {
+      width: 90%;
+      max-width: 80rem;
+    }
+
+    #startButton {
+      margin-top: 2rem;
+      padding: 1rem 2rem;
+      font-size: 1.5rem;
+      background-color: black;
+      color: white;
+      font-family: "Rammetto One", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-0.8rem);
+      }
+    }
+
+    .bottom-gif {
+      position: absolute;
+      bottom: 0%;
+      left: 50%;
+      transform: translateX(-25%);
+    }
+
+    .bottom-gif img {
+      width: 45%;
+      max-width: 45rem;
+    }
+  </style>
+</head>
+<body>
+    <div class="background-wrapper">
+        <div class="background-loop"></div>
+        <div class="background-loop"></div>
+      </div>
+    
+  <div class="title-container">
+    <img src="images/game-title.png" alt="Game Title" class="game-title">
+    <button id="startButton">Start Game</button>
+  </div>
+
+  <div class="bottom-gif">
+    <img src="images/andy-walking.gif" alt="Character Animation">
+  </div>
+
+  <script>
+    document.getElementById('startButton').addEventListener('click', () => {
+      // Replace this with logic to transition into your game
+      // link to foredPath
+      alert('Game Starting!');
+    });
+  </script>
+</body>
+</html>
