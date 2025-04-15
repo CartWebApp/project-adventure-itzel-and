@@ -195,7 +195,7 @@ document.addEventListener("DOMContentLoaded", function () {
             text: {
                 dialog: "Boiled egg, celery, and vanilla muffin",
                 dialog2: "3 containers of chocolate milk",
-                dialog3: "Pick up something off the floor"
+                dialog3: "Pick up something off the floor",
                 dialog4: "44 packets of salt"
             }
         },
@@ -703,6 +703,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         
         //redirect to game over screen
+        redirectLink: "../game-over.html"
     },
 
     acceptFate: {
@@ -823,7 +824,7 @@ document.addEventListener("DOMContentLoaded", function () {
             text: {
                 dialog: "Sue Harukata",
                 dialog2: "Refuse to answer",
-                dialog3: "Stay silent",
+                dialog3: "Stay silent"
             }
         },
     },
@@ -1132,7 +1133,9 @@ document.addEventListener("DOMContentLoaded", function () {
             name: "Narrator",
             text: "*Defeated, Andy trudged to his table, already doing mental math on how to stretch six cartons until dinner. Maybe if he sipped slowly. Maybe if he cried into them for extra moisture. This was a dark day.*",
             background: "",
-        },        
+        },
+        //redirect to lunchOutside
+        redirectLink: "lunch-outside.html"        
     },
 
     eightMilk: {
@@ -1210,7 +1213,8 @@ document.addEventListener("DOMContentLoaded", function () {
             text: "*Andy goes back in line to return the milk.*",
             background: "",
         },
-        //redirect to milkShortage options        
+        //redirect to milkShortage options
+        redirectLink: "milk-shortage.html"        
     },
 
     ignoreDoris: {
@@ -1299,7 +1303,8 @@ document.addEventListener("DOMContentLoaded", function () {
             text: "*Andy gets kicked out of the school. He can no longer have unlimited white milk… no milk, no life.*",
             background: "",
         },
-        //redirect to game over screen        
+        //redirect to game over screen
+        redirectLink: "../game-over.html"        
     },
 
     lunchOutside: {
@@ -1559,7 +1564,8 @@ document.addEventListener("DOMContentLoaded", function () {
             text: "*And then— Silence. No more milk shortages. No more rationing. Just an infinite, starless dark. Somewhere, in the abyss, a single white carton floated past.*",
             background: "",
         },
-        //redirect to game over screen        
+        //redirect to game over screen
+        redirectLink: "../game-over.html"        
     },
 
     theLactoseLegacy: {
@@ -1608,15 +1614,10 @@ document.addEventListener("DOMContentLoaded", function () {
             text: "\"I die… as I lived.\"",
             background: "",
         },
-        //redirect to game over screen        
+        //redirect to game over screen
+        redirectLink: "../game-over.html"        
     }
-
-},
-
-
-
-
-
+}
 
     const sceneSetName = document.body.dataset.path || 'forcedPath';
     let currentSceneSet = sceneSets[sceneSetName];
@@ -1627,7 +1628,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const textElements = {
         dialog: document.querySelector("#character-description"),
         dialog2: document.querySelector("#character-description2"),
-        dialog3: document.querySelector("#character-description3")
+        dialog3: document.querySelector("#character-description3"),
+
+        //is adding the 4th option here correct???
+        
+        dialog4: document.querySelector("#character-description4")
     };
 
     if (!nameElement || !textElements.dialog) {
