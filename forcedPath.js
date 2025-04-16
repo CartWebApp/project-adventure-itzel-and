@@ -4470,7 +4470,7 @@ redirectLink: "path2/respond-to-derik.html" (first branch off of the story)*/
             },
             redirectLink: "uses-regin-potion.html"
         },
-        adventureTimeIfPlayerDoesentHaveFlashlight: {
+        adventureTimeIfPlayerDoesentHaveFlashlight: /*dosent look like theres a proper end path for this one or the one above it... for the option choice...*/{
             1: {
                 name: "Narrator",
                 text: "*Big battle incoming*",
@@ -4518,6 +4518,17 @@ redirectLink: "path2/respond-to-derik.html" (first branch off of the story)*/
             },
         //remember, the end path should be a choice of 3 images (check the doc)  
             redirectLink: "choose-a-face.html" 
+        },
+        adventureTimeFaceChoices: {
+            1: {
+                name: "Narrator",
+                background: "",
+                text: {
+                    dialog: "Option 1",
+                    dialog2: "Option 2",
+                    dialog3: "Option 3",
+                }
+            }, 
         },
 
         adventureTimeUserSelectsCorrectFace: {

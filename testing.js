@@ -43,19 +43,76 @@ document.addEventListener("DOMContentLoaded", function () {
         }*/
         forcedPath: /*dialog checked*/{
             1: {
-                name: "Narrator", 
-                text: "Andy is a senior in high school who is a 5’ 2” short king who is antisocial, not strong or brave, gets picked on easily, and is not very smart. Alright, we’ll just stop there. There is no need to keep bashing the main character. Just see for yourself.",
+                name: "Andy",
+                text: "\"Why do you care at what time I get to school? You’re not the teacher.\"",
+                background: "",
             },
-            "2": {
-                name: "Narrator", 
-                text: "Andy wakes up from his bed and sluggishly makes his way to his closet.",
-                 
+            2: {
+                name: "Derik",
+                text: "\"Oh you wanna talk back now?\"",
+                background: "",
             },
-            "3": {
-                name: "Narrator", 
-                text: "He changes into his school clothes, noting the mustard stain on his shirt.",
-                 
+            3: {
+                name: "Andy",
+                text: "\"Just leave me alone!\"",
+                background: "",
             },
+            4: {
+                name: "Derik",
+                text: "\"You’re not the one who decides that.\"",
+                background: "",
+            },
+            5: {
+                name: "Narrator",
+                text: "*Derik reaches for Andy and grabs him by the shirt.*",
+                background: "",
+            },
+            6: {
+                name: "Derik",
+                text: "\"You’re gonna regret talking to me like that.\"",
+                background: "",
+            },
+            7: {
+                name: "Narrator",
+                text: "*Derik punches Andy in the face as he falls to the ground. Derik kicks Andy, he and his entire friend group start laughing at him. Derik feels a hand on his left shoulder and turns around.*",
+                background: "",
+            },
+            8: {
+                name: "Teacher",
+                text: "\"What do you think you’re doing?\"",
+                background: "",
+            },
+            9: {
+                name: "Derik",
+                text: "\"Oh, him and I are friends *points to Andy on the ground*\"",
+                background: "",
+            },
+            10: {
+                name: "Teacher",
+                text: "\"Right, let’s see if that’s true when we look over the camera footage *points to the surveillance cameras*\"",
+                background: "",
+            },
+            11: {
+                name: "Derik",
+                text: "\"Come on, he’s not even hurt!\"",
+                background: "",
+            },
+            12: {
+                name: "Teacher",
+                text: "\"You’re coming with me.\"",
+                background: "",
+            },
+            13: {
+                name: "Narrator",
+                text: "*Derik leaves with the teacher and his friends run away.*",
+                background: "",
+            },
+            14: {
+                name: "Narrator",
+                text: "*Andy gets up and starts limping to the cafeteria.*",
+                background: "",
+            },
+
             
 
             redirectLink: "branch-to-three.html"  // Redirect here after all scenes in this path
