@@ -1,6 +1,38 @@
 document.addEventListener("DOMContentLoaded", function () {
     let currentSceneNumber = 1;
 
+    const sceneSetName = document.body.dataset.path || 'forcedPath';
+
+    function toKebabCase(str) {
+        return str.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase();
+    }
+    
+    function updateBackground(sceneSetName, sceneNumber) {
+        const folderPath = `../../../../background-imgs/${sceneSetName}/`;  // dynamically use the data-path value
+        const imgPath = `${folderPath}${sceneNumber}.png?v=${new Date().getTime()}`;
+    
+        console.log("Attempting to load image from path:", imgPath);
+    
+        document.body.style.backgroundImage = `url('${imgPath}')`;
+        document.body.style.backgroundSize = "cover";
+        document.body.style.backgroundPosition = "center";
+        document.body.style.backgroundAttachment = "fixed";
+    
+        const img = new Image();
+        img.onload = function() {
+            console.log("Image loaded successfully!");
+        };
+        img.onerror = function() {
+            console.error("Error loading image:", imgPath);
+        };
+        img.src = imgPath;
+    }
+    
+    
+    
+    
+
+    
     const sceneSets = {
         // when replacing the dialog with up to 3 pieces of dialog,
         //  make sure you replace the css in the new html, and you follow this format for dialog
@@ -73,447 +105,504 @@ document.addEventListener("DOMContentLoaded", function () {
             },
             "13": {
                 name: "Narrator", 
-                text: "Andy goes outside to find a tree as lonely as him and sits criss-cross applesauce under it, waiting for the school day to start. When the bell rings, he starts heading to his first class, Statistics.",
+                text: "Andy goes outside to find a tree as lonely as him and sits criss-cross applesauce under it, waiting for the school day to start.",
                 background: "",
             },
-            "14": {
+            "14":{
+                name: "Narrator",
+                text: "When the bell rings, he starts heading to his first class, Statistics.",
+                background: "",
+            },
+            "15": {
                 name: "Mr. Hankey", 
                 text: "\"Remember class, I’m only giving you time today to study in class. The test is tomorrow, so be prepared!\"",
                 background: "",
             },
-            "15": {
-                name: "Narrator", 
-                text: "Andy gets out his study guide but realizes he didn’t finish filling it out. He takes a longer look at it, slams his head on the desk, and sleeps for the entire period.",
-                background: "",
-            },
             "16": {
                 name: "Narrator", 
-                text: "When the bell rings, he wakes up groggily and heads to his next class.",
+                text: "Andy gets out his study guide but realizes he didn’t finish filling it out.",
                 background: "",
             },
             "17": {
                 name: "Narrator", 
+                text: "He takes a longer look at it, slams his head on the desk, and sleeps for the entire period.",
+                background: "",
+            },
+
+            "18": {
+                name: "Narrator", 
+                text: "When the bell rings, he wakes up groggily and heads to his next class.",
+                background: "",
+            },
+
+            "19": {
+                name: "Narrator", 
                 text: "Instead of listening to the teacher's lecture, he dozes off again so that he can continue that good dream he had, which was rudely interrupted.",
                 background: "",
             },
-            "18": {
-                name: "Narrator", 
-                text: "For the rest of his classes, he continues this process until it reaches his favorite period, lunch.",
-                background: "",
-            },
-            "19": {
-                name: "Narrator", 
-                text: "Andy heads over to the school cafeteria once more, he gets 8 cartons of white milk (as he usually would).",
-                background: "",
-            },
+
             "20": {
                 name: "Narrator", 
-                text: "You see this? That means Andy’s backpack has reached full capacity for his white milk! He needs to go dump it out at his locker.",
+                text: "For the rest of his classes, he continues this process until it reaches his favorite period, lunch.",
                 background: "",
             },
 
             "21": {
                 name: "Narrator", 
+                text: "Andy heads over to the school cafeteria once more, he gets 8 cartons of white milk (as he usually would).",
+                background: "",
+            },
+
+            "22": {
+                name: "Narrator", 
+                text: "You see this? That means Andy’s backpack has reached full capacity for his white milk! He needs to go dump it out at his locker.",
+                background: "",
+            },
+
+            "23": {
+                name: "Narrator", 
                 text: "Andy goes to his locker and drops off all 20 of his milk cartons. Now that his backpack is empty … NEW MISSION UNLOCKED: Acquire as much milk as you can",
                 background: "",
             },
-            "22": {
+
+            "24": {
                 name: "Narrator", 
                 text: "Andy goes back to the cafeteria and asks people for their milk.",
                 background: "",
             },
-            "23": {
+
+            "25": {
                 name: "Andy", 
                 text: "\"Do you have any white milk to spare?\"",
                 background: "",
             },
-            "24": {
+
+            "26": {
                 name: "Andy", 
                 text: "\"Milk? Does anybody have white milk for good ole Andy\"",
                 background: "",
             },
-            "25": {
+
+            "27": {
                 name: "Andy", 
                 text: "\"PLEASE. I NEED IT\"",
                 background: "",
             },
-            "26": {
+
+            "28": {
                 name: "Narrator", 
                 text: "In a last attempt to get any milk he can before lunch is over, he goes behind the people eating in the cafeteria and begins taking whatever milk he can before getting caught.",
                 background: "",
             },
-            "27": {
+
+            "29": {
                 name: "Andy", 
                 text: "\"Cha-ching\"",
                 background: "",
             },
-            "28": {
+
+            "30": {
                 name: "Andy", 
                 text: "\"Gimmie that\"",
                 background: "",
             },
-            "29": {
+
+            "31": {
                 name: "Andy", 
                 text: "\"I don’t know why they didn't want to give me the milk, there's so much of it here\"",
                 background: "",
             },
-            "30": {
+
+            "32": {
                 name: "Narrator", 
-                text: "Weird kid … 9 cartons of milk… sick",
+                text: "Ah using his time wisely I see",
                 background: "",
             },
 
-            "31": {
-                name: "Narrator", 
-                text: "Have you ever wanted cartons of white milk without asking people or waiting in line?",
-                background: "",
-            },
-            "32": {
-                name: "Narrator", 
-                text: "Neither have I, but Andy has and he's currently camping in the bathroom, waiting for 6th period to start so he could dumpster dive and get all the white milk he could carry.",
-                background: "",
-            },
             "33": {
-                name: "Narrator", 
-                text: "Andy has a free period which is why he can do this without causing any trouble.",
-                background: "",
-            },
-            "34": {
-                name: "Narrator", 
-                text: "Andy rummages through the trash cans close to the cafeteria. He manages to gather 7 more cartons of white milk before the janitor arrives.",
-                background: "",
-            },
-            "35": {
-                name: "Narrator", 
-                text: "Ah, using his time wisely I see …",
-                background: "",
-            },
-            "36": {
                 name: "Narrator", 
                 text: "The bell rings for 7th period and Andy scurries to his ceramics class.",
                 background: "",
             },
-            "37": {
+
+            "34": {
                 name: "Narrator", 
                 text: "When Andy gets to class he continues to work on his violin project for his friend.",
                 background: "",
             },
-            "38": {
+
+            "35": {
                 name: "Narrator", 
                 text: "Wait… he has a friend???",
                 background: "",
             },
-            "39": {
+
+            "36": {
                 name: "Erica", 
                 text: "\"Hey Andy!\"",
                 background: "",
             },
-            "40": {
+
+            "37": {
                 name: "Andy", 
                 text: "\"Erica, are you skipping again?\"",
                 background: "",
             },
 
-            "41": {
+            "38": {
                 name: "Erica", 
                 text: "\"What me, skipping? …Of course\"",
                 background: "",
             },
-            "42": {
+
+            "39": {
                 name: "Andy", 
                 text: "\"You shouldn’t be doin’ that\"",
                 background: "",
             },
-            "43": {
+
+            "40": {
                 name: "Erica", 
                 text: "\"Well I wanted to check in on my BFF\"",
                 background: "",
             },
-            "44": {
+
+            "41": {
                 name: "Andy", 
                 text: "\"Ummm thanks?\"",
                 background: "",
             },
-            "45": {
+
+            "42": {
                 name: "Narrator", 
                 text: "Andy starts blushing and tries to hide it using his hands",
                 background: "",
             },
-            "46": {
+
+            "43": {
                 name: "Erica", 
                 text: "\"Can I see what you’re working on?\"",
                 background: "",
             },
-            "47": {
+
+            "44": {
                 name: "Andy", 
                 text: "\"Sure…sure… when it's finished\"",
                 background: "",
             },
-            "48": {
+
+            "45": {
                 name: "Erica", 
                 text: "\"Come on!!! Please? I called you my BFF, the least you could do is show me\"",
                 background: "",
             },
-            "49": {
+
+            "46": {
                 name: "Andy", 
                 text: "\"You’ll be the first person I show when it's done. How about that\"",
                 background: "",
             },
-            "50": {
+
+            "47": {
                 name: "Erica", 
                 text: "\"Okay, don’t forget to show me! Pinky promise.\"",
                 background: "",
             },
 
-            "51": {
+            "48": {
                 name: "Narrator", 
                 text: "Erica holds out her pinky finger",
                 background: "",
             },
-            "52": {
+
+            "49": {
                 name: "Andy", 
                 text: "\"Fine, pinky promise\"",
                 background: "",
             },
-            "53": {
+
+            "50": {
                 name: "Narrator", 
                 text: "They lock pinky fingers",
                 background: "",
             },
-            "54": {
+
+            "51": {
                 name: "Erica", 
                 text: "\"See you later Andy!\"",
                 background: "",
             },
-            "55": {
+
+            "52": {
                 name: "Andy", 
                 text: "\"See ya.\"",
                 background: "",
             },
-            "56": {
+
+            "53": {
                 name: "Narrator", 
                 text: "Andy continues to work on the project until the bell rings.",
                 background: "",
             },
-            "57": {
+
+            "54": {
                 name: "Narrator", 
                 text: "Instead of going straight home, he decides to stop by the Table Top Club.",
                 background: "",
             },
-            "58": {
+
+            "55": {
                 name: "Narrator", 
                 text: "Andy enters the classroom and greets everyone.",
                 background: "",
             },
-            "59": {
+
+            "56": {
                 name: "Andy", 
                 text: "\"Hey guys! Did you miss me?\"",
                 background: "",
             },
-            "60": {
+
+            "57": {
                 name: "Narrator", 
                 text: "Silence fills the room (crickets). The club president tries to save Andy from embarrassment.",
                 background: "",
             },
 
-            "61": {
+            "58": {
                 name: "James", 
                 text: "\"Hey Andy! I was hoping you’d stop by. Do you need anything?\"",
                 background: "",
             },
-            "62": {
+
+            "59": {
                 name: "Andy", 
                 text: "\"I was gonna ask you if Table Top is still on for tomorrow… Or should I stay today?\"",
                 background: "",
             },
-            "63": {
+
+            "60": {
                 name: "James", 
                 text: "\"No no no, it’s ok we're hosting it tomorrow too.\"",
                 background: "",
             },
-            "64": {
+
+            "61": {
                 name: "Andy", 
                 text: "\"Ok, I’ll see you tomorrow!\"",
                 background: "",
             },
-            "65": {
+
+            "62": {
                 name: "James", 
                 text: "\"Alright see you then… ha.ha.ha.\"",
                 background: "",
             },
-            "66": {
+
+            "63": {
                 name: "Narrator", 
                 text: "Now that Andy is done with school and has no mandatory club meetings, he is on his way back home.",
                 background: "",
             },
-            "67": {
+
+            "64": {
                 name: "Narrator", 
                 text: "When Andy was just about to get off campus, he sees Derik at the school gate.",
                 background: "",
             },
-            "68": {
+
+            "65": {
                 name: "Derik", 
                 text: "\"Hey loser, I saw you begging for milk in the cafeteria today. Everyone thought you were a total freak hahaha.\"",
                 background: "",
             },
-            "69": {
+
+            "66": {
                 name: "Andy", 
                 text: "\"I always do that and people usually don’t say anything about it…\"",
                 background: "",
             },
-            "70": {
+
+            "67": {
                 name: "Derik", 
                 text: "\"Yeah, because no one wants to talk to you in the first place!\"",
                 background: "",
             },
 
-            "71": {
+            "68": {
                 name: "Andy", 
                 text: "\"Oh, sorry…\"",
                 background: "",
             },
-            "72": {
+            "69": {
                 name: "Derik", 
                 text: "\"Come here-\"",
                 background: "",
             },
-            "73": {
+
+            "70": {
                 name: "Narrator", 
                 text: "Derik takes Andy’s backpack and rips it open. Pencils and papers fly out as Derik takes out 4 cartons of Andy’s white milk.",
                 background: "",
             },
-            "74": {
+
+            "71": {
                 name: "Andy", 
                 text: "\"Not my milk!\"",
                 background: "",
             },
-            "75": {
+
+            "72": {
                 name: "Narrator", 
                 text: "Derik loves to see this kind of reaction from Andy. He smiles as he tears open the cartons and throws them on the ground.",
                 background: "",
             },
-            "76": {
+
+            "73": {
                 name: "Andy", 
                 text: "\"NOOOOO!\"",
                 background: "",
             },
-            "77": {
+
+            "74": {
                 name: "Derik", 
                 text: "\"Ok now get away from me freak!\"",
                 background: "",
             },
-            "78": {
+
+            "75": {
                 name: "Narrator", 
                 text: "As tears build up in Andy’s eyes, he does not have enough courage to say anything and walks away.",
                 background: "",
             },
-            "79": {
+
+            "76": {
                 name: "Narrator", 
                 text: "Before beginning to walk back home again, Andy realizes he can’t give up so easily.",
                 background: "",
             },
-            "80": {
+
+            "77": {
                 name: "Narrator", 
                 text: "He cannot give up so easily on his milk-collecting passion, so he finds a trash can and dumpster dives to find some more.",
                 background: "",
             },
 
-            "81": {
+            "78": {
                 name: "Narrator", 
                 text: "Andy goes looking inside the dumpsters that are closest to the trash can because he knows that there's usually milk in them",
                 background: "",
             },
-            "82": {
+
+            "79": {
                 name: "Andy", 
                 text: "\"Milk…? Where are you…?\"",
                 background: "",
             },
-            "83": {
+
+            "80": {
                 name: "Narrator", 
                 text: "Andy failed to find the trash can milk but remembered there was still one spot that he had not checked",
                 background: "",
             },
-            "84": {
+
+            "81": {
                 name: "Narrator", 
                 text: "As Andy walks over to his go-to spot (Near the Gym) he finds 4 cartons of milk that appear to not have been in the trash before. They were as good as new.",
                 background: "",
             },
-            "85": {
+
+            "82": {
                 name: "Narrator", 
                 text: "Andy goes home with his 16 cartons of white milk in his backpack, preparing to start his adventure for rock collecting",
                 background: "",
             },
-            "86": {
+
+            "83": {
                 name: "Narrator", 
                 text: "Andy goes to his room and opens the top drawer on his dresser to take out a pair of safety glasses, and a rock screening pan.",
                 background: "",
             },
-            "87": {
+
+            "84": {
                 name: "Narrator", 
                 text: "He then takes out a small bag that he will use to store the rocks he finds on his journey. (Current time 4:20 PM)",
                 background: "",
             },
-            "88": {
+
+            "85": {
                 name: "Narrator", 
                 text: "Andy puts on the glasses and stores the rock screening pan in the small bag.",
                 background: "",
             },
-            "89": {
+
+            "86": {
                 name: "Narrator", 
                 text: "Andy walks for about 30 minutes until he stumbles upon a small creek. This is where he usually goes to get the rocks he brings home.",
                 background: "",
             },
-            "90": {
+
+            "87": {
                 name: "Narrator", 
                 text: "Andy spends about 10 minutes looking for rocks before he comes across a nicely shaped rock. This rock doesn't look like anything special, it's just a regular rock",
                 background: "",
             },
-            "91": {
+
+            "88": {
                 name: "Narrator", 
                 text: "Andy made sure to run it through some of the creek's water through the rock screening pan to get rid of any of the dirt that may have been attached to the rock.",
                 background: "",
             },
-            "92": {
+
+            "89": {
                 name: "Narrator", 
                 text: "He spent the next 25 minutes gathering another 4 rocks, each nearly identical to one another.",
                 background: "",
             },
-            "93": {
+
+            "90": {
                 name: "Narrator", 
                 text: "Andy walks back home after another great session of finding rocks and places them in a container that stores all of his findings. (Current time 5:55 PM)",
                 background: "",
             },
-            "94": {
+
+            "91": {
                 name: "Narrator", 
                 text: "It is time for dinner for little Andy, tonight he is having a microwaved meal called Kid Cuisine",
                 background: "",
             },
-            "95": {
+
+            "92": {
                 name: "Narrator", 
                 text: "Tonight's Cuisine contains chicken nuggets, corn, mac in cheese, and for dessert, gummies. Usually, Andy doesn't eat the corn because he doesn't like how it looks but tonight he felt daring.",
                 background: "",
             },
-            "96": {
+
+            "93": {
                 name: "Narrator", 
                 text: "After a great meal, Andy decides to get dressed, take a shower, and head off to sleep. (Current time 8 PM)",
                 background: "",
             },
-            "97": {
+
+            "94": {
                 name: "Narrator", 
                 text: "It’s a new day for Andy, today he plans on doing exactly what he did yesterday but he remembers the test in his first-period class, Statistics.",
                 background: "",
             },
-            "98": {
+
+            "95": {
                 name: "Andy", 
                 text: "\"Aww man, I still haven’t got done with the study guide… darn\"",
                 background: "",
             },
-            "99": {
+
+            "96": {
                 name: "Narrator", 
                 text: "Andy heads off to school until he notices that something’s off about today…",
                 background: "",
             },
-            "100": {
+
+            "97": {
                 name: "Narrator", 
                 text: "There appears to be something shiny in the ground. Andy can't quite put his finger on it, as he examines it, he is left with a decision to make…",
                 background: "",
@@ -533,7 +622,17 @@ redirectLink: "path2/respond-to-derik.html" (first branch off of the story)*/
 
 
 
-
+        branchToThree: {
+            1: {
+                name: "Narrator",
+                text: {
+                    dialog: "Pick up the mysterious artifact",
+                    dialog2: "Walk past the object",
+                    dialog3: "Watch the bully pick up the artifact"
+                }
+            },
+            
+        },
 
 
 
@@ -813,7 +912,7 @@ redirectLink: "path2/respond-to-derik.html" (first branch off of the story)*/
             },
             
 
-            redirectLink: "path1/bring-who.html"  // Redirect here after all scenes in this path
+            redirectLink: "../regular-show/bring-who.html"  // Redirect here after all scenes in this path
         },
 
         regularShowBringWho: {
@@ -1174,7 +1273,7 @@ redirectLink: "path2/respond-to-derik.html" (first branch off of the story)*/
             },
             16: {
                 name: "Narrator",
-                text: "Gene steps aside to revive Muscle Man",
+                text: "Gene gets on top of a vehicle and Muscle Man comes out.",
                 background: "",
             },
             17: {
@@ -1184,7 +1283,7 @@ redirectLink: "path2/respond-to-derik.html" (first branch off of the story)*/
             },
             
 
-        redirectLink: "regular-show/skips-rope.html"
+        redirectLink: "skips-rope.html"
         },
 
         regularShowSkipsRope: {
@@ -1357,7 +1456,7 @@ redirectLink: "path2/respond-to-derik.html" (first branch off of the story)*/
             },
             20: {
                 name: "Dipper",
-                text: "Hey there friend… since we’re going to be in here for a while, mind if I ana-ly-ze you?",
+                text: "Hey there friend… since we’re going to be in here for a while, mind if I analyze you?",
                 background: "",
             },
             21: {
@@ -1443,7 +1542,7 @@ redirectLink: "path2/respond-to-derik.html" (first branch off of the story)*/
             },
             9: {
                 name: "Narrator",
-                text: "Dipper starts scanning the room trying to find anything that can help them escape from the falling",
+                text: "Dipper starts scanning the area trying to find anything that can help them escape from the falling",
                 background: "",
             },
             10: {
@@ -1483,7 +1582,7 @@ redirectLink: "path2/respond-to-derik.html" (first branch off of the story)*/
             },
             17: {
                 name: "Narrator",
-                text: "You all sit silent for a while until Dipper breaks the silence",
+                text: "You all stay silent for a while until Dipper breaks the silence",
                 background: "",
             },
             18: {
@@ -1651,117 +1750,109 @@ redirectLink: "path2/respond-to-derik.html" (first branch off of the story)*/
         },
 
         gravityFallsMeatsFort: {
+            
             1: {
-                name: "Narrator",
-                text: "Dipper walks you to the mystery shack and introduces you to Great Uncle Fort",
-                background: "",
-            },
-            2: {
                 name: "Fort",
                 text: "Nice to meet you stranger, I'm assuming your name is Bandy? I'm kidding. I know who you are, Andy. You need my help right?",
                 background: "",
             },
-            3: {
+            2: {
                 name: "Andy",
                 text: "How… how did you know who I am?",
                 background: "",
             },
-            4: {
+            3: {
                 name: "Narrator",
                 text: "You start to regret coming because if this is the boss of this world, you're done for",
                 background: "",
             },
-            5: {
+            4: {
                 name: "Fort",
                 text: "Easy, I’m a bit of a wizard, I know everything and everyone, it just takes time for me to remember who’s who",
                 background: "",
             },
-            6: {
+            5: {
                 name: "Fort",
                 text: "So you need to take on some boss right? Well here we go, let me get my gear then we’ll go off looking for anything that looks stranger than what I’m used to",
                 background: "",
             },
-            7: {
+            6: {
                 name: "Narrator",
                 text: "You start to hear a loud noise coming from the forest and have a feeling that’s the thing that’s not normal",
                 background: "",
             },
-            8: {
+            7: {
                 name: "Fort",
                 text: "Well kids, we’re off. We’ll be back… hopefully in one piece",
                 background: "",
             },
+            
             redirectLink: "walking-with-fort.html"
         },
         gravityFallsWaistTime: {
             1: {
                 name: "Narrator",
-                text: "Dipper takes this as an insult because you don't know what type of person he is",
-                background: "",
-            },
-            2: {
-                name: "Narrator",
                 text: "You begin walking along the path and stumble across a whole town",
                 background: "",
             },
-            3: {
+            2: {
                 name: "Andy",
                 text: "I wonder if they were banished or something from this place. It looks nice",
                 background: "",
             },
-            4: {
+            3: {
                 name: "Narrator",
                 text: "You enter the first building you see and it's in the shape of a log…? Man this place is weird.",
                 background: "",
             },
-            5: {
+            4: {
                 name: "Narrator",
                 text: "You sit down and before you can even order something, 2 pancakes just landed in front of you. You look around and find that it is really strong… something won a game?",
                 background: "",
             },
-            6: {
+            5: {
                 name: "Andy",
                 text: "Well these look free, let's chow down then get going",
                 background: "",
             },
-            7: {
+            6: {
                 name: "Narrator",
                 text: "You finish eating your pancakes then get going to your next stop which is a really large mansion…",
                 background: "",
             },
-            8: {
+            7: {
                 name: "Andy",
                 text: "Should I…? *Sigh, why not… I’m going to travel this entire place might as well get this one done with",
                 background: "",
             },
-            9: {
+            8: {
                 name: "Narrator",
                 text: "I… don't have a good feeling about this",
                 background: "",
             },
-            10: {
+            9: {
                 name: "Narrator",
                 text: "You spend the next 30 minutes walking up the tall hill",
                 background: "",
             },
-            11: {
+            10: {
                 name: "Narrator",
                 text: "You begin to knock on the gate and explain your situation but nobody comes…",
                 background: "",
             },
-            12: {
+            11: {
                 name: "Narrator",
                 text: "You realize that you have to walk all the way down with your backpack, realizing that maybe you should have met the ‘Great Uncle’",
                 background: "",
             },
-            13: {
+            12: {
                 name: "Narrator",
                 text: "You return from where you came and say sorry for leaving",
                 background: "",
             },
-                    //the link in here should lead into the one where Andty trusts Grunkle 
             redirectLink: "meat-ford.html"
         },
+        
            
         gravityFallsNoSuchDuctTective: {
             1: {
@@ -2634,7 +2725,7 @@ redirectLink: "path2/respond-to-derik.html" (first branch off of the story)*/
             },
             4: {
                 name: "Narrator",
-                text: "You head outside and see some banana about to get pranked?",
+                text: "You look out a window and see some banana about to get pranked?",
                 background: "",
             },
             redirectLink: "nicole-shows-up.html"
@@ -3250,7 +3341,7 @@ redirectLink: "path2/respond-to-derik.html" (first branch off of the story)*/
                 text: "You pick up the artifact and get transported to the fourth and final universe.",
                 background: "",
             },
-            redirectLink: "../../adventure-time/adventure-time.html"
+            redirectLink: "../adventure-time/adventure-time.html"
         },
 
 
@@ -3693,7 +3784,7 @@ redirectLink: "path2/respond-to-derik.html" (first branch off of the story)*/
             },
             70: {
                 name: "Narrator",
-                text: "You see Jake grow really large and fall to the ground.",
+                text: "You see Jake grow really large and see his head in the clouds.",
                 background: "",
             },
             71: {
@@ -3708,7 +3799,7 @@ redirectLink: "path2/respond-to-derik.html" (first branch off of the story)*/
             },
             73: {
                 name: "Narrator",
-                text: "You arrive at the entrance and see two large gumball machines. They look almost like guards with their spears.",
+                text: "You arrive at the entrance and see two large gumball machines. They look almost like guards with their bubble wands.",
                 background: "",
             },
             74: {
@@ -4366,7 +4457,7 @@ redirectLink: "path2/respond-to-derik.html" (first branch off of the story)*/
             },
             64: {
                 name: "Narrator",
-                text: "*Billy stands up and starts approaching you…*",
+                text: "*Billy starts approaching you…*",
                 background: "",
             },
             redirectLink: "billy-aproaches-you.html"
@@ -4552,7 +4643,7 @@ redirectLink: "path2/respond-to-derik.html" (first branch off of the story)*/
             },
             3: {
                 name: "Narrator",
-                text: "Billy ended up winning in the end, and you never made it home… all thanks to you now knowing which is the proper face",
+                text: "Billy ended up winning in the end, and you never made it home… all thanks to you not knowing which is the proper face",
                 background: ""
             },
             4: {
@@ -5175,7 +5266,7 @@ redirectLink: "path2/respond-to-derik.html" (first branch off of the story)*/
         forcedEndingIfHasFlashlight: {
             1: {
                 name: "Narrator",
-                text: "*You teleport back outside where he picked up the first artifact.",
+                text: "*You teleport back outside where you picked up the first artifact.",
                 background: "",
             },
             2: {
@@ -5302,7 +5393,6 @@ redirectLink: "path2/respond-to-derik.html" (first branch off of the story)*/
         },
     }
 
-    const sceneSetName = document.body.dataset.path || 'forcedPath';
     let currentSceneSet = sceneSets[sceneSetName];
 
     const nameElement = document.querySelector(".name p");
@@ -5323,7 +5413,8 @@ redirectLink: "path2/respond-to-derik.html" (first branch off of the story)*/
     let { name, text, background, nextScene } = scene;
 
     nameElement.textContent = name;
-    document.body.style.backgroundImage = `url('${background}?v=${new Date().getTime()}')`;
+    updateBackground(sceneSetName, currentSceneNumber);
+
     document.body.style.backgroundSize = "cover";
     document.body.style.backgroundPosition = "center";
     document.body.style.backgroundAttachment = "fixed";
@@ -5352,7 +5443,7 @@ redirectLink: "path2/respond-to-derik.html" (first branch off of the story)*/
                     if (i < fullText.length) {
                         textElements[key].textContent += fullText.charAt(i);
                         i++;
-                        typewriterTimeouts.push(setTimeout(typeChar, 50));
+                        typewriterTimeouts.push(setTimeout(typeChar, 30)); //controlls the speed of the typewriter effect
                     } else {
                         typingFinished = true;
                         if (nextScene) setTimeout(loadNextScene, 1000);
@@ -5386,7 +5477,8 @@ redirectLink: "path2/respond-to-derik.html" (first branch off of the story)*/
         if (!nextScene) return;
 
         nameElement.textContent = nextScene.name;
-        document.body.style.backgroundImage = `url('${nextScene.background}?v=${new Date().getTime()}')`;
+        updateBackground(sceneSetName, currentSceneNumber); // or sceneNumber if you're incrementing there
+
         name = nextScene.name;
         text = nextScene.text;
         typingFinished = false;
@@ -5414,7 +5506,24 @@ redirectLink: "path2/respond-to-derik.html" (first branch off of the story)*/
             nextScene = scene.nextScene || null;
 
             nameElement.textContent = name;
-            document.body.style.backgroundImage = `url('${background}?v=${new Date().getTime()}')`;
+            updateBackground(sceneSetName, currentSceneNumber);
+
+
+
+            //THIS WILL HELP IZZY A LOT
+             // 👇 Only show button on scene 3
+             const buttonContainer = document.getElementById("scene-button-container");
+
+             if (buttonContainer) {
+                 if (currentSceneNumber === 4) {
+                     buttonContainer.style.display = "block";
+                 } else {
+                     buttonContainer.style.display = "none";
+                 }
+             }
+             
+
+
 
             if (typeof text === 'object') {
                 typeWriterText(text);
