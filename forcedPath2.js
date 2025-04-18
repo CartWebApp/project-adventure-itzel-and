@@ -356,7 +356,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         
         //redirect to game over screen
-        redirectLink: "../game-over.html" //is this one right???
+        redirectLink: "../path1/start-and-end/game-end.html"
     },
 
     eatBreakfast: {
@@ -705,7 +705,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         
         //redirect to game over screen
-        redirectLink: "../game-over.html"
+        redirectLink: "../path1/start-and-end/game-end.html"
     },
 
     acceptFate: {
@@ -1313,7 +1313,7 @@ document.addEventListener("DOMContentLoaded", function () {
             background: "",
         },
         //redirect to game over screen
-        redirectLink: "../game-over.html"        
+        redirectLink: "../path1/start-and-end/game-end.html"
     },
 
     lunchOutside: {
@@ -1566,7 +1566,7 @@ document.addEventListener("DOMContentLoaded", function () {
             background: "",
         },
         //redirect to game over screen
-        redirectLink: "../game-over.html"        
+        redirectLink: "../path1/start-and-end/game-end.html"
     },
 
     theLactoseLegacy: {
@@ -1616,7 +1616,7 @@ document.addEventListener("DOMContentLoaded", function () {
             background: "",
         },
         //redirect to game over screen
-        redirectLink: "../game-over.html"        
+        redirectLink: "../path1/start-and-end/game-end.html"
     }
 }
 

@@ -79,4 +79,17 @@ if (hasItems === "true") {
     document.body.dataset.path = "theAmazingWorldOfGumballGivesCentarAnnoyingOrange";
 }
 
+function unlockAchievement(name) {
+        let achievements = JSON.parse(localStorage.getItem("achievements")) || [];
+        if (!achievements.includes(name)) {
+            achievements.push(name);
+            localStorage.setItem("achievements", JSON.stringify(achievements));
+            // Optional: Display popup or message
+            console.log(`🏆 Achievement Unlocked: ${name}`);
+        }
+    }
+    
+    // Example: unlock one
+    unlockAchievement("Taste the Rainbow");
+</script>
 </script>

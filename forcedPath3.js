@@ -336,7 +336,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 background: "",
             },
             //game over
-            redirectLink: "../game-over.html"
+            redirectLink: "../path1/start-and-end/game-end.html"
         },
 
         trialAndError: {
@@ -739,7 +739,7 @@ document.addEventListener("DOMContentLoaded", function () {
             },
             //Achievement unlocked: The Smell of Death
             //*Game Over: “I don’t feel like eating… for the rest of my life anymore. Thanks.
-            redirectLink: "../game-over.html"            
+            redirectLink: "../path1/start-and-end/game-end.html"
         },
 
         hideInGarage: {
@@ -999,7 +999,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 background: "",
             },            
             //*Game Over: insert coffin dancing meme here with sound... low quality
-            redirectLink: "../game-over.html"
+            redirectLink: "../path1/start-and-end/game-end.html"
         },
 
         hideInCloset: {
@@ -1223,7 +1223,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 background: "",
             },
             //*Game Over: “No mullet, no Jorts, no Sandwich *dies*”
-            redirectLink: "../game-over.html"
+            redirectLink: "../path1/start-and-end/game-end.html"
         },
 
         derikVillainCrew: {
@@ -1428,7 +1428,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 background: "",
             },
             //*Game Over: “your phone is fully charged... and now so are you”
-            redirectLink: "../game-over.html"
+            redirectLink: "../path1/start-and-end/game-end.html"
         },
 
         scienceExperiment: {
@@ -1889,7 +1889,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 background: "",
             },
             //Game Over: You would say that... wouldn't you?
-            redirectLink: "../game-over.html"
+            redirectLink: "../path1/start-and-end/game-end.html"
         },
 
         derikQuestion: {
@@ -2384,7 +2384,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 background: "",
             },
             //game end
-            redirectLink: "../game-over.html"            
+            redirectLink: "../path1/start-and-end/game-end.html"
         },
     }
 
