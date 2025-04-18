@@ -1,41 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Adventure Recap</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Adventure Recap</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: white;
+      text-align: center;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: 4.5vw;
+      margin-bottom: 2vh;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 0.8vw #cc00ff, 0 0 1.6vw #ffcc00;
+      }
+      to {
+        text-shadow: 0 0 1.6vw #fff, 0 0 2.4vw #0f1b5e;
+      }
+    }
+
+    ul#recap {
+      list-style: none;
+      padding: 0;
+      width: 80%;
+      max-width: 70vw;
+      margin-bottom: 3vh;
+    }
+
+    ul#recap li {
+      background: rgba(255, 255, 255, 0.1);
+      margin: 1.5vh 0;
+      padding: 1.5vh 2vw;
+      border-radius: 1vw;
+      backdrop-filter: blur(0.8vw);
+      font-size: 1.8vw;
+      animation: fadeInUp 0.5s ease forwards;
+    }
+
+    ul#recap li strong {
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(3vh);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulse {
+      0% { text-shadow: 0 0 0.3vw red; }
+      50% { text-shadow: 0 0 1vw crimson; }
+      100% { text-shadow: 0 0 0.3vw red; }
+    }
+
+    button {
+      background: linear-gradient(145deg, #5f2c82, #49a09d);
+      color: #fff;
+      border: 0.2vw solid rgba(255, 255, 255, 0.2);
+      padding: 1.5vh 4vw;
+      width: 30vw;
+      font-size: 1.5vw;
+      border-radius: 3vw;
+      cursor: pointer;
+      margin: 1vh auto;
+      transition: transform 0.2s, box-shadow 0.2s, background 0.3s;
+    }
+
+    button:hover {
+      transform: scale(0.96);
+      background: linear-gradient(145deg, #6a3093, #a044ff);
+      box-shadow: 0 0 1vw #fff, 0 0 2vw #6a3093;
+    }
+
+    .sparkles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      opacity: 0.1;
+    }
+  </style>
 </head>
 <body>
-    <h1>Your Adventure Recap</h1>
-    <ul id="recap"></ul>
-    
-    <!-- Restart options -->
-    <button onclick="restartGame()">Play Again (Soft Reset)</button>
-    <button onclick="fullReset()">Full Reset (Wipe All)</button>
+  <div class="sparkles"></div>
+  <h1>Your Adventure Recap</h1>
+  <ul id="recap"></ul>
 
-    <script>
-        // Display choices from localStorage
-        const choices = JSON.parse(localStorage.getItem("playerChoices")) || [];
-        const recapList = document.getElementById("recap");
+  <button onclick="again()">Play Again?</button>
+  <button onclick="fullReset()">Play Again? (Wipe All)</button>
 
-        choices.forEach(choice => {
-            const li = document.createElement("li");
-            li.textContent = choice;
-            recapList.appendChild(li);
-        });
+  <h2 style="margin-top: 5vh;">Achievements</h2>
+    <ul id="achievements"></ul>
 
-        // Soft reset (just clears the progress, not equipment/items)
-        function restartGame() {
-            localStorage.removeItem("playerChoices");
-            window.location.href = "start.html"; // Replace with your actual start page
-        }
 
-        // Full reset (clears *everything*, like items too)
-        function fullReset() {
-            localStorage.clear();
-            alert("All progress and items have been reset.");
-            window.location.href = "start.html"; // Replace with your actual start page
-        }
-    </script>
+  <script>
+    const choices = JSON.parse(localStorage.getItem("playerChoices")) || [];
+    const recapList = document.getElementById("recap");
+
+    choices.forEach((choice, index) => {
+      const li = document.createElement("li");
+      li.style.animationDelay = `${index * 0.2}s`;
+      li.textContent = choice;
+      recapList.appendChild(li);
+    });
+
+    const deathCount = localStorage.getItem("deathCount") || 0;
+    const deathLi = document.createElement("li");
+    deathLi.innerHTML = `<strong>💀 Total Deaths: ${deathCount}</strong>`;
+    deathLi.style.background = "rgba(255, 0, 0, 0.2)";
+    deathLi.style.border = "0.2vw solid crimson";
+    deathLi.style.color = "#ffaaaa";
+    deathLi.style.fontWeight = "bold";
+    deathLi.style.animationDelay = `${choices.length * 0.2 + 0.5}s`;
+    recapList.appendChild(deathLi);
+
+    function fullReset() {
+      localStorage.clear();
+      window.location.href = "../../../../index.html";
+    }
+
+    function again() {
+      window.location.href = "../../../../index.html";
+    }
+  </script>
 </body>
 </html>
+
+
+<script> //to display the achievements
+    
+const achievements = JSON.parse(localStorage.getItem("achievements")) || [];
+const achievementList = document.getElementById("achievements");
+
+achievements.forEach((title, index) => {
+    const li = document.createElement("li");
+    li.textContent = `🏆 ${title}`;
+    li.style.background = "rgba(255, 215, 0, 0.1)";
+    li.style.border = "0.2vw solid gold";
+    li.style.padding = "1.5vh 2vw";
+    li.style.borderRadius = "1vw";
+    li.style.margin = "1vh 0";
+    li.style.backdropFilter = "blur(0.5vw)";
+    li.style.fontSize = "1.8vw";
+    li.style.animation = `fadeInUp 0.5s ease forwards`;
+    li.style.animationDelay = `${index * 0.2 + 1}s`;
+    achievementList.appendChild(li);
+});
+
+</script>

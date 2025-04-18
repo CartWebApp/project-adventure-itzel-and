@@ -37,3 +37,19 @@
 <script src="../../../../forcedPath.js"></script> <!--exicutes all the scripts-->
 <!-- <script src="../js/nextPage.js"></script> goes to the next page -->
 <script src="../../../js/fadeIn.js"></script> <!--ensures the text in js loads before the typewriter works-->
+
+<script>
+    function unlockAchievement(name) {
+        let achievements = JSON.parse(localStorage.getItem("achievements")) || [];
+        if (!achievements.includes(name)) {
+            achievements.push(name);
+            localStorage.setItem("achievements", JSON.stringify(achievements));
+            // Optional: Display popup or message
+            console.log(`🏆 Achievement Unlocked: ${name}`);
+        }
+    }
+    
+    // Example: unlock one
+    unlockAchievement("It's dark in here");
+</script>
+    

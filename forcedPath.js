@@ -41,6 +41,95 @@ document.addEventListener("DOMContentLoaded", function () {
             dialog2: "He stretches and yawns, still groggy from sleep.",
             dialog3: "The morning light creeps in through the blinds."
         }*/
+       gameOverBG: {
+        1: {
+            name: "Narrator",
+            text: "Listen, because im literally the best game creator ever I’ll give you a second chance. I’ll take you back to where you first messed up. Try not to mess it up again",
+        },
+        redirectLink: "bring-who.html"
+       },
+
+       gameOverBG1: {
+        1: {
+            name: "Narrator",
+            text: "Listen, because im literally the best game creator ever I’ll give you a second chance. I’ll take you back to where you first messed up. Try not to mess it up again",
+        },
+        redirectLink: "skips-rope.html"
+       },
+
+       gameOverBG2: {
+        1: {
+            name: "Narrator",
+            text: "Listen, because im literally the best game creator ever I’ll give you a second chance. I’ll take you back to where you first messed up. Try not to mess it up again",
+        },
+        redirectLink: "yo-mama-reads.html"
+       },
+
+       gameOverBG3: {
+        1: {
+            name: "Narrator",
+            text: "Listen, because im literally the best game creator ever I’ll give you a second chance. I’ll take you back to where you first messed up. Try not to mess it up again",
+        },
+        redirectLink: "battle-weapons.html"
+       },
+
+       gameOverBG4: {
+        1: {
+            name: "Narrator",
+            text: "Listen, because im literally the best game creator ever I’ll give you a second chance. I’ll take you back to where you first messed up. Try not to mess it up again",
+        },
+        redirectLink: "centar-choice1.html"
+       },
+
+       gameOverBG5: {
+        1: {
+            name: "Narrator",
+            text: "Listen, because im literally the best game creator ever I’ll give you a second chance. I’ll take you back to where you first messed up. Try not to mess it up again",
+        },
+        redirectLink: "sticky-note-options.html"
+       },
+
+       gameOverBG6: {
+        1: {
+            name: "Narrator",
+            text: "Listen, because im literally the best game creator ever I’ll give you a second chance. I’ll take you back to where you first messed up. Try not to mess it up again",
+        },
+        redirectLink: "choose-your-orange.html"
+       },
+       gameOverBG7: { //this is the Nicole dialog
+        1: {
+            name: "Narrator",
+            text: "Listen, because im literally the best game creator ever I’ll give you a second chance. I’ll take you back to where you first messed up. Try not to mess it up again",
+        },
+        redirectLink: "choice-with-nicole.html"
+       },
+
+       gameOverBG8: { //this is the Nicole dialog
+        1: {
+            name: "Narrator",
+            text: "Listen, because im literally the best game creator ever I’ll give you a second chance. I’ll take you back to where you first messed up. Try not to mess it up again",
+        },
+        redirectLink: "first-choice.html"
+       },
+
+       gameOverBG9: { //this is the Nicole dialog
+        1: {
+            name: "Narrator",
+            text: "Listen, because im literally the best game creator ever I’ll give you a second chance. I’ll take you back to where you first messed up. Try not to mess it up again",
+        },
+        redirectLink: "choose-a-face.html"
+       },
+
+       gameOverBG10: { //this is the Nicole dialog
+        1: {
+            name: "Narrator",
+            text: "Listen, because im literally the best game creator ever I’ll give you a second chance. I’ll take you back to where you first messed up. Try not to mess it up again",
+        },
+        redirectLink: "abadeer-options.html"
+       },
+
+
+
         forcedPath: /*re-do the images for this one... check if it ligns up or not*/{
             1: {
                 name: "Narrator", 
@@ -1156,7 +1245,7 @@ redirectLink: "path2/respond-to-derik.html" (first branch off of the story)*/
             },
             
             
-        redirectLink: "../game-over.html"
+        redirectLink: "extra-life2.html"
         },
 
         regularShowBringNone: {
@@ -1192,7 +1281,7 @@ redirectLink: "path2/respond-to-derik.html" (first branch off of the story)*/
             },
             
             
-        redirectLink: "game-over.html"
+        redirectLink: "extra-life.html"
         },
 
         regularShowBringSkips: {
@@ -1340,7 +1429,7 @@ redirectLink: "path2/respond-to-derik.html" (first branch off of the story)*/
             },
             
             
-        redirectLink: "../../game-over.html"
+        redirectLink: "extra-life1.html"
         },
 
 
@@ -2279,7 +2368,7 @@ redirectLink: "path2/respond-to-derik.html" (first branch off of the story)*/
                 text: "Game Over",
                 background: "",
             },
-            redirectLink: "game-over.html"
+            redirectLink: "extra-life3.html"
         },
         gravityFallsUseFlashLight: {
             1: {
@@ -2537,7 +2626,7 @@ redirectLink: "path2/respond-to-derik.html" (first branch off of the story)*/
                 text: "lol what a weak way to go out… a centaur had too much Taco Bell and let it all out on you… this job pays me TOO much for how much I'm enjoying it.",
                 background: "",
             },
-            redirectLink: "game-over.html"
+            redirectLink: "extra-life4.html"
             
         },
 
@@ -2610,7 +2699,7 @@ redirectLink: "path2/respond-to-derik.html" (first branch off of the story)*/
                 background: "",
             },
             
-            redirectLink: "game-over.html"
+            redirectLink: "extra-life5.html"
             
         },
         theAmazingWorldOfGumballGoesToHouse: {
@@ -3083,7 +3172,7 @@ redirectLink: "path2/respond-to-derik.html" (first branch off of the story)*/
                 text: "Game Over",
                 background: "",
             },
-            redirectLink: "game-over.html"
+            redirectLink: "extra-life7.html"
         },
 
         theAmazingWorldOfGumballNicoleKicksPlayerBackToSchool: {
@@ -3139,7 +3228,7 @@ redirectLink: "path2/respond-to-derik.html" (first branch off of the story)*/
                 text: "The centaur turns around and lights you on fire using his butt.",
                 background: "",
             },
-            redirectLink: "game-over.html"
+            redirectLink: "extra-life6.html"
         },
 
         theAmazingWorldOfGumballYouSeeMolly: /*progam here*/{
@@ -3887,7 +3976,7 @@ redirectLink: "path2/respond-to-derik.html" (first branch off of the story)*/
                 background: "",
             },
             
-            redirectLink: "game-over.html"
+            redirectLink: "extra-life8.html"
         },
 
         adventureTimeDecideIfSlapIK: {
@@ -4556,7 +4645,7 @@ redirectLink: "path2/respond-to-derik.html" (first branch off of the story)*/
             },
             19: {
                 name: "Narrator",
-                text: "*You crushed Billy with a Red M&M*",
+                text: "*You crushed Billy with a Red Skittle*",
                 background: "",
             },
             redirectLink: "uses-regin-potion.html"
@@ -4652,7 +4741,7 @@ redirectLink: "path2/respond-to-derik.html" (first branch off of the story)*/
                 background: ""
             },
             
-            redirectLink: "game-over.html" 
+            redirectLink: "extra-life9.html" 
         },
 
         adventureTimeAndyTakesOutAllHisMilk: {
@@ -4833,7 +4922,7 @@ redirectLink: "path2/respond-to-derik.html" (first branch off of the story)*/
                 text: "Game Over",
                 background: "",
             },
-            redirectLink: "game-over.html"
+            redirectLink: "extra-life10.html"
         },
 
         adventureTimeShouldUseReginPower: {
@@ -4933,18 +5022,18 @@ redirectLink: "path2/respond-to-derik.html" (first branch off of the story)*/
                 background: "",
             },
             20: {
-                name: "Jake",
-                text: "Everybody get on",
+                name: "Narrator",
+                text: "Your group goes outside as they prepare to follow the Lich",
                 background: "",
             },
             21: {
                 name: "Narrator",
-                text: "Your party all gets on Jake as he gets big",
+                text: "You all gets on Jake as he gets big",
                 background: "",
             },
             22: {
-                name: "Jake",
-                text: "Follows the Lich and realizes he is headed straight for the Candy Kingdom",
+                name: "Narrator",
+                text: "Jake follows the Lich and realizes he is headed straight for the Candy Kingdom",
                 background: "",
             },
             23: {
@@ -5100,7 +5189,7 @@ redirectLink: "path2/respond-to-derik.html" (first branch off of the story)*/
             },
             12: {
                 name: "Narrator",
-                text: "Everyone starts celebrating and jumping when suddenly\nCrunch",
+                text: "Everyone starts celebrating and jumping when suddenly you hear a Crunch",
                 background: "",
             },
             13: {
@@ -5110,7 +5199,7 @@ redirectLink: "path2/respond-to-derik.html" (first branch off of the story)*/
             },
             14: {
                 name: "Narrator",
-                text: "You see the spirit fly into the sky and only assume that nothing will come of it",
+                text: "You see the spirit of the evil snail fly into the sky and only assume that nothing will come of it",
                 background: "",
             },
             15: {
@@ -5224,7 +5313,7 @@ redirectLink: "path2/respond-to-derik.html" (first branch off of the story)*/
                 text: "And so, you find yourself with a year-long detention, but at least you survived another bizarre day.",
                 background: "",
             },
-            redirectLink: "../ending-for-path1.html"
+            redirectLink: "../start-and-end/game-end.html"
         },
         adventureTimeForcedENdingIfNoFlashlight: {
             1: {
@@ -5257,7 +5346,7 @@ redirectLink: "path2/respond-to-derik.html" (first branch off of the story)*/
                 text: "The bully, a common nuisance among the nerds, shows up and eliminates MC with ease. The end.",
                 background: "",
             },
-            redirectLink: "../ending-for-path1.html"
+            redirectLink: "../start-and-end/game-end.html"
 
         },
 
@@ -5324,7 +5413,7 @@ redirectLink: "path2/respond-to-derik.html" (first branch off of the story)*/
                 text: "*The teacher gave you detention for the rest of the school year for failing the math test.",
                 background: "",
             },
-            redirectLink: "credits.html"
+            redirectLink: "../start-and-end/game-end.html"
         },
         forcedEndingIfDoesNotHaveFlashlight: {
             1: {
@@ -5367,7 +5456,7 @@ redirectLink: "path2/respond-to-derik.html" (first branch off of the story)*/
                 text: "*The end.",
                 background: "",
             },
-            redirectLink: "credits.html"
+            redirectLink: "../start-and-end/game-end.html"
         },
 
         TEMPLATE1: {
@@ -5392,6 +5481,7 @@ redirectLink: "path2/respond-to-derik.html" (first branch off of the story)*/
         
         },
     }
+
 
     let currentSceneSet = sceneSets[sceneSetName];
 
@@ -5449,6 +5539,8 @@ redirectLink: "path2/respond-to-derik.html" (first branch off of the story)*/
                         if (nextScene) setTimeout(loadNextScene, 1000);
                     }
                 }
+
+                
                 typeChar();
             }
         });
@@ -5507,29 +5599,30 @@ redirectLink: "path2/respond-to-derik.html" (first branch off of the story)*/
 
             nameElement.textContent = name;
             updateBackground(sceneSetName, currentSceneNumber);
-
-
-
-            //THIS WILL HELP IZZY A LOT
-             // 👇 Only show button on scene 3
-             const buttonContainer = document.getElementById("scene-button-container");
-
-             if (buttonContainer) {
-                 if (currentSceneNumber === 4) {
-                     buttonContainer.style.display = "block";
-                 } else {
-                     buttonContainer.style.display = "none";
-                 }
-             }
-             
-
-
-
             if (typeof text === 'object') {
                 typeWriterText(text);
             } else {
                 typeWriterText({ dialog: text });
             }
+
+             //THIS WILL HELP IZZY A LOT
+             // 👇 Only show button on scene 3
+             const buttonContainer = document.getElementById("scene-button-container");
+            const bookImage = document.getElementById("book");
+            const rope = document.getElementById("rope");
+
+            if (buttonContainer) {
+                buttonContainer.style.display = (currentSceneNumber === 4) ? "block" : "none";
+            }
+
+            if (bookImage) {
+                bookImage.style.display = (currentSceneNumber === 44) ? "block" : "none";
+            }
+
+            if (rope) {
+                rope.style.display = (currentSceneNumber === 2) ? "block" : "none";
+            }
+
         }
     }
 

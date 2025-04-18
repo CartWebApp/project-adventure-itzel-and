@@ -16,12 +16,30 @@
             position: relative;
             overflow: hidden;
         }
+
+        .top-centered-image {
+            /* position: absolute; */
+            /* top: 0; */
+            /* left: 50%; */
+            /* transform: translateX(-50%); */
+            display: none;
+        }
+
+        .top-centered-image img {
+            width: 15vw;  /* or whatever size you prefer */
+            height: auto;
+        }
        
         
     </style>
 </head>
 <body data-path="regularShowBringSkips" data-scene="1">
     <div class="container">
+
+        <div id="rope" style="display: none;" class="top-centered-image">
+            <img src="pop-up-imgs/rope.png" alt="Rope Img">
+        </div>
+
         <div class="name"><p></p></div>
             <div class="containerfp one">
             <p id="character-description" class="text two three" data-fulltext=""></p>
