@@ -700,17 +700,6 @@ document.addEventListener("DOMContentLoaded", function () {
             redirectLink: "branch-to-three.html"  // Redirect here after all scenes in this path
         },
 
-
-
-
-
-
-/*do I put the start of the path2 JS here and redirect it to the 
-redirectLink: "path2/ignore.html" (the start of the path 2 story) or 
-redirectLink: "path2/respond-to-derik.html" (first branch off of the story)*/
-
-
-
         branchToThree: {
             1: {
                 name: "Narrator",

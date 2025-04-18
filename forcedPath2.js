@@ -158,7 +158,7 @@ document.addEventListener("DOMContentLoaded", function () {
     schoolCafeteria: {
         1: {
             name: "Narrator",
-            text: "*Andy gets in line for breakfast and reaches for the white milk first. The lunch lady greets*",
+            text: "*Andy gets in line for breakfast and reaches for the white milk first. The lunch lady greets him.*",
             background: "",
         },
         2: {
@@ -185,7 +185,8 @@ document.addEventListener("DOMContentLoaded", function () {
             name: "Doris",
             text: "\"That’s nice mijo…\"",
             background: "",
-        },        
+        },
+        redirectLink: "breakfast-options.html"                      
     },
 
     breakfastOptions: {
@@ -280,7 +281,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         2: { 
             name: "Andy",
-            text: "\"whispers My favorite.\"",
+            text: "\"My favorite...\"",
             background: "",
         },
         3: { 
@@ -384,7 +385,7 @@ document.addEventListener("DOMContentLoaded", function () {
             text: "\"Time to make space.\"",
             background: "",
         },
-        
+        redirectLink: "backpack-full.html"
     },
 
     backpackFull: {
@@ -435,8 +436,8 @@ document.addEventListener("DOMContentLoaded", function () {
             background: "",
         },
         6: {
-            name: "Narrator",
-            text: "*Class: silence*",
+            name: "Class",
+            text: "*Silence*",
             background: "",
         },
         7: {
@@ -444,7 +445,7 @@ document.addEventListener("DOMContentLoaded", function () {
             text: "\"Good, now let's begin!\"",
             background: "",
         },
-        //redirect to stats test html????        
+        redirectLink: "stats-test.html"       
     },
 
     statsTest: {
@@ -469,6 +470,7 @@ document.addEventListener("DOMContentLoaded", function () {
             text: "\"Yes, I can finally get enough milk to build my plasma cannon! I think I have a chance at this.\"",
             background: "",
         },
+        redirectLink: "cheat-or-not.html"       
     },
 
     cheatOrNot: {
@@ -736,7 +738,8 @@ document.addEventListener("DOMContentLoaded", function () {
             name: "Mr. Hankey",
             text: "\"... just leave my class.\"",
             background: "",
-        },        
+        },
+        redirectLink: "history-class.html"        
     },
 
     historyClass: {
@@ -786,8 +789,8 @@ document.addEventListener("DOMContentLoaded", function () {
             background: "",
         },
         10: {
-            name: "Narrator",
-            text: "*Class: silent*",
+            name: "Class",
+            text: "*Silent*",
             background: "",
         },
         11: {
@@ -815,6 +818,7 @@ document.addEventListener("DOMContentLoaded", function () {
             text: "*Question: Name the Warlord defeated by Mori Motonari at the Battle of Itsukushima.*",
             background: "",
         },
+        redirectLink: "history-question.html"        
     },
 
     historyQuestion: {
@@ -845,7 +849,8 @@ document.addEventListener("DOMContentLoaded", function () {
             text: "\"He actually got it right?\"",
             background: "",
         },
-        //Achievement unlocked: Wait did you actually know that or is that from an Anime?        
+        //Achievement unlocked: Wait did you actually know that or is that from an Anime?
+        redirectLink: "english-class.html"                
     },
 
     refuseToAnswer: {
@@ -878,7 +883,8 @@ document.addEventListener("DOMContentLoaded", function () {
             name: "Classmate",
             text: "\"Yeah, that's so embarrassing.\"",
             background: "",
-        },        
+        },
+        redirectLink: "english-class.html"                        
     },
 
     staySilent: {
@@ -911,7 +917,8 @@ document.addEventListener("DOMContentLoaded", function () {
             name: "Narrator",
             text: "*Without question Andy runs out of the class and does exactly what Mr. Hill said.*",
             background: "",
-        },        
+        },
+        redirectLink: "english-class.html"                        
     },
 
     englishClass: {
@@ -936,8 +943,8 @@ document.addEventListener("DOMContentLoaded", function () {
             background: "",
         },
         5: {
-            name: "Narrator",
-            text: "*Class: Silent*",
+            name: "Class",
+            text: "*Silent*",
             background: "",
         },
         6: {
@@ -947,7 +954,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         7: {
             name: "Classmate",
-            text: "\"I think Andy will like to go first *giggles*\"",
+            text: "\"I think Andy would like to go first *giggles*\"",
             background: "",
         },
         8: {
@@ -996,8 +1003,8 @@ document.addEventListener("DOMContentLoaded", function () {
             background: "",
         },
         17: {
-            name: "Narrator",
-            text: "*Class: laughs*",
+            name: "Class",
+            text: "*Laughs*",
             background: "",
         },
         18: {
@@ -1037,7 +1044,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         25: {
             name: "Narrator",
-            text: "*KABOOM. A deafening crack echoed through the room as Andy’s experiment erupted in a flash of orange and white. The force rattled the windows, sending a shockwave of heat across his face. The class shrieked, diving under desks as a thick, acrid smoke filled the air.*",
+            text: "*KABOOM.* A deafening crack echoed through the room as Andy’s experiment erupted in a flash of orange and white. The force rattled the windows, sending a shockwave of heat across his face. The class shrieked, diving under desks as a thick, acrid smoke filled the air.*",
             background: "",
         },
         26: {
@@ -1104,7 +1111,8 @@ document.addEventListener("DOMContentLoaded", function () {
             name: "Doris",
             text: "Milk?",
             background: "",
-        }        
+        },
+        redirectLink: "milk-shortage.html"                
     },
 
     milkShortage: {
@@ -1183,7 +1191,8 @@ document.addEventListener("DOMContentLoaded", function () {
             name: "Doris",
             text: "\"Andy! Get back here now!\"",
             background: "",
-        },        
+        },
+        redirectLink: "stolen-milk.html"                
     },
 
     stolenMilk: {
@@ -1353,74 +1362,75 @@ document.addEventListener("DOMContentLoaded", function () {
             text: "\"Thanks.\"",
             background: "",
         },
+        //Achievement unlocked: Crafted with Care
         10: {
-            name: "Narrator",
-            text: "*Achievement unlocked: Crafted with Care*",
-            background: "",
-        },
-        11: {
             name: "Narrator",
             text: "*The bell rings and Erica follows Andy to witness his post-school activity, dumpster diving. He emerged victorious—WM total: 10—including the carton Erica had conveniently left in their usual spot.*",
             background: "",
         },
-        12: {
+        11: {
             name: "Erica",
             text: "\"You’re like a raccoon with a death wish.\"",
             background: "",
         },
-        13: {
+        12: {
             name: "Andy",
             text: "\"Death wish? I’ve been doing this for years now.\"",
             background: "",
         },
-        14: {
+        13: {
             name: "Erica",
             text: "\"Are you done now?\"",
             background: "",
         },
-        15: {
+        14: {
             name: "Andy",
             text: "\"Yeah, let's go home.\"",
             background: "",
         },
-        16: {
+        15: {
             name: "Narrator",
             text: "*As they walked home, the pavement beneath them spiderwebbed with cracks.*",
             background: "",
         },
-        17: {
+        16: {
             name: "Erica",
             text: "\"Uh… new sidewalk budget cuts?\"",
             background: "",
         },
-        18: {
+        17: {
             name: "Narrator",
             text: "*Andy kicked a pebble into the fissure. It didn’t hit bottom.*",
             background: "",
         },
-        19: {
+        18: {
             name: "Andy",
             text: "\"I didn’t hear it hit the bottom…\"",
             background: "",
         },
-        20: {
+        19: {
             name: "Erica",
             text: "\"Are your ears something else you need to get checked out too?\"",
             background: "",
         },
-        21: {
+        20: {
             name: "Andy",
             text: "\"I’m being serious!\"",
             background: "",
         },
-        22: {
+        21: {
             name: "Erica",
             text: "\"Hahaha ok I’ll see you later.\"",
             background: "",
         },
+        22: {
+            name: "Narrator",
+            text: "*Erica goes inside her house and Andy continues to walk home for another 2 minutes. Home sweet home. Andy barely made it inside before the earthquake hit—harder, longer. Picture frames rattled off walls as his milk cartons trembled in the fridge.*",
+            background: "",
+        },
         23: {
             name: "Narrator",
-            text: "*Erica goes inside her house and Andy continues to walk home for another 2 minutes. Home sweet home. Andy barely made it inside before the earthquake hit—harder, longer. Picture frames rattled off walls as his milk cartons trembled in the fridge. Then, the dogs. Every breed, every size, bolting down the street in a frenzied stampede. A poodle wearing a diamond collar nearly took him out at the knees.*",
+            text: "*Then, the dogs. Every breed, every size, bolting down the street in a frenzied stampede. A poodle wearing a diamond collar nearly took him out at the knees.*",
             background: "",
         },
         24: {
@@ -1478,53 +1488,44 @@ document.addEventListener("DOMContentLoaded", function () {
             text: "+3 King-Sized Hershey Bars (emergency rations)\n+2 Bottled Waters (for mixing with milk, obviously)\n+4 Rolls of TP (because chaos demands pettiness)",
             background: "",
         },
+        // Achievement unlocked: Looting
         35: {
-            name: "Narrator",
-            text: "*Achievement unlocked: Looting*",
-            background: "",
-        },
-        //Achievement unlocked: Looting
-        36: {
             name: "Narrator",
             text: "*After his looting, he detoured to Mr. Hankey’s house—his math teacher, the tyrant of statistics—and TP’d it into a mummy’s tomb.*",
             background: "",
         },
-        37: {
+        36: {
             name: "Andy",
             text: "\"This… this is for the test.\"",
             background: "",
         },
-        38: {
-            name: "Narrator",
-            text: "*Achievement unlocked: I would do that too but I dont have TP money*",
-            background: "",
-        },
-        //Achievement unlocked: I would do that too but I dont have TP money
-        39: {
+        // Achievement unlocked: I would do that too but I dont have TP money
+        37: {
             name: "Narrator",
             text: "*Uncle Dave’s house was next. Andy ransacked the fridge.*",
             background: "",
         },
-        40: {
+        38: {
             name: "Narrator",
             text: "+1 gallon of milk",
             background: "",
         },
-        41: {
+        39: {
             name: "Narrator",
             text: "*The news blared: the black hole was closer. He peeked outside. The horizon bent as trees leaned toward it.*",
             background: "",
         },
-        42: {
+        40: {
             name: "Andy",
             text: "\"…I gotta go check this out.\"",
             background: "",
         },
-        43: {
+        41: {
             name: "Narrator",
             text: "*Andy goes outside to confirm and:*",
             background: "",
         },        
+        redirectLink: "andys-end.html"                
     },
 
     andysEnd: {
@@ -1736,6 +1737,49 @@ document.addEventListener("DOMContentLoaded", function () {
 
             nameElement.textContent = name;
             document.body.style.backgroundImage = `url('${background}?v=${new Date().getTime()}')`;
+
+
+//add acheivements here
+
+             const achievement1Container = document.getElementById("achievement1-container");
+
+             if (achievement1Container) {
+                 if (currentSceneNumber === 4) {
+                    achievement1Container.style.display = "block";
+                 } else {
+                    achievement1Container.style.display = "none";
+                 }
+            }
+
+            const achievement2Container = document.getElementById("achievement2-container");
+
+            if (achievement2Container) {
+                if (currentSceneNumber === 9) {
+                   achievement2Container.style.display = "block";
+                } else {
+                   achievement2Container.style.display = "none";
+                }
+           }
+
+           const achievement3Container = document.getElementById("achievement3-container");
+
+           if (achievement3Container) {
+               if (currentSceneNumber === 34) {
+                  achievement3Container.style.display = "block";
+               } else {
+                  achievement3Container.style.display = "none";
+               }
+          }
+
+          const achievement4Container = document.getElementById("achievement4-container");
+
+          if (achievement4Container) {
+              if (currentSceneNumber === 36) {
+                 achievement4Container.style.display = "block";
+              } else {
+                 achievement4Container.style.display = "none";
+              }
+         }
 
             if (typeof text === 'object') {
                 typeWriterText(text);
