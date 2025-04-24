@@ -25,6 +25,9 @@ body{
     transition: opacity 0.5s ease-in;
 }
 
+body{
+    overflow-y: scroll;
+}
 
 p {
     color: black;
