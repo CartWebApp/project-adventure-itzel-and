@@ -6,6 +6,14 @@ document.addEventListener("DOMContentLoaded", function () {
     function toKebabCase(str) {
         return str.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase();
     }
+    function preloadImages(sceneSetName, startSceneNumber, count = 2) {
+        const folderPath = `../../../../background-imgs/${sceneSetName}/`;
+        for (let i = 1; i <= count; i++) {
+            const sceneNum = startSceneNumber + i;
+            const preloadImg = new Image();
+            preloadImg.src = `${folderPath}${sceneNum}.png`;
+        }
+    }
     
     function updateBackground(sceneSetName, sceneNumber) {
         const folderPath = `../../../../background-imgs/${sceneSetName}/`;  // dynamically use the data-path value
@@ -5588,6 +5596,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
             nameElement.textContent = name;
             updateBackground(sceneSetName, currentSceneNumber);
+            preloadImages(sceneSetName, currentSceneNumber, 2);
+
             if (typeof text === 'object') {
                 typeWriterText(text);
             } else {

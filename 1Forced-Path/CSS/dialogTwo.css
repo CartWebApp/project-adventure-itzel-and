@@ -7,6 +7,10 @@
     font-family: "Shantell Sans", cursive;
 }
 
+body{
+    overflow-y: scroll;
+}
+
 /* Fade In / Out Effect */
 .fade-out {
     opacity: 0;
