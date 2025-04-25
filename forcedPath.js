@@ -2827,7 +2827,7 @@ document.addEventListener("DOMContentLoaded", function () {
             redirectLink: "nicole-shows-up.html"
         },
 
-        theAmazingWorldOfGumballSecretJoe: /*havent tested yet*/{
+        theAmazingWorldOfGumballSecretJoe:{
             1: {
                 name: "Andy",
                 text: "Woah, what's going on?",
