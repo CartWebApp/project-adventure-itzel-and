@@ -40,10 +40,11 @@
 
     .background-loop {
       width: 400vw;
+      min-width: 100vw;
       height: 100vh;
       background-image: url('intro/images/game-background.png');
       background-repeat: repeat;
-      background-size: cover;
+      background-size: contain;
       background-position: top left;
     }
 
@@ -199,15 +200,131 @@
     }
   }
 
-  /*landscape mobile*/
-  @media (max-height: 900px) {
+  /*landscape mode mobile*/
+  @media (max-height: 900px) and (orientation: landscape) {
     .game-title {
       width: 40vw;
     }
 
     #startButton {
       padding: 1vw 3vw;
+      font-size: 1.5vw;
+    }
+
+    .bottom-gif img {
+      width: 10vw;
+    }
+
+    .title-container {
+      top: 20%;
+    }
+    .background-wrapper {
+      width: 2000vw;
+      height: 100%;
+      animation: scrollBackground 30s linear infinite;
+    }
+
+    .background-loop {
+      width: 2000vw;
+      height: 100%;
+    }
+  }
+
+  @media (max-height: 800px) and (orientation: landscape) {
+    .game-title {
+      width: 40vw;
+    }
+
+    #startButton {
+      padding: 1vw 3vw;
+      font-size: 1.5vw;
+    }
+
+    .bottom-gif img {
+      width: 15vw;
+    }
+
+    .title-container {
+      top: 20%;
+    }
+    .background-wrapper {
+      width: 2000vw;
+      height: 100%;
+      animation: scrollBackground 30s linear infinite;
+    }
+
+    .background-loop {
+      width: 2000vw;
+      height: 100%;
+    }
+  }
+
+  @media (max-height: 700px) and (orientation: landscape) {
+    .game-title {
+      width: 50vw;
+    }
+
+    #startButton {
+      padding: 1vw 3vw;
       font-size: 2vw;
+    }
+
+    .bottom-gif img {
+      width: 17vw;
+    }
+
+    .title-container {
+      top: 20%;
+    }
+    .background-wrapper {
+      width: 2000vw;
+      height: 100%;
+      animation: scrollBackground 30s linear infinite;
+    }
+
+    .background-loop {
+      width: 2000vw;
+      height: 100%;
+    }
+  }
+
+  @media (max-height: 600px) and (orientation: landscape) {
+    .game-title {
+      width: 50vw;
+    }
+
+    #startButton {
+      padding: 1vw 3vw;
+      font-size: 2vw;
+    }
+
+    .bottom-gif img {
+      width: 17vw;
+    }
+
+    .title-container {
+      top: 20%;
+    }
+    .background-wrapper {
+      width: 2000vw;
+      height: 100%;
+      animation: scrollBackground 30s linear infinite;
+    }
+
+    .background-loop {
+      width: 2000vw;
+      height: 100%;
+    }
+  }
+
+  @media (max-height: 500px) and (orientation: landscape) {
+    .game-title {
+      width: 40vw;
+    }
+
+    #startButton {
+      padding: 1vw 3vw;
+      font-size: 1.5vw;
     }
 
     .bottom-gif img {
@@ -220,6 +337,8 @@
     .background-wrapper {
       width: 2000vw;
       height: 100%;
+      animation: scrollBackground 30s linear infinite;
+
     }
 
     .background-loop {
@@ -227,7 +346,35 @@
       height: 100%;
     }
   }
-  /*fix the verical responsive design*/
+
+  @media (max-height: 400px) and (orientation: landscape) {
+    .game-title {
+      width: 35vw;
+    }
+
+    #startButton {
+      padding: 1vw 3vw;
+      font-size: 1.5vw;
+    }
+
+    .bottom-gif img {
+      width: 12vw;
+    }
+
+    .title-container {
+      top: 20%;
+    }
+    .background-wrapper {
+      width: 2000vw;
+      height: 100%;
+      animation: scrollBackground 30s linear infinite;
+    }
+
+    .background-loop {
+      width: 2000vw;
+      height: 100%;
+    }
+  }
   </style>
 <body>
     <div class="background-wrapper">
