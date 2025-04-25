@@ -73,3 +73,47 @@ p {
     0%, 100% { opacity: 1; }
     50% { opacity: 0; }
 }
+
+
+
+
+
+
+
+
+
+
+#character-description,
+#character-description2,
+#character-description3 {
+    max-height: 30vh; /* adjusts height relative to screen size */
+    overflow-y: auto; /* enables scrolling if content is too tall */
+    padding-bottom: 1em; /* gives breathing room at the bottom */
+    box-sizing: border-box;
+    word-break: break-word;
+}
+
+/* Optional: prevent content from touching the edge on small screens */
+@media (max-width: 600px) {
+    #character-description,
+    #character-description2,
+    #character-description3 {
+        padding: 1em;
+        font-size: 1rem;
+    }
+}
+
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: flex-end; /* push dialog box to bottom */
+}

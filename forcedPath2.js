@@ -1798,3 +1798,7 @@ document.addEventListener("DOMContentLoaded", function () {
         typeWriterText({ dialog: text });
     }
 });
+
+window.addEventListener("resize", () => {
+    document.body.style.height = window.innerHeight + "px";
+});
