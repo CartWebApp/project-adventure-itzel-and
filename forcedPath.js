@@ -11,13 +11,13 @@ document.addEventListener("DOMContentLoaded", function () {
         for (let i = 1; i <= count; i++) {
             const sceneNum = startSceneNumber + i;
             const preloadImg = new Image();
-            preloadImg.src = `${folderPath}${sceneNum}.png`;
+            preloadImg.src = `${folderPath}${sceneNum}.webp`;
         }
     }
     
     function updateBackground(sceneSetName, sceneNumber) {
         const folderPath = `../../../../background-imgs/${sceneSetName}/`;  // dynamically use the data-path value
-        const imgPath = `${folderPath}${sceneNumber}.png?v=${new Date().getTime()}`;
+        const imgPath = `${folderPath}${sceneNumber}.webp?v=${new Date().getTime()}`;
     
         console.log("Attempting to load image from path:", imgPath);
     
@@ -5669,3 +5669,64 @@ document.addEventListener("DOMContentLoaded", function () {
 window.addEventListener("resize", () => {
     document.body.style.height = window.innerHeight + "px";
 });
+
+
+
+
+
+
+
+// loading the images before the user sees them
+
+function preloadAllSceneImages(sceneSetName, onComplete) {
+    if (!sceneSetName) {
+        console.error('sceneSetName is required');
+        return;
+    }
+
+    const folderPath = `../../../../background-imgs/${sceneSetName}/`;
+    let sceneNumber = 1;
+    let totalImagesPreloaded = 0;
+    const loadedImages = new Set(); // Track loaded images to avoid duplicates
+
+    function loadNext() {
+        const imgPath = `${folderPath}${sceneNumber}.webp`;
+
+        if (loadedImages.has(imgPath)) {
+            sceneNumber++;
+            loadNext(); // Skip already loaded images
+            return;
+        }
+
+        const img = new Image();
+        img.onload = () => {
+            console.log(`[Preloading] Loaded: ${imgPath}`); // Log each image being preloaded
+            loadedImages.add(imgPath);
+            totalImagesPreloaded++;
+            sceneNumber++;
+            loadNext(); // Load the next image in this set
+        };
+
+        img.onerror = () => {
+            console.error(`[Error] Failed to load: ${imgPath}`); // Log error if image fails to load
+            sceneNumber++;
+            loadNext(); // Continue to next image
+        };
+
+        img.src = imgPath;
+    }
+
+    loadNext(); // Start loading images for the first scene
+
+    // If preload is complete, execute the onComplete callback (if provided)
+    const checkIfComplete = setInterval(() => {
+        if (loadedImages.size > 0 && loadedImages.size === totalImagesPreloaded) {
+            clearInterval(checkIfComplete); // Stop checking once all images are loaded
+            console.log(`[Preload Complete] Scene Set: "${sceneSetName}", Total images preloaded: ${totalImagesPreloaded}`);
+            if (onComplete) onComplete(); // Call the onComplete callback if provided
+        }
+    }, 100);
+}
+
+
+
