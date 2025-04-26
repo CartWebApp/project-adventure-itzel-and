@@ -6,6 +6,14 @@ document.addEventListener("DOMContentLoaded", function () {
     function toKebabCase(str) {
         return str.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase();
     }
+    function preloadImages(sceneSetName, startSceneNumber, count = 2) {
+        const folderPath = `../../../../background-imgs/${sceneSetName}/`;
+        for (let i = 1; i <= count; i++) {
+            const sceneNum = startSceneNumber + i;
+            const preloadImg = new Image();
+            preloadImg.src = `${folderPath}${sceneNum}.png`;
+        }
+    }
     
     function updateBackground(sceneSetName, sceneNumber) {
         const folderPath = `../../../../background-imgs/${sceneSetName}/`;  // dynamically use the data-path value
@@ -133,7 +141,7 @@ document.addEventListener("DOMContentLoaded", function () {
         forcedPath: /*re-do the images for this one... check if it ligns up or not*/{
             1: {
                 name: "Narrator", 
-                text: "Andy is a senior in high school who is a 5’ 2” short king who is antisocial, not strong or brave, gets picked on easily, and is not very smart. Alright, we’ll just stop there. There is no need to keep bashing the main character. Just see for yourself.",
+                text: "Andys is a senior in high school who is a 5’ 2” short king who is antisocial, not strong or brave, gets picked on easily, and is not very smart. Alright, we’ll just stop there. There is no need to keep bashing the main character. Just see for yourself.",
                 background: "../../../assets/forced-begining/ss.webp",
             },
             "2": {
@@ -2717,7 +2725,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 background: "",
             },
             3: {
-                name: "Achievement",
+                name: "Narrator",
                 text: "Achievement unlocked: Useless Trophy",
                 background: "",
             },
@@ -2819,7 +2827,7 @@ document.addEventListener("DOMContentLoaded", function () {
             redirectLink: "nicole-shows-up.html"
         },
 
-        theAmazingWorldOfGumballSecretJoe: /*havent tested yet*/{
+        theAmazingWorldOfGumballSecretJoe:{
             1: {
                 name: "Andy",
                 text: "Woah, what's going on?",
@@ -3181,7 +3189,7 @@ document.addEventListener("DOMContentLoaded", function () {
         theAmazingWorldOfGumballGivesCentarAnnoyingOrange: {
             1: {
                 name: "Narrator",
-                text: "You give the centar the ‘Annoying Orange",
+                text: "You give the centar the ‘Annoying Orange'",
                 background: "",
             },
             2: {
@@ -3201,7 +3209,7 @@ document.addEventListener("DOMContentLoaded", function () {
             },
             5: {
                 name: "Narrator",
-                text: "Taste the Rainbow Achievement",
+                text: "Achievement unlocked: Taste the Rainbow",
                 background: "",
             },
             redirectLink: "you-see-molly.html"
@@ -5588,6 +5596,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
             nameElement.textContent = name;
             updateBackground(sceneSetName, currentSceneNumber);
+            preloadImages(sceneSetName, currentSceneNumber, 2);
+
             if (typeof text === 'object') {
                 typeWriterText(text);
             } else {
@@ -5596,7 +5606,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
              //THIS WILL HELP IZZY A LOT
              // 👇 Only show button on scene 3
-             const buttonContainer = document.getElementById("scene-button-container");
+            const buttonContainer = document.getElementById("scene-button-container");
             const bookImage = document.getElementById("book");
             const rope = document.getElementById("rope");
 
@@ -5612,6 +5622,35 @@ document.addEventListener("DOMContentLoaded", function () {
                 rope.style.display = (currentSceneNumber === 2) ? "block" : "none";
             }
 
+            //add acheivements here
+            const achievement1Container = document.getElementById("achievement1-container");
+
+            if (achievement1Container) {
+                if (currentSceneNumber === 3) {
+                   achievement1Container.style.display = "block";
+                } else {
+                   achievement1Container.style.display = "none";
+                }
+           }
+           const achievement2Container = document.getElementById("achievement2-container");
+
+           if (achievement2Container) {
+               if (currentSceneNumber === 3) {
+                  achievement2Container.style.display = "block";
+               } else {
+                  achievement2Container.style.display = "none";
+               }
+          }
+          const achievement3Container = document.getElementById("achievement3-container");
+
+          if (achievement3Container) {
+              if (currentSceneNumber === 5) {
+                 achievement3Container.style.display = "block";
+              } else {
+                 achievement3Container.style.display = "none";
+              }
+         }
+
         }
     }
 
@@ -5623,4 +5662,10 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
         typeWriterText({ dialog: text });
     }
+});
+
+// in hopes this will make the mobile part not have overflowing text
+
+window.addEventListener("resize", () => {
+    document.body.style.height = window.innerHeight + "px";
 });

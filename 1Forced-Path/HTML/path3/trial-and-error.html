@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Multiverse Paradox</title>
     <link rel="stylesheet" href="../../CSS/dialogOne.css">
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
     <style>
         body{
             background-image: url();
@@ -17,10 +18,44 @@
             overflow: hidden;
         }
        
-        
+        #achievement-title{
+            background-color: none;
+            color: #FFF200;
+            border: none;
+            width: 100%;
+            font-family: "Jersey 10", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 2.5vw;
+            text-align: center;
+        }
+
+        #achievement3-container{
+            display: flex;
+            justify-content: center;
+            padding: 1%;
+            animation: bounce 2s infinite;
+        }
+
+        #achievement3-container{
+            display: none;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+              transform: translateY(0);
+            }
+            50% {
+              transform: translateY(-0.8rem);
+            }
+        }
+
     </style>
 </head>
 <body data-path="trialAndError" data-scene="1">
+    <div id="achievement3-container">
+        <p id="achievement-title">Achievement unlocked: Professional Failure</p>
+    </div>
     <div class="container">
         <div class="name"><p></p></div>
             <div class="containerfp one">
@@ -34,6 +69,20 @@
 </html>
 
 
-<script src="../../../forcedPath3.js"></script> <!--exicutes all the scripts-->
+<script src="/forcedPath3.js"></script> <!--exicutes all the scripts-->
 <!-- <script src="../js/nextPage.js"></script> goes to the next page -->
-<script src="../../../js/fadeIn.js"></script> <!--ensures the text in js loads before the typewriter works-->
+<script src="../../js/fadeIn.js"></script> <!--ensures the text in js loads before the typewriter works-->
+<script>
+    function unlockAchievement(name) {
+        let achievements = JSON.parse(localStorage.getItem("achievements")) || [];
+        if (!achievements.includes(name)) {
+            achievements.push(name);
+            localStorage.setItem("achievements", JSON.stringify(achievements));
+            // Optional: Display popup or message
+            console.log(`🏆 Achievement Unlocked: ${name}`);
+        }
+    }
+    
+    // Example: unlock one
+    unlockAchievement("Professional Failure");
+</script>

@@ -111,50 +111,61 @@ document.addEventListener("DOMContentLoaded", function () {
             },
             22: {
                 name: "Narrator",
-                text: "*Andy gives up and bubbles in A for all of the answers on his scantron. Andy stands up and turns in his test at the front of the class and sits back down. He puts his head on the desk and sleeps for the rest of the period. The bell rings and Andy takes his backpack to go to his next class. As Andy was about to leave, Mr. Hankey stopped him.*",
+                text: "*Andy gives up and bubbles in A for all of the answers on his scantron. Andy stands up and turns in his test at the front of the class and sits back down.*",
                 background: "",
             },
             23: {
+                name: "Narrator",
+                text: "*He puts his head on the desk and sleeps for the rest of the period. The bell rings and Andy takes his backpack to go to his next class. As Andy was about to leave, Mr. Hankey stopped him.*",
+                background: "",
+            },
+            24: {
                 name: "Mr. Hanky",
                 text: "\"Did you even study for the test?\"",
                 background: "",
             },
-            24: {
+            25: {
                 name: "Andy",
                 text: "\"Yeah, I just got distracted by the noises outside. The birds and stuff ya know?\"",
                 background: "",
             },
-            25: {
+            26: {
                 name: "Mr. Hanky",
                 text: "\"... just leave my class.\"",
                 background: "",
             },
-            26: {
+            27: {
                 name: "Narrator",
                 text: "*Following Andy through his other classes is pointless. He just dozes off and doesn’t do any of his work, so let’s skip to his favorite part of the day, lunch.*",
                 background: "",
             },
-            27: {
-                name: "Narrator",
-                text: "*Andy finds his usual spot outside to eat his lunch. He sits down, criss crossed on the concrete and chugs 4 of the 8 cartons of white milk he got from the cafeteria. As he was about to eat his lunch, Andy noticed some cracks forming in the cement near him. He watched, chewing slowly, as the cracks deepened ever so slightly.*",
-                background: "",
-            },
             28: {
-                name: "Andy",
-                text: "\"Huh. Weird…\"",
+                name: "Narrator",
+                text: "*Andy finds his usual spot outside to eat his lunch. He sits down, criss crossed on the concrete and chugs 4 of the 8 cartons of white milk he got from the cafeteria.*",
                 background: "",
             },
             29: {
                 name: "Narrator",
-                text: "*Andy drifted his eyes upward, the sky was crowded. More planes than he’d ever seen. Jets screamed past in formation, their afterburners painting streaks across the horizon.*",
+                text: "*As he was about to eat his lunch, Andy noticed some cracks forming in the cement near him. He watched, chewing slowly, as the cracks deepened ever so slightly.*",
                 background: "",
             },
             30: {
                 name: "Andy",
-                text: "\"Must be some airshow…\"",
+                text: "\"Huh. Weird…\"",
                 background: "",
             },
-            //Achievement unlocked: Master observer            
+            31: {
+                name: "Narrator",
+                text: "*Andy drifted his eyes upward, the sky was crowded. More planes than he’d ever seen. Jets screamed past in formation, their afterburners painting streaks across the horizon.*",
+                background: "",
+            },
+            32: {
+                name: "Andy",
+                text: "\"Must be some airshow…\"",
+                background: "",
+            },            
+            //Achievement unlocked: Master observer
+            redirectLink: "derik-regular-show.html"                    
         },
 
         derikRegularShow: {
@@ -170,84 +181,90 @@ document.addEventListener("DOMContentLoaded", function () {
             },
             3: {
                 name: "Narrator",
-                text: "*He finds himself in a strange, dimly lit cavernous space filled with pulsing machinery, blinking lights, and swirling portals projected on tall, jagged walls. Strange cables snake across the floor like vines, and distant echoes of mechanical grinding bounce off the steel ceiling. It feels like a villain's lair straight out of a Saturday morning cartoon.*",
+                text: "*He finds himself in a strange, dimly lit cavernous space filled with pulsing machinery, blinking lights, and swirling portals projected on tall, jagged walls.*",
                 background: "",
             },
             4: {
+                name: "Narrator",
+                text: "*Strange cables snake across the floor like vines, and distant echoes of mechanical grinding bounce off the steel ceiling. It feels like a villain's lair straight out of a Saturday morning cartoon.*",
+                background: "",
+            },
+            5: {
                 name: "Gean",
                 text: "\"On your feet dimwit!\"",
                 background: "",
             },
-            5: {
+            6: {
                 name: "Derik",
                 text: "\"Wha… What is this place?\"",
                 background: "",
             },
-            6: {
+            7: {
                 name: "Gean",
                 text: "\"This is my base that you just so happened to bust into, Gene Base.\"",
                 background: "",
             },
-            7: {
+            8: {
                 name: "Derik",
                 text: "\"Gene Base? Pffft what kind of name is that?\"",
                 background: "",
             },
-            8: {
+            9: {
                 name: "Gean",
                 text: "\"Shut up, you’ll regret saying that…\"",
                 background: "",
             },
-            9: {
+            10: {
                 name: "Derik",
                 text: "\"Oh really? Show me.\"",
                 background: "",
             },
-            10: {
+            11: {
                 name: "Narrator",
                 text: "*Gean clenches his fist and slams it into a metal pillar, instantly denting it with a deafening crunch. Sparks fly. Derik flinches.*",
                 background: "",
             },
-            11: {
+            12: {
                 name: "Derik",
                 text: "\"Ok I believe you. What do you want from me?\"",
                 background: "",
             },
-            12: {
+            13: {
                 name: "Gean",
                 text: "\"Good, I only need you for one thing. You help me build my teleporter and I can bring you back home.\"",
                 background: "",
             },
-            13: {
+            14: {
                 name: "Derik",
                 text: "\"How can I trust you?\"",
                 background: "",
             },
-            14: {
+            15: {
                 name: "Gean",
                 text: "\"Easy, I have power!\"",
                 background: "",
             },
-            15: {
+            16: {
                 name: "Derik",
                 text: "\"ight, sounds reasonable. What do you need me to do, boss?\"",
                 background: "",
             },
-            16: {
+            17: {
                 name: "Gean",
                 text: "\"As I said before, I’m building a teleporter. With this, I’ll be able to travel to any universe and become the most powerful being ever!\"",
                 background: "",
             },
-            17: {
+            18: {
                 name: "Derik",
                 text: "\"Okayyyyy… and what do I do? Am I getting something out of this?\"",
                 background: "",
             },
-            18: {
+            19: {
                 name: "Gean",
                 text: "\"Hahaha of course not silly! Now go and get me 3 apple fritters, 1 feather from Mordecai, and 2 lollipops from Pop’s wallet.\"",
                 background: "",
             },            
+            redirectLink: "derik-task.html"                                
         },
 
         derikTask: {
@@ -319,7 +336,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 background: "",
             },
             //game over
-            redirectLink: "../game-over.html"
+            redirectLink: "../path1/start-and-end/game-end.html"
         },
 
         trialAndError: {
@@ -508,7 +525,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 name: "Narrator",
                 text: "*Derik hears the steps get closer and closer to him*",
                 background: "",
-            },            
+            },
+            redirectLink: "derik-hides.html"            
         },
 
         derikHides: {
@@ -629,6 +647,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 text: "*Muscle Man proceeds to rip the most earth-shaking fart of his life… you can feel the house getting unbolted and see the stench of green fog coming from his rear.*",
                 background: "",
             },
+            redirectLink: "survive-muscle-man.html"            
         },
 
         surviveMuscleMan: {
@@ -720,7 +739,7 @@ document.addEventListener("DOMContentLoaded", function () {
             },
             //Achievement unlocked: The Smell of Death
             //*Game Over: “I don’t feel like eating… for the rest of my life anymore. Thanks.
-            redirectLink: "../game-over.html"            
+            redirectLink: "../path1/start-and-end/game-end.html"
         },
 
         hideInGarage: {
@@ -846,136 +865,141 @@ document.addEventListener("DOMContentLoaded", function () {
             },
             25: {
                 name: "Narrator",
-                text: "*Derik’s eyes darted around the garage, searching for an escape that wasn’t there. The lock clicked. The door groaned open, flooding the dim space with blinding sunlight. Skips stood in the doorway, his massive frame blocking any hope of escape. His expression shifted from surprise to stern suspicion in an instant.*",
+                text: "*Derik’s eyes darted around the garage, searching for an escape that wasn’t there. The lock clicked. The door groaned open, flooding the dim space with blinding sunlight.*",
                 background: "",
             },
             26: {
+                name: "Narrator",
+                text: "*Skips stood in the doorway, his massive frame blocking any hope of escape. His expression shifted from surprise to stern suspicion in an instant.*",
+                background: "",
+            },
+            27: {
                 name: "Skips",
                 text: "\"What in the world…\"",
                 background: "",
             },
-            27: {
+            28: {
                 name: "Derik",
                 text: "\"I come in peace.\"",
                 background: "",
             },
-            28: {
+            29: {
                 name: "Narrator",
                 text: "*Skips’ eyes narrowed. He cracked his knuckles.*",
                 background: "",
             },
-            29: {
+            30: {
                 name: "Skips",
                 text: "\"Yeah? Then you won’t mind answering a few questions.\"",
                 background: "",
             },
-            30: {
+            31: {
                 name: "Narrator",
                 text: "*Derik swallowed hard. He had a bad feeling about this.*",
                 background: "",
             },
-            31: {
+            32: {
                 name: "Skips",
                 text: "\"Alright, kid. Start talking.\"",
                 background: "",
             },
-            32: {
+            33: {
                 name: "Derik",
                 text: "\"Uh… nice weather we’re having, huh?\"",
                 background: "",
             },
-            33: {
+            34: {
                 name: "Narrator",
                 text: "*Skips didn’t budge. His glare deepened.*",
                 background: "",
             },
-            34: {
+            35: {
                 name: "Skips",
                 text: "\"First question: What are you doing in our garage?\"",
                 background: "",
             },
-            35: {
+            36: {
                 name: "Derik",
                 text: "\"I was just, y’know… exploring?\"",
                 background: "",
             },
-            36: {
+            37: {
                 name: "Skips",
                 text: "\"Exploring. In a locked maintenance shed.\"",
                 background: "",
             },
-            37: {
+            38: {
                 name: "Derik",
                 text: "\"Okay, fine! I was hiding! Some guys were after me, and I panicked!\"",
                 background: "",
             },
-            38: {
+            39: {
                 name: "Skips",
                 text: "\"Second question: Did you touch anything in here?\"",
                 background: "",
             },
-            39: {
+            40: {
                 name: "Derik",
                 text: "\"No! I swear! I just stood here like a statue!\"",
                 background: "",
             },
-            40: {
+            41: {
                 name: "Narrator",
                 text: "*Skips’ eyes flicked to a suspiciously moved toolbox, then back to Derik.*",
                 background: "",
             },
-            41: {
+            42: {
                 name: "Skips",
                 text: "\"You’re lying.\"",
                 background: "",
             },
-            42: {
+            43: {
                 name: "Derik",
                 text: "\"Okay, okay! I knocked over a wrench, but I put it back!\"",
                 background: "",
             },
-            43: {
+            44: {
                 name: "Narrator",
                 text: "*Skips took a slow step forward. Derik instinctively backed up—only to bump into a shelf, sending a can of bolts clattering to the ground.*",
                 background: "",
             },
-            44: {
+            45: {
                 name: "Skips",
                 text: "\"Real smooth.\"",
                 background: "",
             },
-            45: {
+            46: {
                 name: "Derik",
                 text: "\"Look, I didn’t break anything! Just let me go, and I’ll never come back!\"",
                 background: "",
             },
-            46: {
+            47: {
                 name: "Skips",
                 text: "\"Final question: You ever heard the phrase ‘play stupid games, win stupid prizes’?\"",
                 background: "",
             },
-            47: {
+            48: {
                 name: "Derik",
                 text: "\"Uh… no?\"",
                 background: "",
             },
-            48: {
+            49: {
                 name: "Narrator",
                 text: "*Skips’ fist shot out like a piston.*",
                 background: "",
             },
-            49: {
+            50: {
                 name: "Derik",
                 text: "\"Ohhh, now I get it—\"",
                 background: "",
             },
-            50: {
+            51: {
                 name: "Narrator",
                 text: "*POW!*\n*Derik gets the ole one two by Skips.*",
                 background: "",
-            },
+            },            
             //*Game Over: insert coffin dancing meme here with sound... low quality
-            redirectLink: "../game-over.html"
+            redirectLink: "../path1/start-and-end/game-end.html"
         },
 
         hideInCloset: {
@@ -1013,7 +1037,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 name: "Narrator",
                 text: "*He bolted from the house, not bothering to close the door behind him. The park blurred past as he sprinted to get the other items, the stolen lollipops clutched tightly in his fist.*",
                 background: "",
-            },            
+            },
+            redirectLink: "geans-base.html"            
         },
 
         geansBase: {
@@ -1101,7 +1126,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 name: "Narrator",
                 text: "*His smirk faltered for a second. Then, a slow, wicked idea crept into his mind.*",
                 background: "",
-            },            
+            },
+            redirectLink: "derik-plan.html"                        
         },
 
         derikPlan: {
@@ -1197,7 +1223,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 background: "",
             },
             //*Game Over: “No mullet, no Jorts, no Sandwich *dies*”
-            redirectLink: "../game-over.html"
+            redirectLink: "../path1/start-and-end/game-end.html"
         },
 
         derikVillainCrew: {
@@ -1213,104 +1239,110 @@ document.addEventListener("DOMContentLoaded", function () {
             },
             3: {
                 name: "Narrator",
-                text: "*With a decisive press of a button, the teleporter whirred to life, and in a flash of light, Derik found himself back at the park—though he had no idea this was the show’s main setting. The sun hung high in the sky, the familiar green landscape stretching before him. His eyes locked onto a massive, muscular yeti pushing a lawnmower with effortless strength.*",
+                text: "*With a decisive press of a button, the teleporter whirred to life, and in a flash of light, Derik found himself back at the park—though he had no idea this was the show’s main setting.*",
                 background: "",
             },
             4: {
+                name: "Narrator",
+                text: "*The sun hung high in the sky, the familiar green landscape stretching before him. His eyes locked onto a massive, muscular yeti pushing a lawnmower with effortless strength.*",
+                background: "",
+            },
+            5: {
                 name: "Derik",
                 text: "\"Now there’s a guy who looks like he could wreck some stuff.\"",
                 background: "",
             },
-            5: {
+            6: {
                 name: "Narrator",
                 text: "*He strutted up to Skips, who barely glanced up from his work.*",
                 background: "",
             },
-            6: {
+            7: {
                 name: "Derik",
                 text: "\"Hey, big guy. How’d you like to join my villain crew? We’re gonna cause some real chaos.\"",
                 background: "",
             },
-            7: {
+            8: {
                 name: "Narrator",
                 text: "*Skips paused, slowly turning his head to stare at Derik with an unimpressed frown.*",
                 background: "",
             },
-            8: {
+            9: {
                 name: "Skips",
                 text: "\"Kid, I’ve been around long enough to know that never ends well. Walk away while you still can.\"",
                 background: "",
             },
-            9: {
+            10: {
                 name: "Derik",
                 text: "\"Yeah, yeah, moral high ground. Boring.\"",
                 background: "",
             },
-            10: {
+            11: {
                 name: "Narrator",
                 text: "*Skips sighed and resumed mowing, clearly done with the conversation. Derik shoved his hands in his pockets and walked off.*",
                 background: "",
             },
-            11: {
+            12: {
                 name: "Derik",
                 text: "\"Wasted potential…\"",
                 background: "",
             },
-            12: {
+            13: {
                 name: "Narrator",
                 text: "*Derik’s next stop was a cozy little coffee shop, its warm lighting and smell of roasted beans completely lost on him. Behind the counter stood Margaret, humming as she wiped down the espresso machine.*",
                 background: "",
             },
-            13: {
+            14: {
                 name: "Derik",
                 text: "\"Hey, you. Where do I find some real villains around here? Like, world-destroying types?\"",
                 background: "",
             },
-            14: {
+            15: {
                 name: "Narrator",
                 text: "*Margaret blinked, then let out a light laugh.*",
                 background: "",
             },
-            15: {
+            16: {
                 name: "Margaret",
                 text: "\"Wow, that sounds like something straight out of a cheesy video game.\"",
                 background: "",
             },
-            16: {
+            17: {
                 name: "Narrator",
                 text: "*She gestured to the back of the shop, where a glowing arcade game stood surrounded by a crowd of kids.*",
                 background: "",
             },
-            17: {
+            18: {
                 name: "Margaret",
                 text: "\"You should try that new game, it’s super popular. The villain in it is literally called the 'Destroyer of Worlds.' Maybe that’ll scratch your evil itch?\"",
                 background: "",
             },
-            18: {
+            19: {
                 name: "Derik",
                 text: "\"Pfft. Gaming’s for nerds.\"",
                 background: "",
             },
-            19: {
+            20: {
                 name: "Narrator",
                 text: "*But as he turned to leave, his gaze snagged on the screen. A red pixelated monstrosity with glowing eyes dominated the game’s boss battle. Derik’s eyes widened.*",
                 background: "",
             },
-            20: {
+            21: {
                 name: "Derik",
                 text: "\"Okay… maybe that’s kinda cool.\"",
                 background: "",
             },
-            21: {
+            22: {
                 name: "Narrator",
                 text: "*Just then, the machine sputtered, the screen glitching violently before going black. The kids groaned and dispersed, leaving the cabinet dark and silent.*",
                 background: "",
             },
-            22: {
+            23: {
                 name: "Narrator",
                 text: "*Derik waited until the last kid was gone before creeping up to the machine. The \"OUT OF ORDER\" sign hung crookedly. With a smirk, he crouched down and popped open the control panel, revealing a mess of wires… including two loose ones, one red, one blue.*",
                 background: "",
             },            
+            redirectLink: "fix-arcade-machine.html"          
         },
 
         fixArcadeMachine: {
@@ -1396,7 +1428,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 background: "",
             },
             //*Game Over: “your phone is fully charged... and now so are you”
-            redirectLink: "../game-over.html"
+            redirectLink: "../path1/start-and-end/game-end.html"
         },
 
         scienceExperiment: {
@@ -1412,44 +1444,50 @@ document.addEventListener("DOMContentLoaded", function () {
             },
             3: {
                 name: "Narrator",
-                text: "*He grabbed the wires and jammed them together.*\n*ZZZZZZAP!*\n*A surge of energy blasted him backward, sending him crashing into the wall. The arcade machine roared to life, its screen flashing violently before the pixelated Destroyer of Worlds suddenly leaned out of the screen, its glowing eyes locking onto Derik.*",
+                text: "*He grabbed the wires and jammed them together.*\n*ZZZZZZAP!*\n*A surge of energy blasted him backward, sending him crashing into the wall.*",
                 background: "",
             },
             4: {
+                name: "Narrator",
+                text: "*The arcade machine roared to life, its screen flashing violently before the pixelated Destroyer of Worlds suddenly leaned out of the screen, its glowing eyes locking onto Derik.*",
+                background: "",
+            },
+            5: {
                 name: "Destroyer of Worlds",
                 text: "\"Free... after 12,780 game overs.\"",
                 background: "",
             },
-            5: {
+            6: {
                 name: "Narrator",
                 text: "*Derik scrambled to his feet, eyes wide with awe… not fear. He brushed off his jacket with a grin.*",
                 background: "",
             },
-            6: {
+            7: {
                 name: "Derik",
                 text: "\"Dude. That. Was. AWESOME. Name's Derik. I'm putting together a crew to wreck this cartoon world, and you? You're exactly what I need.\"",
                 background: "",
             },
-            7: {
+            8: {
                 name: "Narrator",
                 text: "*The Destroyer's glowing eyes narrowed, studying Derik. Then, to everyone's surprise, he let out a booming laugh that rattled the coffee mugs.*",
                 background: "",
             },
-            8: {
+            9: {
                 name: "Destroyer of Worlds",
                 text: "\"You freed me from my prison, mortal. For that... I owe you a debt… name your terms.\"",
                 background: "",
             },
-            9: {
+            10: {
                 name: "Derik",
                 text: "\"Alright, first—we need more firepower. You gotta know some other villains trapped in dumb places like this, right?\"",
                 background: "",
             },
-            10: {
+            11: {
                 name: "Destroyer of Worlds",
                 text: "\"I know a guy.\"",
                 background: "",
             },            
+            redirectLink: "andy-school.html"            
         },
 
         andySchool: {
@@ -1475,19 +1513,25 @@ document.addEventListener("DOMContentLoaded", function () {
             },
             5: {
                 name: "Narrator",
-                text: "*He wiped his hands on his jeans and cautiously approached the anomaly. The closer he got, the more the air buzzed with static, making the hairs on his arms stand up. Then—*\n*FWIP!*\n*A red-and-blue blur shot out of the rift, landing in a perfect crouch right in front of him. The figure straightened up, revealing the unmistakable web-patterned suit and white lenses of Spider-Man.*",
+                text: "*He wiped his hands on his jeans and cautiously approached the anomaly. The closer he got, the more the air buzzed with static, making the hairs on his arms stand up. Then—*\n*FWIP!*\n*A red-and-blue blur shot out of the rift, landing in a perfect crouch right in front of him.*",
                 background: "",
             },
             6: {
+                name: "Narrator",
+                text: "*The figure straightened up, revealing the unmistakable web-patterned suit and white lenses of Spider-Man.*",
+                background: "",
+            },
+            7: {
                 name: "Spider-Man",
                 text: "\"Whoa. Okay, definitely not Queens. Kid, where am I?\"",
                 background: "",
             },
-            7: {
+            8: {
                 name: "Narrator",
                 text: "*Andy's brain short-circuited. His mouth opened, but all that came out was:*",
                 background: "",
-            },            
+            },
+            redirectLink: "andy-spiderman.html"                        
         },
 
         andySpiderman: {
@@ -1555,54 +1599,60 @@ document.addEventListener("DOMContentLoaded", function () {
             //Achievement unlocked: Successful Fanboy
             6: {
                 name: "Narrator",
-                text: "*BRRRRMMMM!*\n*Another rift tore open beside them, this one spitting out the deafening roar of an engine. A sleek, black 1970 Dodge Charger rocketed through at full speed, tires screeching as it executed a perfect 180-degree drift, kicking up a cloud of smoke and asphalt. The car stopped inches from Andy and Spider-Man, who both instinctively jumped back.*",
+                text: "*BRRRRMMMM!*\n*Another rift tore open beside them, this one spitting out the deafening roar of an engine. A sleek, black 1970 Dodge Charger rocketed through at full speed, tires screeching as it executed a perfect 180-degree drift, kicking up a cloud of smoke and asphalt.*",
                 background: "",
             },
             7: {
                 name: "Narrator",
-                text: "*The smoke cleared. The driver’s door creaked open, and out stepped Dominic Toretto, sunglasses glinting, arms crossed over his chest. He didn’t say a word. He didn’t need to.*",
+                text: "*The car stopped inches from Andy and Spider-Man, who both instinctively jumped back.*",
                 background: "",
             },
             8: {
+                name: "Narrator",
+                text: "*The smoke cleared. The driver’s door creaked open, and out stepped Dominic Toretto, sunglasses glinting, arms crossed over his chest. He didn’t say a word. He didn’t need to.*",
+                background: "",
+            },
+            9: {
                 name: "Spider-Man",
                 text: "\"Nice ride.\"",
                 background: "",
             },
-            9: {
+            10: {
                 name: "Narrator",
                 text: "*Andy, now completely overwhelmed, just pointed weakly between the two of them, jaw dropped to the floor.*",
                 background: "",
             },
-            10: {
+            11: {
                 name: "Narrator",
                 text: "*Dom gave a single nod.*",
                 background: "",
             },
-            11: {
+            12: {
                 name: "Dom",
                 text: "\"Thanks. But I need to get back to my race.\"",
                 background: "",
             },
-            12: {
+            13: {
                 name: "Spider-Man",
                 text: "\"Dude, same. I was mid-swing when this happened.\" (To Andy) \"Any idea how we got here?\"",
                 background: "",
             },
-            13: {
+            14: {
                 name: "Narrator",
                 text: "*Before Andy could even attempt to answer—*",
                 background: "",
             },
-            14: {
+            15: {
                 name: "Narrator",
                 text: "*CRACK!*\n*A third rift split the sky above them, glowing an ominous purple. The ground trembled. Spider-Man’s spidey-sense tingled violently. Dom’s engine revved on instinct.*",
                 background: "",
             },
-            15: {
+            16: {
                 name: "Narrator",
                 text: "*Something was coming.*",
                 background: "",
             },
+            redirectLink: "derik-coffee-shop.html"          
         },
 
         derikCoffeeShop: {
@@ -1670,7 +1720,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 name: "Anti-Pops",
                 text: "\"Prove you’re worth my time.\"",
                 background: "",
-            },            
+            },
+            redirectLink: "battle-anti-pops.html"                      
         },
 
         battleAntiPops: {
@@ -1806,7 +1857,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 name: "Narrator",
                 text: "*Derik interrupts:*",
                 background: "",
-            },            
+            },
+            redirectLink: "respond-to-lich.html"                                             
         },
 
         respondToLich: {
@@ -1837,7 +1889,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 background: "",
             },
             //Game Over: You would say that... wouldn't you?
-            redirectLink: "../game-over.html"
+            redirectLink: "../path1/start-and-end/game-end.html"
         },
 
         derikQuestion: {
@@ -1930,7 +1982,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 name: "Derik",
                 text: "\"Ohhhh this is gonna be good.\"",
                 background: "",
-            },            
+            },
+            redirectLink: "andy-minion.html"            
         },
 
         andyMinion: {
@@ -1938,7 +1991,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 name: "Narrator",
                 text: "Andy and Bob from the Minions seem to be having a casual conversation about:",
                 background: "",
-            },            
+            },
+            redirectLink: "minion-convo.html"                        
         },
 
         minionConvo: {
@@ -2060,9 +2114,15 @@ document.addEventListener("DOMContentLoaded", function () {
             },
             3: {
                 name: "Narrator",
-                text: "*With a dramatic flourish, Derik activated the teleporter. The world dissolved into streaks of neon light before reforming into the familiar sight of his school—though now bathed in an eerie green glow from the Lich's lingering influence. Derik struck a pose 40 feet from the entrance, ready to make his grand introduction.*",
+                text: "*With a dramatic flourish, Derik activated the teleporter. The world dissolved into streaks of neon light before reforming into the familiar sight of his school—though now bathed in an eerie green glow from the Lich's lingering influence.*",
                 background: "",
-            },            
+            },
+            4: {
+                name: "Narrator",
+                text: "*Derik struck a pose 40 feet from the entrance, ready to make his grand introduction.*",
+                background: "",
+            },
+            redirectLink: "derik-entrance.html"                                  
         },
 
         derikEntrance: {
@@ -2203,45 +2263,106 @@ document.addEventListener("DOMContentLoaded", function () {
                 background: "",
             },
             9: {
-                name: "Andy",
-                text: "\"Or that one over there!!!\"",
+                name: "JAE",
+                text: "\"yo yo whats up man what's happening in this homie?\"",
                 background: "",
             },
             10: {
-                name: "Narrator",
-                text: "*Itzel the Perfectionist was lecturing a powerless Thanos on proper gauntlet maintenance.*",
+                name: "Edger1",
+                text: "\"not much pluh got me my money?\"",
                 background: "",
             },
             11: {
-                name: "Andy",
-                text: "\"Look at this one!!!\"",
+                name: "JAE",
+                text: "\"listen man your money…*smacks lips* man. Iz izz Iz like not happening man\"",
                 background: "",
             },
             12: {
-                name: "Narrator",
-                text: "*Gru was mid-monologue about moon theft while Bob the Minion still waddled in circles, sobbing for his lost teddy.*",
+                name: "Edger2",
+                text: "\"aye. You better run me my money if chu know whats best for ya\"",
                 background: "",
             },
             13: {
-                name: "Andy",
-                text: "\"LOOK AT THEM! THIS IS OUR HOME!\"",
+                name: "JAE",
+                text: "\"Ye ye i know whachu mean big dawg but like…\" *whispers* \"man.\"",
                 background: "",
             },
             14: {
-                name: "Derik",
-                text: "\"Not anymore.\"",
+                name: "JAE",
+                text: "\"ima just be so fr i used it frfr man\"",
                 background: "",
             },
             15: {
-                name: "Narrator",
-                text: "*Behind them, the Lich raised a skeletal hand. The green glow intensified, spreading like a virus. Trees withered. Birds dropped mid-flight. The very air turned to poison.*",
+                name: "Edger1",
+                text: "\"used my money? On what\"",
                 background: "",
             },
             16: {
                 name: "Narrator",
+                text: "*Jeremy’s alter ego takes out a handkerchief to shine his watch*",
+                background: "",
+            },
+            17: {
+                name: "JAE",
+                text: "\"this ICED out watch man\"",
+                background: "",
+            },
+            18: {
+                name: "Narrator",
+                text: "*Zoom in on the Miku Nakano watch*",
+                background: "",
+            },
+            19: {
+                name: "Edger3",
+                text: "\"whats it homie, you’re done for…\"",
+                background: "",
+            },
+            20: {
+                name: "EdgerAll",
+                text: "\"GET HIM!\"",
+                background: "",
+            },
+            21: {
+                name: "Andy",
+                text: "\"Or that one over there!!!\"",
+                background: "",
+            },
+            22: {
+                name: "Narrator",
+                text: "*Itzel the Perfectionist was lecturing a powerless Thanos on proper gauntlet maintenance.*",
+                background: "",
+            },
+            23: {
+                name: "Andy",
+                text: "\"Look at this one!!!\"",
+                background: "",
+            },
+            24: {
+                name: "Narrator",
+                text: "*Gru was mid-monologue about moon theft while Bob the Minion still waddled in circles, sobbing for his lost teddy.*",
+                background: "",
+            },
+            25: {
+                name: "Andy",
+                text: "\"LOOK AT THEM! THIS IS OUR HOME!\"",
+                background: "",
+            },
+            26: {
+                name: "Derik",
+                text: "\"Not anymore.\"",
+                background: "",
+            },
+            27: {
+                name: "Narrator",
+                text: "*Behind them, the Lich raised a skeletal hand. The green glow intensified, spreading like a virus. Trees withered. Birds dropped mid-flight. The very air turned to poison.*",
+                background: "",
+            },
+            28: {
+                name: "Narrator",
                 text: "*And so, the Lich—being an immortal entity of pure destruction—successfully completed his plan. Everyone died. The end.*",
                 background: "",
             },            
+            redirectLink: "after-desctruction.html"                                             
         },
 
         //cut to black
@@ -2263,7 +2384,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 background: "",
             },
             //game end
-            redirectLink: "../game-over.html"            
+            redirectLink: "../path1/start-and-end/game-end.html"
         },
     }
 
@@ -2381,6 +2502,52 @@ document.addEventListener("DOMContentLoaded", function () {
             nameElement.textContent = name;
             document.body.style.backgroundImage = `url('${background}?v=${new Date().getTime()}')`;
 
+//add acheivements here
+const achievement1Container = document.getElementById("achievement1-container");
+if (achievement1Container) {
+    if (currentSceneNumber === 32) {
+       achievement1Container.style.display = "block";
+    } else {
+       achievement1Container.style.display = "none";
+    }
+}
+
+const achievement2Container = document.getElementById("achievement2-container");
+if (achievement2Container) {
+    if (currentSceneNumber === 6) {
+       achievement2Container.style.display = "block";
+    } else {
+       achievement2Container.style.display = "none";
+    }
+}
+
+const achievement3Container = document.getElementById("achievement3-container");
+if (achievement3Container) {
+    if (currentSceneNumber === 18) {
+       achievement3Container.style.display = "block";
+    } else {
+       achievement3Container.style.display = "none";
+    }
+}
+
+const achievement4Container = document.getElementById("achievement4-container");
+if (achievement4Container) {
+    if (currentSceneNumber === 1) {
+       achievement4Container.style.display = "block";
+    } else {
+       achievement4Container.style.display = "none";
+    }
+}
+
+const achievement5Container = document.getElementById("achievement5-container");
+if (achievement5Container) {
+    if (currentSceneNumber === 5) {
+       achievement5Container.style.display = "block";
+    } else {
+       achievement5Container.style.display = "none";
+    }
+}
+
             if (typeof text === 'object') {
                 typeWriterText(text);
             } else {
@@ -2397,4 +2564,8 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
         typeWriterText({ dialog: text });
     }
+});
+
+window.addEventListener("resize", () => {
+    document.body.style.height = window.innerHeight + "px";
 });
