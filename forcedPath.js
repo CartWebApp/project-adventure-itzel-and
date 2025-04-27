@@ -16,25 +16,61 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     
     function updateBackground(sceneSetName, sceneNumber) {
-        const folderPath = `../../../../background-imgs/${sceneSetName}/`;  // dynamically use the data-path value
-        const imgPath = `${folderPath}${sceneNumber}.webp?v=${new Date().getTime()}`;
+        const scene = currentSceneSet[sceneNumber];
+        const { background, backgroundType } = scene;
+        const folderPath = `../../../../background-imgs/${sceneSetName}/`;
     
-        console.log("Attempting to load image from path:", imgPath);
+        if (!background) {
+            // Auto-load image if no background manually specified
+            const imgPath = `${folderPath}${sceneNumber}.webp?v=${new Date().getTime()}`;
+            setBodyBackgroundImage(imgPath);
+        } else if (backgroundType === "video") {
+            setBodyBackgroundVideo(background);
+        } else {
+            setBodyBackgroundImage(background);
+        }
+    }
+    
+    function setBodyBackgroundImage(imgPath) {
+        removeVideoIfExists();
     
         document.body.style.backgroundImage = `url('${imgPath}')`;
         document.body.style.backgroundSize = "cover";
         document.body.style.backgroundPosition = "center";
         document.body.style.backgroundAttachment = "fixed";
-    
-        const img = new Image();
-        img.onload = function() {
-            console.log("Image loaded successfully!");
-        };
-        img.onerror = function() {
-            console.error("Error loading image:", imgPath);
-        };
-        img.src = imgPath;
     }
+    
+    function setBodyBackgroundVideo(videoPath) {
+        removeVideoIfExists();
+    
+        const video = document.createElement("video");
+        video.src = videoPath;
+        video.autoplay = true;
+        video.loop = true;
+        video.muted = true;
+        video.playsInline = true;
+        video.style.position = "fixed";
+        video.style.top = 0;
+        video.style.left = 0;
+        video.style.width = "100%";
+        video.style.height = "100%";
+        video.style.objectFit = "cover";
+        video.style.zIndex = "-1";
+    
+        video.setAttribute("id", "background-video");
+    
+        document.body.appendChild(video);
+    
+        document.body.style.backgroundImage = "none"; // remove background image
+    }
+    
+    function removeVideoIfExists() {
+        const existingVideo = document.getElementById("background-video");
+        if (existingVideo) {
+            existingVideo.remove();
+        }
+    }
+    
     
     
     
@@ -2516,7 +2552,8 @@ document.addEventListener("DOMContentLoaded", function () {
             1: {
                 name: "Narrator",
                 text: "What… What is this…? Wait… WE GET A REGULAR INTRO. WOOOO!!",
-                background: "",
+                background: "video.mp4",
+                backgroundType: "video",
             },
             2: {
                 name: "Andy",

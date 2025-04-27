@@ -17,6 +17,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      /* height: 1000vh; */ /*testing*/
     }
 
     h1 {
@@ -101,10 +102,32 @@
       pointer-events: none;
       opacity: 0.1;
     }
+    video{
+      position: fixed;
+      left: 5%;
+      top: 5%;
+      width: 20vw;
+      z-index: 1;
+      
+    }
+
   </style>
 </head>
 <body>
   <div class="sparkles"></div>
+  
+  <video id="myVideo" muted loop>
+    <source src="end-assets/vid.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <audio id="myAudio" autoplay loop>
+    <source src="end-assets/spongebob-end.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <button onclick="playBoth()">Play Video and Audio</button>
+
   <h1>Your Adventure Recap</h1>
   <ul id="recap"></ul>
 
@@ -114,7 +137,12 @@
   <h2 style="margin-top: 5vh;">Achievements</h2>
     <ul id="achievements"></ul>
 
-
+    <script>
+      function playBoth() {
+        document.getElementById('myVideo').play();
+        document.getElementById('myAudio').play();
+      }
+      </script>
   <script>
     const choices = JSON.parse(localStorage.getItem("playerChoices")) || [];
     const recapList = document.getElementById("recap");
