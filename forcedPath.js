@@ -2740,7 +2740,8 @@ document.addEventListener("DOMContentLoaded", function () {
             1: {
                 name: "Narrator",
                 text: "Oh yeah, cutscenes baby… we have budget cuts so this is what you are left with :(",
-                background: "",
+                backgroundType: "video",
+                background: "andy-walking.mp4",
             },
             2: {
                 name: "Narrator",
