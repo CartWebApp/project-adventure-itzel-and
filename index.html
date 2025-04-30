@@ -113,6 +113,8 @@
       max-width: 25rem; /* Caps size on very wide screens */
     }
 
+
+
     @media (max-width: 1024px) {
     .game-title {
       width: 80vw;
@@ -376,6 +378,39 @@
       height: 100%;
     }
   }
+
+  button#toggleButton{
+    position: absolute;
+    top: 2%;
+    left: 2%;
+    padding: 1vh 3vw;
+    border-radius: 1vw;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border: none;
+
+    font-size: 2vw;
+  }
+  .hidden-text{
+    font-size: 1.25vw;
+    position: absolute;
+    padding: 1vw;
+    border-radius: 1vw;
+    margin-top: 10vh;
+    background-color: black;
+    color: white;
+    width: 25vw;
+  }
+
+  #myText {
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+    #myText.visible {
+      opacity: 1;
+      visibility: visible;
+    }
   </style>
 <body>
     <div class="background-wrapper">
@@ -420,5 +455,25 @@
     </div> -->
 
 </body>
+<button id="toggleButton">Instructions</button>
+
+<div class="hidden-text" id="myText">
+  <p>This game features three distinct paths.
+    The first path is heavily based on cartoon references from 2011 to 2018, while the other two can be enjoyed without any prior knowledge.</p>
+  <p>Read the dialogue and click through the game.
+    Choose one of the three unique storylines each choice can drastically alter the ending.</p>
+</div>
+
+
+
 </html>
+
+<script>
+  const button = document.getElementById('toggleButton');
+  const text = document.getElementById('myText');
+
+  button.addEventListener('click', () => {
+    text.classList.toggle('visible');
+  });
+</script>
 <script src="1Forced-Path/js/icon.js"></script>
