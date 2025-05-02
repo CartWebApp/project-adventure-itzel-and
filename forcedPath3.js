@@ -1,6 +1,82 @@
 document.addEventListener("DOMContentLoaded", function () {
     let currentSceneNumber = 1;
 
+    const sceneSetName = document.body.dataset.path || 'forcedPath';
+
+    function toKebabCase(str) {
+        return str.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase();
+    }
+    function preloadImages(sceneSetName, startSceneNumber, count = 2) {
+        const folderPath = `../../../background-imgs3/${sceneSetName}/`;
+        for (let i = 1; i <= count; i++) {
+            const sceneNum = startSceneNumber + i;
+            const preloadImg = new Image();
+            preloadImg.src = `${folderPath}${sceneNum}.webp`;
+        }
+    }
+    
+    function updateBackground(sceneSetName, sceneNumber) {
+        const scene = currentSceneSet[sceneNumber];
+        const { background, backgroundType } = scene;
+        const folderPath = `../../../background-imgs3/${sceneSetName}/`;
+    
+        if (!background) {
+            // Auto-load image if no background manually specified
+            const imgPath = `${folderPath}${sceneNumber}.webp?v=${new Date().getTime()}`;
+            setBodyBackgroundImage(imgPath);
+        } else if (backgroundType === "video") {
+            setBodyBackgroundVideo(background);
+        } else {
+            setBodyBackgroundImage(background);
+        }
+    }
+    
+    function setBodyBackgroundImage(imgPath) {
+        removeVideoIfExists();
+    
+        document.body.style.backgroundImage = `url('${imgPath}')`;
+        document.body.style.backgroundSize = "cover";
+        document.body.style.backgroundPosition = "center";
+        document.body.style.backgroundAttachment = "fixed";
+    }
+    
+    function setBodyBackgroundVideo(videoPath) {
+        removeVideoIfExists();
+    
+        const video = document.createElement("video");
+        video.src = videoPath;
+        video.autoplay = true;
+        video.loop = true;
+        video.muted = true;
+        video.playsInline = true;
+        video.style.position = "fixed";
+        video.style.top = 0;
+        video.style.left = 0;
+        video.style.width = "100%";
+        video.style.height = "100%";
+        video.style.objectFit = "cover";
+        video.style.zIndex = "-1";
+    
+        video.setAttribute("id", "background-video");
+    
+        document.body.appendChild(video);
+    
+        document.body.style.backgroundImage = "none"; // remove background image
+    }
+    
+    function removeVideoIfExists() {
+        const existingVideo = document.getElementById("background-video");
+        if (existingVideo) {
+            existingVideo.remove();
+        }
+    }
+    
+    
+    
+    
+    
+
+    
     const sceneSets = {
 
         derikNoticeRock: {
@@ -270,7 +346,7 @@ document.addEventListener("DOMContentLoaded", function () {
         derikTask: {
             1: {
                 name: "Narrator",
-                background: "../../../assets/alternate-path/tech-background.webp", //change this link
+                background: "", //change this link
                 text: {
                     dialog: "Get it right the first time",
                     dialog2: "Trial and error",
@@ -532,7 +608,7 @@ document.addEventListener("DOMContentLoaded", function () {
         derikHides: {
             1: {
                 name: "Narrator",
-                background: "../../../assets/alternate-path/tech-background.webp",
+                background: "",
                 text: {
                     dialog: "Acts like a lamp post",
                     dialog2: "Hides in the garage",
@@ -1133,7 +1209,7 @@ document.addEventListener("DOMContentLoaded", function () {
         derikPlan: {
             1: {
                 name: "Narrator",
-                background: "../../../assets/alternate-path/tech-background.webp", //change this link
+                background: "", //change this link
                 text: {
                     dialog: "Needs a light snack",
                     dialog2: "Create a villain crew",
@@ -1348,7 +1424,7 @@ document.addEventListener("DOMContentLoaded", function () {
         fixArcadeMachine: {
             1: {
                 name: "Narrator",
-                background: "../../../assets/alternate-path/tech-background.webp",
+                background: "",
                 text: {
                     dialog: "The mechanic approach",
                     dialog2: "The science experiment approach",
@@ -1537,7 +1613,7 @@ document.addEventListener("DOMContentLoaded", function () {
         andySpiderman: {
             1: {
                 name: "Narrator",
-                background: "../../../assets/alternate-path/tech-background.webp", //change this link
+                background: "", //change this link
                 text: {
                     dialog: "In shock",
                     dialog2: "Full fanboy meltdown",
@@ -1727,7 +1803,7 @@ document.addEventListener("DOMContentLoaded", function () {
         battleAntiPops: {
             1: {
                 name: "Narrator",
-                background: "../../../assets/alternate-path/tech-background.webp",
+                background: "",
                 text: {
                     dialog: "The toilet paper",
                     dialog2: "The shoe",
@@ -1864,7 +1940,7 @@ document.addEventListener("DOMContentLoaded", function () {
         respondToLich: {
             1: {
                 name: "Narrator",
-                background: "../../../assets/alternate-path/tech-background.webp", //change this link
+                background: "", //change this link
                 text: {
                     dialog: "Insult",
                     dialog2: "Question",
@@ -1998,7 +2074,7 @@ document.addEventListener("DOMContentLoaded", function () {
         minionConvo: {
             1: {
                 name: "Narrator",
-                background: "../../../assets/alternate-path/tech-background.webp", //change this link
+                background: "", //change this link
                 text: {
                     dialog: "Table top club",
                     dialog2: "Royalty",
@@ -2128,7 +2204,7 @@ document.addEventListener("DOMContentLoaded", function () {
         derikEntrance: {
             1: {
                 name: "Narrator",
-                background: "../../../assets/alternate-path/tech-background.webp", //change this link
+                background: "", //change this link
                 text: {
                     dialog: "Boombox",
                     dialog2: "Destroyer of Worlds",
@@ -2388,7 +2464,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
     }
 
-    const sceneSetName = document.body.dataset.path || 'forcedPath';
+
     let currentSceneSet = sceneSets[sceneSetName];
 
     const nameElement = document.querySelector(".name p");
@@ -2397,7 +2473,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const textElements = {
         dialog: document.querySelector("#character-description"),
         dialog2: document.querySelector("#character-description2"),
-        dialog3: document.querySelector("#character-description3")
+        dialog3: document.querySelector("#character-description3"),
+        dialog4: document.querySelector("#character-description4")
     };
 
     if (!nameElement || !textElements.dialog) {
@@ -2409,7 +2486,8 @@ document.addEventListener("DOMContentLoaded", function () {
     let { name, text, background, nextScene } = scene;
 
     nameElement.textContent = name;
-    document.body.style.backgroundImage = `url('${background}?v=${new Date().getTime()}')`;
+    updateBackground(sceneSetName, currentSceneNumber);
+
     document.body.style.backgroundSize = "cover";
     document.body.style.backgroundPosition = "center";
     document.body.style.backgroundAttachment = "fixed";
@@ -2438,12 +2516,14 @@ document.addEventListener("DOMContentLoaded", function () {
                     if (i < fullText.length) {
                         textElements[key].textContent += fullText.charAt(i);
                         i++;
-                        typewriterTimeouts.push(setTimeout(typeChar, 50));
+                        typewriterTimeouts.push(setTimeout(typeChar, 30)); //controlls the speed of the typewriter effect
                     } else {
                         typingFinished = true;
                         if (nextScene) setTimeout(loadNextScene, 1000);
                     }
                 }
+
+                
                 typeChar();
             }
         });
@@ -2472,7 +2552,8 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!nextScene) return;
 
         nameElement.textContent = nextScene.name;
-        document.body.style.backgroundImage = `url('${nextScene.background}?v=${new Date().getTime()}')`;
+        updateBackground(sceneSetName, currentSceneNumber); // or sceneNumber if you're incrementing there
+
         name = nextScene.name;
         text = nextScene.text;
         typingFinished = false;
@@ -2485,8 +2566,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    /* old code here
-    function goToNextScene() {
+function goToNextScene() {
         currentSceneNumber++;
         const totalScenes = Object.keys(currentSceneSet).filter(key => key !== 'redirectLink').length;
 
@@ -2501,69 +2581,81 @@ document.addEventListener("DOMContentLoaded", function () {
             nextScene = scene.nextScene || null;
 
             nameElement.textContent = name;
-            document.body.style.backgroundImage = `url('${background}?v=${new Date().getTime()}')`;
-
-//add acheivements here
-const achievement1Container = document.getElementById("achievement1-container");
-if (achievement1Container) {
-    if (currentSceneNumber === 32) {
-       achievement1Container.style.display = "block";
-    } else {
-       achievement1Container.style.display = "none";
-    }
-}
-
-const achievement2Container = document.getElementById("achievement2-container");
-if (achievement2Container) {
-    if (currentSceneNumber === 6) {
-       achievement2Container.style.display = "block";
-    } else {
-       achievement2Container.style.display = "none";
-    }
-}
-
-const achievement3Container = document.getElementById("achievement3-container");
-if (achievement3Container) {
-    if (currentSceneNumber === 18) {
-       achievement3Container.style.display = "block";
-    } else {
-       achievement3Container.style.display = "none";
-    }
-}
-
-const achievement4Container = document.getElementById("achievement4-container");
-if (achievement4Container) {
-    if (currentSceneNumber === 1) {
-       achievement4Container.style.display = "block";
-    } else {
-       achievement4Container.style.display = "none";
-    }
-}
-
-const achievement5Container = document.getElementById("achievement5-container");
-if (achievement5Container) {
-    if (currentSceneNumber === 5) {
-       achievement5Container.style.display = "block";
-    } else {
-       achievement5Container.style.display = "none";
-    }
-}
+            updateBackground(sceneSetName, currentSceneNumber);
+            preloadImages(sceneSetName, currentSceneNumber, 2);
 
             if (typeof text === 'object') {
                 typeWriterText(text);
             } else {
                 typeWriterText({ dialog: text });
             }
-        }
-    }*/
 
-    function goToNextScene() {
+             //THIS WILL HELP IZZY A LOT
+             // 👇 Only show button on scene 3
+            const buttonContainer = document.getElementById("scene-button-container");
+            const bookImage = document.getElementById("book");
+            const rope = document.getElementById("rope");
+
+            if (buttonContainer) {
+                buttonContainer.style.display = (currentSceneNumber === 4) ? "block" : "none";
+            }
+
+            if (bookImage) {
+                bookImage.style.display = (currentSceneNumber === 44) ? "block" : "none";
+            }
+
+            if (rope) {
+                rope.style.display = (currentSceneNumber === 2) ? "block" : "none";
+            }
+
+            //add acheivements here
+            const achievement1Container = document.getElementById("achievement1-container");
+
+            if (achievement1Container) {
+                if (currentSceneNumber === 3) {
+                   achievement1Container.style.display = "block";
+                } else {
+                   achievement1Container.style.display = "none";
+                }
+           }
+           const achievement2Container = document.getElementById("achievement2-container");
+
+           if (achievement2Container) {
+               if (currentSceneNumber === 9) {
+                  achievement2Container.style.display = "block";
+               } else {
+                  achievement2Container.style.display = "none";
+               }
+          }
+          const achievement3Container = document.getElementById("achievement3-container");
+
+          if (achievement3Container) {
+              if (currentSceneNumber === 34) {
+                 achievement3Container.style.display = "block";
+              } else {
+                 achievement3Container.style.display = "none";
+              }
+         }
+         const achievement4Container = document.getElementById("achievement4-container");
+
+         if (achievement4Container) {
+             if (currentSceneNumber === 36) {
+                achievement4Container.style.display = "block";
+             } else {
+                achievement4Container.style.display = "none";
+             }
+        }
+
+        }
+    }
+
+    /*function goToNextScene() {
         currentSceneNumber++;
         const totalScenes = Object.keys(currentSceneSet).filter(key => key !== 'redirectLink').length;
     
         if (currentSceneNumber > totalScenes) {
             // Removed redirection to default-endpage.html
-            return; // Optionally add custom end-of-story behavior here
+            return; // You can also add logic here if you'd like to handle "end of scenes" in some other way
         } else {
             scene = currentSceneSet[currentSceneNumber];
             name = scene.name;
@@ -2572,42 +2664,53 @@ if (achievement5Container) {
             nextScene = scene.nextScene || null;
     
             nameElement.textContent = name;
-            document.body.style.backgroundImage = `url('${background}?v=${new Date().getTime()}')`;
-    
-            // Add achievements here
-            const achievement1Container = document.getElementById("achievement1-container");
-            if (achievement1Container) {
-                achievement1Container.style.display = (currentSceneNumber === 32) ? "block" : "none";
-            }
-    
-            const achievement2Container = document.getElementById("achievement2-container");
-            if (achievement2Container) {
-                achievement2Container.style.display = (currentSceneNumber === 6) ? "block" : "none";
-            }
-    
-            const achievement3Container = document.getElementById("achievement3-container");
-            if (achievement3Container) {
-                achievement3Container.style.display = (currentSceneNumber === 18) ? "block" : "none";
-            }
-    
-            const achievement4Container = document.getElementById("achievement4-container");
-            if (achievement4Container) {
-                achievement4Container.style.display = (currentSceneNumber === 1) ? "block" : "none";
-            }
-    
-            const achievement5Container = document.getElementById("achievement5-container");
-            if (achievement5Container) {
-                achievement5Container.style.display = (currentSceneNumber === 5) ? "block" : "none";
-            }
+            updateBackground(sceneSetName, currentSceneNumber);
+            preloadImages(sceneSetName, currentSceneNumber, 2);
     
             if (typeof text === 'object') {
                 typeWriterText(text);
             } else {
                 typeWriterText({ dialog: text });
             }
+    
+            // 👇 Only show button on scene 4
+            const buttonContainer = document.getElementById("scene-button-container");
+            const bookImage = document.getElementById("book");
+            const rope = document.getElementById("rope");
+    
+            if (buttonContainer) {
+                buttonContainer.style.display = (currentSceneNumber === 4) ? "block" : "none";
+            }
+    
+            if (bookImage) {
+                bookImage.style.display = (currentSceneNumber === 44) ? "block" : "none";
+            }
+    
+            if (rope) {
+                rope.style.display = (currentSceneNumber === 2) ? "block" : "none";
+            }
+    
+            // Add achievements here
+            const achievement1Container = document.getElementById("achievement1-container");
+    
+            if (achievement1Container) {
+                achievement1Container.style.display = (currentSceneNumber === 3) ? "block" : "none";
+            }
+    
+            const achievement2Container = document.getElementById("achievement2-container");
+    
+            if (achievement2Container) {
+                achievement2Container.style.display = (currentSceneNumber === 3) ? "block" : "none";
+            }
+    
+            const achievement3Container = document.getElementById("achievement3-container");
+    
+            if (achievement3Container) {
+                achievement3Container.style.display = (currentSceneNumber === 5) ? "block" : "none";
+            }
         }
-    }
-        
+    }*/
+    
 
     document.addEventListener("click", displayFullText);
     document.addEventListener("keydown", displayFullText);
@@ -2619,6 +2722,82 @@ if (achievement5Container) {
     }
 });
 
+// in hopes this will make the mobile part not have overflowing text
+
 window.addEventListener("resize", () => {
     document.body.style.height = window.innerHeight + "px";
 });
+
+
+
+
+
+
+
+// loading the images before the user sees them
+
+function preloadAllSceneImages(sceneSetName, onComplete) {
+    if (!sceneSetName) {
+        console.error('sceneSetName is required');
+        return;
+    }
+
+    const folderPath = `../../../background-imgs3/${sceneSetName}/`;
+    let sceneNumber = 1;
+    let totalImagesPreloaded = 0;
+    const loadedImages = new Set(); // Track loaded images to avoid duplicates
+
+    function loadNext() {
+        const imgPath = `${folderPath}${sceneNumber}.webp`;
+
+        if (loadedImages.has(imgPath)) {
+            sceneNumber++;
+            loadNext(); // Skip already loaded images
+            return;
+        }
+
+        const img = new Image();
+        img.onload = () => {
+            console.log(`[Preloading] Loaded: ${imgPath}`); // Log each image being preloaded
+            loadedImages.add(imgPath);
+            totalImagesPreloaded++;
+            sceneNumber++;
+            loadNext(); // Load the next image in this set
+        };
+
+        img.onerror = () => {
+            console.error(`[Error] Failed to load: ${imgPath}`); // Log error if image fails to load
+            sceneNumber++;
+            loadNext(); // Continue to next image
+        };
+
+        img.src = imgPath;
+    }
+
+    loadNext(); // Start loading images for the first scene
+
+    // If preload is complete, execute the onComplete callback (if provided)
+    const checkIfComplete = setInterval(() => {
+        if (loadedImages.size > 0 && loadedImages.size === totalImagesPreloaded) {
+            clearInterval(checkIfComplete); // Stop checking once all images are loaded
+            console.log(`[Preload Complete] Scene Set: "${sceneSetName}", Total images preloaded: ${totalImagesPreloaded}`);
+            if (onComplete) onComplete(); // Call the onComplete callback if provided
+        }
+    }, 100);
+}
+
+
+
+
+// path to icon (its inside assets under forced path)
+
+// Create a new <link> element
+var link = document.createElement('link');
+link.rel = 'icon';
+link.type = 'image/jpeg';  // Specify the type as JPEG (or "image/jpg")
+link.href = '../../../../assets/icon.jpg'; // Path to the image in the 'assets' folder
+
+// Append the <link> element to the <head> section
+document.head.appendChild(link);
+
+

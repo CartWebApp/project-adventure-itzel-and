@@ -7,22 +7,22 @@ document.addEventListener("DOMContentLoaded", function () {
         return str.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase();
     }
     function preloadImages(sceneSetName, startSceneNumber, count = 2) {
-        const folderPath = `../../../path2_image_backup/${sceneSetName}/`;
+        const folderPath = `../../../path2/${sceneSetName}/`;
         for (let i = 1; i <= count; i++) {
             const sceneNum = startSceneNumber + i;
             const preloadImg = new Image();
-            preloadImg.src = `${folderPath}${sceneNum}.png`;
+            preloadImg.src = `${folderPath}${sceneNum}.webp`;
         }
     }
     
     function updateBackground(sceneSetName, sceneNumber) {
         const scene = currentSceneSet[sceneNumber];
         const { background, backgroundType } = scene;
-        const folderPath = `../../../path2_image_backup/${sceneSetName}/`;
+        const folderPath = `../../../path2/${sceneSetName}/`;
     
         if (!background) {
             // Auto-load image if no background manually specified
-            const imgPath = `${folderPath}${sceneNumber}.png?v=${new Date().getTime()}`;
+            const imgPath = `${folderPath}${sceneNumber}.webp?v=${new Date().getTime()}`;
             setBodyBackgroundImage(imgPath);
         } else if (backgroundType === "video") {
             setBodyBackgroundVideo(background);
@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
         respondDerik: {
             1: {
                 name: "Narrator",
-                background: "../../../path2_image_backup/ignoreRock/3.png", //change this link
+                background: "../../../path2/ignoreRock/3.webp", //change this link
                 text: {
                     dialog: "Andy defends himself",
                     dialog2: "Says nothing",
@@ -268,7 +268,7 @@ document.addEventListener("DOMContentLoaded", function () {
         breakfastOptions: {
             1: {
                 name: "Narrator",
-                background: "../../../path2_image_backup/schoolCafeteria/7.png", //replace link????
+                background: "../../../path2/schoolCafeteria/7.webp", //replace link????
                 text: {
                     dialog: "Boiled egg, celery, and vanilla muffin",
                     dialog2: "3 containers of chocolate milk",
@@ -323,7 +323,7 @@ document.addEventListener("DOMContentLoaded", function () {
         respondDoris: {
             1: {
                 name: "Narrator",
-                background: "../../../path2_image_backup/eatBreakfast/1.png", //change this link. no you
+                background: "../../../path2/eatBreakfast/1.webp", //change this link. no you
                 text: {
                     dialog: "Thank Doris",
                     dialog2: "Share wisdom",
@@ -335,7 +335,7 @@ document.addEventListener("DOMContentLoaded", function () {
             1: {
                 name: "Andy",
                 text: "“Thanks, you too.”",
-                background: "../../../path2_image_backup/eatBreakfast/1.png",
+                background: "../../../path2/eatBreakfast/1.webp",
             },
             //redirect to main plot
             redirectLink: "eat-breakfast.html"                      
@@ -345,7 +345,7 @@ document.addEventListener("DOMContentLoaded", function () {
             1: {
                 name: "Andy",
                 text: "“With great milk comes great power.”",
-                background: "../../../path2_image_backup/eatBreakfast/1.png",
+                background: "../../../path2/eatBreakfast/1.webp",
             },
             //redirect to main plot
             redirectLink: "eat-breakfast.html"                      
@@ -469,7 +469,7 @@ document.addEventListener("DOMContentLoaded", function () {
         backpackFull: {
             1: {
                 name: "Narrator",
-                background: "../../../path2_image_backup/eatBreakfast/6.png", //change this link
+                background: "../../../path2/eatBreakfast/6.webp", //change this link
                 text: {
                     dialog: "Walk to first period",
                     dialog2: "Dump cartons in locker",
@@ -529,7 +529,7 @@ document.addEventListener("DOMContentLoaded", function () {
         statsTest: {
             1: {
                 name: "Narrator",
-                background: "../../../path2_image_backup/dumpCartonsLocker/7.png", //change this link
+                background: "../../../path2/dumpCartonsLocker/7.webp", //change this link
                 text: {
                     dialog: "Cheat with your pre-programmed calculator",
                     dialog2: "Accept your fate and fail the test",
@@ -554,7 +554,7 @@ document.addEventListener("DOMContentLoaded", function () {
         cheatOrNot: {
             1: {
                 name: "Narrator",
-                background: "../../../path2_image_backup/programmedCalc/2.png", //change this link
+                background: "../../../path2/programmedCalc/2.webp", //change this link
                 text: {
                     dialog: "Don’t cheat on the test because your grade is already too low",
                     dialog2: "Continue cheating on the test",
@@ -598,6 +598,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 text: "\"... just leave my class.\"",
                 background: "",
             },        
+            redirectLink: "history-class.html"  
         },
     
         continueCheating: {
@@ -902,7 +903,7 @@ document.addEventListener("DOMContentLoaded", function () {
         historyQuestion: {
             1: {
                 name: "Narrator",
-                background: "../../../assets/alternate-path/tech-background.png", //change this link
+                background: "../../../path2/historyClass/15.webp", //change this link
                 text: {
                     dialog: "Sue Harukata",
                     dialog2: "Refuse to answer",
@@ -1196,7 +1197,7 @@ document.addEventListener("DOMContentLoaded", function () {
         milkShortage: {
             1: {
                 name: "Narrator",
-                background: "../../../assets/alternate-path/tech-background.png", //change this link
+                background: "", //change this link
                 text: {
                     dialog: "Take 6 and listen to the rules",
                     dialog2: "Take 8 because you won't let some sign tell you what to do",
@@ -1276,7 +1277,7 @@ document.addEventListener("DOMContentLoaded", function () {
         stolenMilk: {
             1: {
                 name: "Narrator",
-                background: "../../../assets/alternate-path/tech-background.png", //change this link
+                background: "", //change this link
                 text: {
                     dialog: "Bring back the milk because you know that Doris is just doing her job",
                     dialog2: "Ignore her",
@@ -1609,7 +1610,7 @@ document.addEventListener("DOMContentLoaded", function () {
         andysEnd: {
             1: {
                 name: "Narrator",
-                background: "../../../assets/alternate-path/tech-background.png", //change this link
+                background: "", //change this link
                 text: {
                     dialog: "Admire the view",
                     dialog2: "The Lactose Legacy",
@@ -1976,13 +1977,13 @@ function preloadAllSceneImages(sceneSetName, onComplete) {
         return;
     }
 
-    const folderPath = `../../../path2_image_backup/${sceneSetName}/`;
+    const folderPath = `../../../path2/${sceneSetName}/`;
     let sceneNumber = 1;
     let totalImagesPreloaded = 0;
     const loadedImages = new Set(); // Track loaded images to avoid duplicates
 
     function loadNext() {
-        const imgPath = `${folderPath}${sceneNumber}.png`;
+        const imgPath = `${folderPath}${sceneNumber}.webp`;
 
         if (loadedImages.has(imgPath)) {
             sceneNumber++;
