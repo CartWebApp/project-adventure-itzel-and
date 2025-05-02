@@ -2485,6 +2485,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    /* old code here
     function goToNextScene() {
         currentSceneNumber++;
         const totalScenes = Object.keys(currentSceneSet).filter(key => key !== 'redirectLink').length;
@@ -2554,7 +2555,59 @@ if (achievement5Container) {
                 typeWriterText({ dialog: text });
             }
         }
+    }*/
+
+    function goToNextScene() {
+        currentSceneNumber++;
+        const totalScenes = Object.keys(currentSceneSet).filter(key => key !== 'redirectLink').length;
+    
+        if (currentSceneNumber > totalScenes) {
+            // Removed redirection to default-endpage.html
+            return; // Optionally add custom end-of-story behavior here
+        } else {
+            scene = currentSceneSet[currentSceneNumber];
+            name = scene.name;
+            text = scene.text;
+            background = scene.background;
+            nextScene = scene.nextScene || null;
+    
+            nameElement.textContent = name;
+            document.body.style.backgroundImage = `url('${background}?v=${new Date().getTime()}')`;
+    
+            // Add achievements here
+            const achievement1Container = document.getElementById("achievement1-container");
+            if (achievement1Container) {
+                achievement1Container.style.display = (currentSceneNumber === 32) ? "block" : "none";
+            }
+    
+            const achievement2Container = document.getElementById("achievement2-container");
+            if (achievement2Container) {
+                achievement2Container.style.display = (currentSceneNumber === 6) ? "block" : "none";
+            }
+    
+            const achievement3Container = document.getElementById("achievement3-container");
+            if (achievement3Container) {
+                achievement3Container.style.display = (currentSceneNumber === 18) ? "block" : "none";
+            }
+    
+            const achievement4Container = document.getElementById("achievement4-container");
+            if (achievement4Container) {
+                achievement4Container.style.display = (currentSceneNumber === 1) ? "block" : "none";
+            }
+    
+            const achievement5Container = document.getElementById("achievement5-container");
+            if (achievement5Container) {
+                achievement5Container.style.display = (currentSceneNumber === 5) ? "block" : "none";
+            }
+    
+            if (typeof text === 'object') {
+                typeWriterText(text);
+            } else {
+                typeWriterText({ dialog: text });
+            }
+        }
     }
+        
 
     document.addEventListener("click", displayFullText);
     document.addEventListener("keydown", displayFullText);
