@@ -1855,7 +1855,7 @@ function goToNextScene() {
            const achievement2Container = document.getElementById("achievement2-container");
 
            if (achievement2Container) {
-               if (currentSceneNumber === 3) {
+               if (currentSceneNumber === 9) {
                   achievement2Container.style.display = "block";
                } else {
                   achievement2Container.style.display = "none";
@@ -1864,12 +1864,21 @@ function goToNextScene() {
           const achievement3Container = document.getElementById("achievement3-container");
 
           if (achievement3Container) {
-              if (currentSceneNumber === 5) {
+              if (currentSceneNumber === 34) {
                  achievement3Container.style.display = "block";
               } else {
                  achievement3Container.style.display = "none";
               }
          }
+         const achievement4Container = document.getElementById("achievement4-container");
+
+         if (achievement4Container) {
+             if (currentSceneNumber === 36) {
+                achievement4Container.style.display = "block";
+             } else {
+                achievement4Container.style.display = "none";
+             }
+        }
 
         }
     }
