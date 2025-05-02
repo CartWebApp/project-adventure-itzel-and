@@ -1847,7 +1847,7 @@ function goToNextScene() {
             const achievement1Container = document.getElementById("achievement1-container");
 
             if (achievement1Container) {
-                if (currentSceneNumber === 3) {
+                if (currentSceneNumber === 1) {
                    achievement1Container.style.display = "block";
                 } else {
                    achievement1Container.style.display = "none";

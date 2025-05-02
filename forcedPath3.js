@@ -864,7 +864,7 @@ document.addEventListener("DOMContentLoaded", function () {
                background: "",
            },
            //Achievement unlocked: The Smell of Death
-           1: {
+           2: {
                name: "Narrator",
                text: "*Game Over: I don’t feel like eating… for the rest of my life anymore. Thanks.*",
                background: "",
@@ -2683,19 +2683,19 @@ function goToNextScene() {
             const achievement1Container = document.getElementById("achievement1-container");
     
             if (achievement1Container) {
-                achievement1Container.style.display = (currentSceneNumber === 3) ? "block" : "none";
+                achievement1Container.style.display = (currentSceneNumber === 32) ? "block" : "none";
             }
     
             const achievement2Container = document.getElementById("achievement2-container");
     
             if (achievement2Container) {
-                achievement2Container.style.display = (currentSceneNumber === 3) ? "block" : "none";
+                achievement2Container.style.display = (currentSceneNumber === 6) ? "block" : "none";
             }
     
             const achievement3Container = document.getElementById("achievement3-container");
     
             if (achievement3Container) {
-                achievement3Container.style.display = (currentSceneNumber === 5) ? "block" : "none";
+                achievement3Container.style.display = (currentSceneNumber === 18) ? "block" : "none";
             }
     
             const achievement4Container = document.getElementById("achievement4-container");
