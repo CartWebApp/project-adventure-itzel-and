@@ -565,12 +565,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 text: "*Andy opens his backpack and reaches for his calculator. When he takes it out and turns it on, he notices some words on it. Andy realizes that he made a cheat sheet prior to the test. When he reads the test form and goes back to the calculator, the notes he has written in the calculator practically have all the right answers for the test.*",
                 background: "",
             },
+            //error in the console happens here
             2: {
                 name: "Andy",
                 text: "\"Yes, I can finally get enough milk to build my plasma cannon! I think I have a chance at this.\"",
                 background: "",
             },
-            redirectLink: "/1Forced-Path/HTML/path2/fp2extra-life2.html"       
+            redirectLink: "cheat-or-not.html"       
         },
     
         cheatOrNot: {
@@ -615,11 +616,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 text: "\"Yeah, I just got distracted by the noises outside. The birds and stuff ya know?\"",
                 background: "",
             },
+            //error in the console
             7: {
                 name: "Mr. Hankey",
                 text: "\"... just leave my class.\"",
                 background: "",
-            },        
+            },
+            redirectLink: "history-class.html"
         },
     
         continueCheating: {
@@ -798,6 +801,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 text: "*Andy gets kicked out of the school. He can no longer have unlimited white milk… no milk, no life.*",
                 background: "",
             },
+            //error in the console
             36: {
                 name: "Narrator",
                 text: "*Plasma cannon? out of milk...? how would you even do that?*",
@@ -805,7 +809,7 @@ document.addEventListener("DOMContentLoaded", function () {
             },
             
             //redirect to game over screen
-            redirectLink: "cheat-or-not.html"
+            redirectLink: "/1Forced-Path/HTML/path2/fp2extra-life2.html"
         },
     
         acceptFate: {
@@ -840,9 +844,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 background: "",
             },
             redirectLink: "history-class.html"        
+            //why is there a default end page after this????
         },
     
         historyClass: {
+            //images are not showing up for history-class.html***** images for the rest of the scenes from here also dont show up
             1: {
                 name: "Narrator",
                 text: "*Andy goes to his history class and waits for his teacher to start the lecture.*",
@@ -1868,7 +1874,7 @@ function goToNextScene() {
             const achievement1Container = document.getElementById("achievement1-container");
 
             if (achievement1Container) {
-                if (currentSceneNumber === 3) {
+                if (currentSceneNumber === 1) {
                    achievement1Container.style.display = "block";
                 } else {
                    achievement1Container.style.display = "none";
@@ -2055,5 +2061,3 @@ link.href = '../../../../assets/icon.jpg'; // Path to the image in the 'assets' 
 
 // Append the <link> element to the <head> section
 document.head.appendChild(link);
-
-
