@@ -1,6 +1,76 @@
 document.addEventListener("DOMContentLoaded", function () {
     let currentSceneNumber = 1;
 
+    const sceneSetName = document.body.dataset.path || 'forcedPath';
+
+    function toKebabCase(str) {
+        return str.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase();
+    }
+    function preloadImages(sceneSetName, startSceneNumber, count = 2) {
+        const folderPath = `${sceneSetName}/`;
+        for (let i = 1; i <= count; i++) {
+            const sceneNum = startSceneNumber + i;
+            const preloadImg = new Image();
+            preloadImg.src = `${folderPath}${sceneNum}.png`;
+        }
+    }
+    
+    function updateBackground(sceneSetName, sceneNumber) {
+        const scene = currentSceneSet[sceneNumber];
+        const { background, backgroundType } = scene;
+        const folderPath = `${sceneSetName}/`;
+    
+        if (!background) {
+            // Auto-load image if no background manually specified
+            const imgPath = `${folderPath}${sceneNumber}.png?v=${new Date().getTime()}`;
+            setBodyBackgroundImage(imgPath);
+        } else if (backgroundType === "video") {
+            setBodyBackgroundVideo(background);
+        } else {
+            setBodyBackgroundImage(background);
+        }
+    }
+    
+    function setBodyBackgroundImage(imgPath) {
+        removeVideoIfExists();
+    
+        document.body.style.backgroundImage = `url('${imgPath}')`;
+        document.body.style.backgroundSize = "cover";
+        document.body.style.backgroundPosition = "center";
+        document.body.style.backgroundAttachment = "fixed";
+    }
+    
+    function setBodyBackgroundVideo(videoPath) {
+        removeVideoIfExists();
+    
+        const video = document.createElement("video");
+        video.src = videoPath;
+        video.autoplay = true;
+        video.loop = true;
+        video.muted = true;
+        video.playsInline = true;
+        video.style.position = "fixed";
+        video.style.top = 0;
+        video.style.left = 0;
+        video.style.width = "100%";
+        video.style.height = "100%";
+        video.style.objectFit = "cover";
+        video.style.zIndex = "-1";
+    
+        video.setAttribute("id", "background-video");
+    
+        document.body.appendChild(video);
+    
+        document.body.style.backgroundImage = "none"; // remove background image
+    }
+    
+    function removeVideoIfExists() {
+        const existingVideo = document.getElementById("background-video");
+        if (existingVideo) {
+            existingVideo.remove();
+        }
+    }
+
     const sceneSets = {
          //loop back to branch links
          fp3gameOverBG1: {
@@ -1552,7 +1622,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 text: "\"I know a guy.\"",
                 background: "",
             },            
-            redirectLink: "andy-school.html"            
+            redirectLink: "../path3/andy-school.html"            
         },
 
         andySchool: {
@@ -1596,7 +1666,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 text: "*Andy's brain short-circuited. His mouth opened, but all that came out was:*",
                 background: "",
             },
-            redirectLink: "andy-spiderman.html"                        
+            redirectLink: "../path3/andy-spiderman.html"                        
         },
 
         andySpiderman: {
@@ -1622,7 +1692,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 background: "",
             },
             //redirect to meetAndGreet
-            redirectLink: "meet-and-greet.html"      
+            redirectLink: "../path3/meet-and-greet.html"      
         },
 
         andyMeltdown: {
@@ -1632,7 +1702,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 background: "",
             },
             //rediret to meetAndGreet
-            redirectLink: "meet-and-greet.html"          
+            redirectLink: "../path3/meet-and-greet.html"          
         },
 
         meetAndGreet: {
@@ -1717,7 +1787,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 text: "*Something was coming.*",
                 background: "",
             },
-            redirectLink: "derik-coffee-shop.html"          
+            redirectLink: "../path3/derik-coffee-shop.html"          
         },
 
         derikCoffeeShop: {
@@ -1786,7 +1856,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 text: "\"Prove you’re worth my time.\"",
                 background: "",
             },
-            redirectLink: "battle-anti-pops.html"                      
+            redirectLink: "../path3/battle-anti-pops.html"                      
         },
 
         battleAntiPops: {
@@ -1823,7 +1893,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 background: "",
             },
             //redirect to lichIntroduction
-            redirectLink: "lich-intro.html"                     
+            redirectLink: "../path3/lich-intro.html"                     
         },
 
         shoeMiss: {
@@ -1848,7 +1918,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 background: "",
             },
             //redirect to lichIntroduction
-            redirectLink: "lich-intro.html"                               
+            redirectLink: "../path3/lich-intro.html"                               
         },
 
         derikLuigi: {
@@ -1859,7 +1929,7 @@ document.addEventListener("DOMContentLoaded", function () {
             },
             //queue luigi video or something
             //redirect to lichIntroduction
-            redirectLink: "lich-intro.html"                                 
+            redirectLink: "../path3/lich-intro.html"                                 
         },
 
         lichIntroduction: {
@@ -1923,7 +1993,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 text: "*Derik interrupts:*",
                 background: "",
             },
-            redirectLink: "respond-to-lich.html"                                             
+            redirectLink: "../path3/respond-to-lich.html"                                             
         },
 
         respondToLich: {
@@ -2053,7 +2123,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 text: "\"Ohhhh this is gonna be good.\"",
                 background: "",
             },
-            redirectLink: "andy-minion.html"            
+            redirectLink: "../path3/andy-minion.html"            
         },
 
         andyMinion: {
@@ -2062,7 +2132,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 text: "Andy and Bob from the Minions seem to be having a casual conversation about:",
                 background: "",
             },
-            redirectLink: "minion-convo.html"                        
+            redirectLink: "../path3/minion-convo.html"                        
         },
 
         minionConvo: {
@@ -2103,7 +2173,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 background: "",
             },
             //redirect to derikIntro
-            redirectLink: "derik-intro.html"           
+            redirectLink: "../path3/derik-intro.html"           
         },
 
         minionRoyalty: {
@@ -2168,7 +2238,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 background: "",
             },
             //redirect to derikIntro
-            redirectLink: "derik-intro.html"                      
+            redirectLink: "../path3/derik-intro.html"                      
         },
 
         derikIntro: {
@@ -2192,7 +2262,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 text: "*Derik struck a pose 40 feet from the entrance, ready to make his grand introduction.*",
                 background: "",
             },
-            redirectLink: "derik-entrance.html"                                  
+            redirectLink: "../path3/derik-entrance.html"                                  
         },
 
         derikEntrance: {
@@ -2248,7 +2318,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 background: "",
             },
             //redirect to destroyFinale
-            redirectLink: "destroy-finale.html"                                 
+            redirectLink: "../path3/destroy-finale.html"                                 
         },
 
         dowIntro: {
@@ -2288,7 +2358,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 background: "",
             },
             //redirect to destroyFinale
-            redirectLink: "destroy-finale.html"                                 
+            redirectLink: "../path3/destroy-finale.html"                                 
         },
 
         destroyFinale: {
@@ -2432,7 +2502,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 text: "*And so, the Lich—being an immortal entity of pure destruction—successfully completed his plan. Everyone died. The end.*",
                 background: "",
             },            
-            redirectLink: "after-desctruction.html"                                             
+            redirectLink: "../path3/after-desctruction.html"                                             
         },
 
         //cut to black
@@ -2458,7 +2528,6 @@ document.addEventListener("DOMContentLoaded", function () {
         },
     }
 
-    const sceneSetName = document.body.dataset.path || 'forcedPath';
     let currentSceneSet = sceneSets[sceneSetName];
 
     const nameElement = document.querySelector(".name p");
@@ -2467,7 +2536,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const textElements = {
         dialog: document.querySelector("#character-description"),
         dialog2: document.querySelector("#character-description2"),
-        dialog3: document.querySelector("#character-description3")
+        dialog3: document.querySelector("#character-description3"),
     };
 
     if (!nameElement || !textElements.dialog) {
@@ -2479,7 +2548,8 @@ document.addEventListener("DOMContentLoaded", function () {
     let { name, text, background, nextScene } = scene;
 
     nameElement.textContent = name;
-    document.body.style.backgroundImage = `url('${background}?v=${new Date().getTime()}')`;
+    updateBackground(sceneSetName, currentSceneNumber);
+
     document.body.style.backgroundSize = "cover";
     document.body.style.backgroundPosition = "center";
     document.body.style.backgroundAttachment = "fixed";
@@ -2497,18 +2567,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Fill in text with typing effect
     function typeWriterText(contentMap) {
-        clearAllText();
+        // Clear previous timeouts
+        typewriterTimeouts.forEach(timeout => clearTimeout(timeout));
+        typewriterTimeouts = []; // Reset the array of timeouts
+    
+        clearAllText(); // Clear existing text
         typingFinished = false;
         index = 0;
-
+    
         Object.entries(contentMap).forEach(([key, fullText]) => {
             if (textElements[key]) {
+                textElements[key].textContent = ""; // Ensure text starts fresh
                 let i = 0;
                 function typeChar() {
                     if (i < fullText.length) {
                         textElements[key].textContent += fullText.charAt(i);
                         i++;
-                        typewriterTimeouts.push(setTimeout(typeChar, 50));
+                        typewriterTimeouts.push(setTimeout(typeChar, 30)); // Controls the speed
                     } else {
                         typingFinished = true;
                         if (nextScene) setTimeout(loadNextScene, 1000);
@@ -2542,7 +2617,8 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!nextScene) return;
 
         nameElement.textContent = nextScene.name;
-        document.body.style.backgroundImage = `url('${nextScene.background}?v=${new Date().getTime()}')`;
+        updateBackground(sceneSetName, currentSceneNumber); // or sceneNumber if you're incrementing there
+
         name = nextScene.name;
         text = nextScene.text;
         typingFinished = false;
@@ -2555,8 +2631,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    /* old code here
-    function goToNextScene() {
+function goToNextScene() {
         currentSceneNumber++;
         const totalScenes = Object.keys(currentSceneSet).filter(key => key !== 'redirectLink').length;
 
@@ -2571,79 +2646,33 @@ document.addEventListener("DOMContentLoaded", function () {
             nextScene = scene.nextScene || null;
 
             nameElement.textContent = name;
-            document.body.style.backgroundImage = `url('${background}?v=${new Date().getTime()}')`;
-
-//add acheivements here
-const achievement1Container = document.getElementById("achievement1-container");
-if (achievement1Container) {
-    if (currentSceneNumber === 32) {
-       achievement1Container.style.display = "block";
-    } else {
-       achievement1Container.style.display = "none";
-    }
-}
-
-const achievement2Container = document.getElementById("achievement2-container");
-if (achievement2Container) {
-    if (currentSceneNumber === 6) {
-       achievement2Container.style.display = "block";
-    } else {
-       achievement2Container.style.display = "none";
-    }
-}
-
-const achievement3Container = document.getElementById("achievement3-container");
-if (achievement3Container) {
-    if (currentSceneNumber === 18) {
-       achievement3Container.style.display = "block";
-    } else {
-       achievement3Container.style.display = "none";
-    }
-}
-
-const achievement4Container = document.getElementById("achievement4-container");
-if (achievement4Container) {
-    if (currentSceneNumber === 1) {
-       achievement4Container.style.display = "block";
-    } else {
-       achievement4Container.style.display = "none";
-    }
-}
-
-const achievement5Container = document.getElementById("achievement5-container");
-if (achievement5Container) {
-    if (currentSceneNumber === 5) {
-       achievement5Container.style.display = "block";
-    } else {
-       achievement5Container.style.display = "none";
-    }
-}
+            updateBackground(sceneSetName, currentSceneNumber);
+            preloadImages(sceneSetName, currentSceneNumber, 2);
 
             if (typeof text === 'object') {
                 typeWriterText(text);
             } else {
                 typeWriterText({ dialog: text });
             }
-        }
-    }*/
 
-    function goToNextScene() {
-        currentSceneNumber++;
-        const totalScenes = Object.keys(currentSceneSet).filter(key => key !== 'redirectLink').length;
-    
-        if (currentSceneNumber > totalScenes) {
-            // Removed redirection to default-endpage.html
-            return; // Optionally add custom end-of-story behavior here
-        } else {
-            scene = currentSceneSet[currentSceneNumber];
-            name = scene.name;
-            text = scene.text;
-            background = scene.background;
-            nextScene = scene.nextScene || null;
-    
-            nameElement.textContent = name;
-            document.body.style.backgroundImage = `url('${background}?v=${new Date().getTime()}')`;
-    
+             //THIS WILL HELP IZZY A LOT
+             // 👇 Only show button on scene 3
+            const buttonContainer = document.getElementById("scene-button-container");
+            const bookImage = document.getElementById("book");
+            const rope = document.getElementById("rope");
+
+            if (buttonContainer) {
+                buttonContainer.style.display = (currentSceneNumber === 4) ? "block" : "none";
+            }
+
+            if (bookImage) {
+                bookImage.style.display = (currentSceneNumber === 44) ? "block" : "none";
+            }
+
+            if (rope) {
+                rope.style.display = (currentSceneNumber === 2) ? "block" : "none";
+            }
+
             // Add achievements here
             const achievement1Container = document.getElementById("achievement1-container");
             if (achievement1Container) {
@@ -2677,8 +2706,7 @@ if (achievement5Container) {
             }
         }
     }
-        
-
+    
     document.addEventListener("click", displayFullText);
     document.addEventListener("keydown", displayFullText);
 
@@ -2689,6 +2717,113 @@ if (achievement5Container) {
     }
 });
 
+// in hopes this will make the mobile part not have overflowing text
+
 window.addEventListener("resize", () => {
     document.body.style.height = window.innerHeight + "px";
 });
+
+
+// loading the images before the user sees them
+
+function preloadAllSceneImages(sceneSetName, onComplete) {
+    if (!sceneSetName) {
+        console.error('sceneSetName is required');
+        return;
+    }
+
+    const folderPath = `../../../path2_image_backup/${sceneSetName}/`;
+    let sceneNumber = 1;
+    let totalImagesPreloaded = 0;
+    const loadedImages = new Set(); // Track loaded images to avoid duplicates
+
+    function loadNext() {
+        const imgPath = `${folderPath}${sceneNumber}.png`;
+
+        if (loadedImages.has(imgPath)) {
+            sceneNumber++;
+            loadNext(); // Skip already loaded images
+            return;
+        }
+
+        const img = new Image();
+        img.onload = () => {
+            console.log(`[Preloading] Loaded: ${imgPath}`); // Log each image being preloaded
+            loadedImages.add(imgPath);
+            totalImagesPreloaded++;
+            sceneNumber++;
+            loadNext(); // Load the next image in this set
+        };
+
+        img.onerror = () => {
+            console.error(`[Error] Failed to load: ${imgPath}`); // Log error if image fails to load
+            sceneNumber++;
+            loadNext(); // Continue to next image
+        };
+
+        img.src = imgPath;
+    }
+
+    loadNext(); // Start loading images for the first scene
+
+    // If preload is complete, execute the onComplete callback (if provided)
+    const checkIfComplete = setInterval(() => {
+        if (loadedImages.size > 0 && loadedImages.size === totalImagesPreloaded) {
+            clearInterval(checkIfComplete); // Stop checking once all images are loaded
+            console.log(`[Preload Complete] Scene Set: "${sceneSetName}", Total images preloaded: ${totalImagesPreloaded}`);
+            if (onComplete) onComplete(); // Call the onComplete callback if provided
+        }
+    }, 100);
+}
+
+
+
+
+// path to icon (its inside assets under forced path)
+
+// Create a new <link> element
+var link = document.createElement('link');
+link.rel = 'icon';
+link.type = 'image/jpeg';  // Specify the type as JPEG (or "image/jpg")
+link.href = '../../../../assets/icon.jpg'; // Path to the image in the 'assets' folder
+
+// Append the <link> element to the <head> section
+document.head.appendChild(link);
+
+
+
+            /*
+            // Add achievements here
+            const achievement1Container = document.getElementById("achievement1-container");
+            if (achievement1Container) {
+                achievement1Container.style.display = (currentSceneNumber === 32) ? "block" : "none";
+            }
+    
+            const achievement2Container = document.getElementById("achievement2-container");
+            if (achievement2Container) {
+                achievement2Container.style.display = (currentSceneNumber === 6) ? "block" : "none";
+            }
+    
+            const achievement3Container = document.getElementById("achievement3-container");
+            if (achievement3Container) {
+                achievement3Container.style.display = (currentSceneNumber === 18) ? "block" : "none";
+            }
+    
+            const achievement4Container = document.getElementById("achievement4-container");
+            if (achievement4Container) {
+                achievement4Container.style.display = (currentSceneNumber === 1) ? "block" : "none";
+            }
+    
+            const achievement5Container = document.getElementById("achievement5-container");
+            if (achievement5Container) {
+                achievement5Container.style.display = (currentSceneNumber === 5) ? "block" : "none";
+            }
+    
+            if (typeof text === 'object') {
+                typeWriterText(text);
+            } else {
+                typeWriterText({ dialog: text });
+            }
+        }
+    }
+        */
