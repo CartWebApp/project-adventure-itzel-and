@@ -434,7 +434,7 @@ document.addEventListener("DOMContentLoaded", function () {
             },
             
             //redirect to game over screen
-            redirectLink: "../path1/start-and-end/game-end.html"
+            redirectLink: "breakfast-options.html"
         },
     
         eatBreakfast: {
@@ -783,7 +783,7 @@ document.addEventListener("DOMContentLoaded", function () {
             },
             
             //redirect to game over screen
-            redirectLink: "../path1/start-and-end/game-end.html"
+            redirectLink: "cheat-or-not.html"
         },
     
         acceptFate: {
@@ -1391,7 +1391,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 background: "",
             },
             //redirect to game over screen
-            redirectLink: "../path1/start-and-end/game-end.html"
+            redirectLink: "stolen-milk.html"
         },
     
         lunchOutside: {
