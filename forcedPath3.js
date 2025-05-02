@@ -2,7 +2,52 @@ document.addEventListener("DOMContentLoaded", function () {
     let currentSceneNumber = 1;
 
     const sceneSets = {
+         //loop back to branch links
+         fp3gameOverBG1: {
+            1: {
+                name: "Narrator",
+                text: "Listen, because im literally the best game creator ever I’ll give you a second chance. I’ll take you back to where you first messed up. Try not to mess it up again",
+            },
+            redirectLink: "../path3/derik-task.html"
+           },
+        fp3gameOverBG2: {
+            1: {
+                name: "Narrator",
+                text: "Listen, because im literally the best game creator ever I’ll give you a second chance. I’ll take you back to where you first messed up. Try not to mess it up again",
+            },
+            redirectLink: "../path3/derik-hides.html"
+           },
+        fp3gameOverBG3: {
+            1: {
+                name: "Narrator",
+                text: "Listen, because im literally the best game creator ever I’ll give you a second chance. I’ll take you back to where you first messed up. Try not to mess it up again",
+            },
+            redirectLink: "../path3/derik-hides.html"
+           },
+        fp3gameOverBG4: {
+            1: {
+                name: "Narrator",
+                text: "Listen, because im literally the best game creator ever I’ll give you a second chance. I’ll take you back to where you first messed up. Try not to mess it up again",
+            },
+            redirectLink: "../path3/derik-plan.html"
+           },
+        fp3gameOverBG5: {
+            1: {
+                name: "Narrator",
+                text: "Listen, because im literally the best game creator ever I’ll give you a second chance. I’ll take you back to where you first messed up. Try not to mess it up again",
+            },
+            redirectLink: "../path3/fix-arcade-machine.html"
+           },
+        fp3gameOverBG6: {
+            1: {
+                name: "Narrator",
+                text: "Listen, because im literally the best game creator ever I’ll give you a second chance. I’ll take you back to where you first messed up. Try not to mess it up again",
+            },
+            redirectLink: "../path3/respond-to-lich.html"
+           },
 
+
+//dialogue starts here
         derikNoticeRock: {
             1: {
                 name: "Derik",
@@ -165,7 +210,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 background: "",
             },            
             //Achievement unlocked: Master observer
-            redirectLink: "derik-regular-show.html"                    
+            redirectLink: "../path3/derik-regular-show.html"                    
         },
 
         derikRegularShow: {
@@ -264,7 +309,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 text: "\"Hahaha of course not silly! Now go and get me 3 apple fritters, 1 feather from Mordecai, and 2 lollipops from Pop’s wallet.\"",
                 background: "",
             },            
-            redirectLink: "derik-task.html"                                
+            redirectLink: "../path3/derik-task.html"                                
         },
 
         derikTask: {
@@ -335,8 +380,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 text: "*BOOM*\n*The deafening explosion shook the very foundation of the base. Derik’s words were swallowed by the blast as the world around him went black. Gean’s eyes glinted with cold calculation as his finger hovered over the trigger. Gean kills you because he thinks you are too smart.*",
                 background: "",
             },
+            12: {
+                name: "Narrator",
+                text: "*Game Over*",
+                background: "",
+            },
             //game over
-            redirectLink: "../path1/start-and-end/game-end.html"
+            redirectLink: "/1Forced-Path/HTML/path3/fp3extra-life1.html"
         },
 
         trialAndError: {
@@ -526,7 +576,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 text: "*Derik hears the steps get closer and closer to him*",
                 background: "",
             },
-            redirectLink: "derik-hides.html"            
+            redirectLink: "../path3/derik-hides.html"            
         },
 
         derikHides: {
@@ -647,7 +697,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 text: "*Muscle Man proceeds to rip the most earth-shaking fart of his life… you can feel the house getting unbolted and see the stench of green fog coming from his rear.*",
                 background: "",
             },
-            redirectLink: "survive-muscle-man.html"            
+            redirectLink: "../path3/survive-muscle-man.html"            
         },
 
         surviveMuscleMan: {
@@ -673,7 +723,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 background: "",
             },
             //redirect link to cannotEscape
-            redirectLink: "cannot-escape.html"                                    
+            redirectLink: "../path3/cannot-escape.html"                                    
         },
 
         tryToEscape: {
@@ -728,7 +778,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 background: "",
             },
             //redirect to cannotEscape
-            redirectLink: "cannot-escape.html"                        
+            redirectLink: "../path3/cannot-escape.html"                        
         },
 
         cannotEscape: {
@@ -738,8 +788,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 background: "",
             },
             //Achievement unlocked: The Smell of Death
+            1: {
+                name: "Narrator",
+                text: "*Game Over: I don’t feel like eating… for the rest of my life anymore. Thanks.*",
+                background: "",
+            },
             //*Game Over: “I don’t feel like eating… for the rest of my life anymore. Thanks.
-            redirectLink: "../path1/start-and-end/game-end.html"
+            redirectLink: "/1Forced-Path/HTML/path3/fp3extra-life2.html"
         },
 
         hideInGarage: {
@@ -999,7 +1054,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 background: "",
             },            
             //*Game Over: insert coffin dancing meme here with sound... low quality
-            redirectLink: "../path1/start-and-end/game-end.html"
+            redirectLink: "/1Forced-Path/HTML/path3/fp3extra-life3.html"
         },
 
         hideInCloset: {
@@ -1038,7 +1093,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 text: "*He bolted from the house, not bothering to close the door behind him. The park blurred past as he sprinted to get the other items, the stolen lollipops clutched tightly in his fist.*",
                 background: "",
             },
-            redirectLink: "geans-base.html"            
+            redirectLink: "../path3/geans-base.html"            
         },
 
         geansBase: {
@@ -1127,7 +1182,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 text: "*His smirk faltered for a second. Then, a slow, wicked idea crept into his mind.*",
                 background: "",
             },
-            redirectLink: "derik-plan.html"                        
+            redirectLink: "../path3/derik-plan.html"                        
         },
 
         derikPlan: {
@@ -1222,8 +1277,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 text: "*\"Must wear cut-off jean shorts and a mullet while consuming the Death Sandwich. Not responsible for spontaneous combustion, dimensional displacement, or total existence failure.\"*",
                 background: "",
             },
+            17: {
+                name: "Narrator",
+                text: "*Game Over: No mullet, no Jorts, no Sandwich *dies**",
+                background: "",
+            },
             //*Game Over: “No mullet, no Jorts, no Sandwich *dies*”
-            redirectLink: "../path1/start-and-end/game-end.html"
+            redirectLink: "/1Forced-Path/HTML/path3/fp3extra-life4.html"
         },
 
         derikVillainCrew: {
@@ -1342,7 +1402,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 text: "*Derik waited until the last kid was gone before creeping up to the machine. The \"OUT OF ORDER\" sign hung crookedly. With a smirk, he crouched down and popped open the control panel, revealing a mess of wires… including two loose ones, one red, one blue.*",
                 background: "",
             },            
-            redirectLink: "fix-arcade-machine.html"          
+            redirectLink: "../path3/fix-arcade-machine.html"          
         },
 
         fixArcadeMachine: {
@@ -1427,8 +1487,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 text: "\"...That's not how charging works.\"",
                 background: "",
             },
+            15: {
+                name: "Margaret",
+                text: "*Game Over: your phone is fully charged... and now so are you*",
+                background: "",
+            },
             //*Game Over: “your phone is fully charged... and now so are you”
-            redirectLink: "../path1/start-and-end/game-end.html"
+            redirectLink: "/1Forced-Path/HTML/path3/fp3extra-life5.html"
         },
 
         scienceExperiment: {
@@ -1888,8 +1953,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 text: "*The Lich’s mouth opened and let out death.*",
                 background: "",
             },
+            4: {
+                name: "Narrator",
+                text: "*Game Over: You would say that... wouldn't you?*",
+                background: "",
+            },
             //Game Over: You would say that... wouldn't you?
-            redirectLink: "../path1/start-and-end/game-end.html"
+            redirectLink: "/1Forced-Path/HTML/path3/fp3extra-life6.html"
         },
 
         derikQuestion: {
@@ -2384,7 +2454,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 background: "",
             },
             //game end
-            redirectLink: "../path1/start-and-end/game-end.html"
+            redirectLink: "/1Forced-Path/HTML/path1/start-and-end/game-end.html"
         },
     }
 

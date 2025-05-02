@@ -78,6 +78,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
     
     const sceneSets = {
+        //loop back to branch links
+        fp2gameOverBG1: {
+            1: {
+                name: "Narrator",
+                text: "Listen, because im literally the best game creator ever I’ll give you a second chance. I’ll take you back to where you first messed up. Try not to mess it up again",
+            },
+            redirectLink: "breakfast-options.html"
+           },
+        fp2gameOverBG2: {
+            1: {
+                name: "Narrator",
+                text: "Listen, because im literally the best game creator ever I’ll give you a second chance. I’ll take you back to where you first messed up. Try not to mess it up again",
+            },
+            redirectLink: "cheat-or-not.html"
+           },
+        fp2gameOverBG3: {
+            1: {
+                name: "Narrator",
+                text: "Listen, because im literally the best game creator ever I’ll give you a second chance. I’ll take you back to where you first messed up. Try not to mess it up again",
+            },
+            redirectLink: "stolen-milk.html"
+           },
 
 
         ignoreRock: {
@@ -434,7 +456,7 @@ document.addEventListener("DOMContentLoaded", function () {
             },
             
             //redirect to game over screen
-            redirectLink: "breakfast-options.html"
+            redirectLink: "/1Forced-Path/HTML/path2/fp2extra-life1.html"
         },
     
         eatBreakfast: {
@@ -548,7 +570,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 text: "\"Yes, I can finally get enough milk to build my plasma cannon! I think I have a chance at this.\"",
                 background: "",
             },
-            redirectLink: "cheat-or-not.html"       
+            redirectLink: "/1Forced-Path/HTML/path2/fp2extra-life2.html"       
         },
     
         cheatOrNot: {
@@ -1270,7 +1292,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 text: "\"Andy! Get back here now!\"",
                 background: "",
             },
-            redirectLink: "stolen-milk.html"                
+            redirectLink: "/1Forced-Path/HTML/path2/fp2extra-life3.html"                
         },
     
         stolenMilk: {
