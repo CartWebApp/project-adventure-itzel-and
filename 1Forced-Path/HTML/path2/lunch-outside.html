@@ -93,7 +93,11 @@
 <script src="/forcedPath2.js"></script> <!--exicutes all the scripts-->
 <!-- <script src="../js/nextPage.js"></script> goes to the next page -->
 <script src="../../js/fadeIn.js"></script> <!--ensures the text in js loads before the typewriter works-->
-<script>
+
+
+<!-- pretty sure this is just here bc -->
+
+ <script>
     function unlockAchievement(name) {
         let achievements = JSON.parse(localStorage.getItem("achievements")) || [];
         if (!achievements.includes(name)) {
