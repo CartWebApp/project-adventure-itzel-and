@@ -5521,46 +5521,46 @@ document.addEventListener("DOMContentLoaded", function () {
     let currentSceneSet = sceneSets[sceneSetName];
 
     const nameElement = document.querySelector(".name p");
-
+    
     // Handle all #character-description elements
     const textElements = {
         dialog: document.querySelector("#character-description"),
         dialog2: document.querySelector("#character-description2"),
-        dialog3: document.querySelector("#character-description3")
+        dialog3: document.querySelector("#character-description3"),
     };
-
+    
     if (!nameElement || !textElements.dialog) {
         console.error("Required elements not found!");
         return;
     }
-
+    
     let scene = currentSceneSet[currentSceneNumber];
     let { name, text, background, nextScene } = scene;
-
+    
     nameElement.textContent = name;
     updateBackground(sceneSetName, currentSceneNumber);
-
+    
     document.body.style.backgroundSize = "cover";
     document.body.style.backgroundPosition = "center";
     document.body.style.backgroundAttachment = "fixed";
-
+    
     let index = 0;
     let typingFinished = false;
     let typewriterTimeouts = [];
-
+    
     // Clear all text areas
     function clearAllText() {
-        Object.values(textElements).forEach(el => {
+        Object.values(textElements).forEach((el) => {
             if (el) el.textContent = "";
         });
     }
-
+    
     // Fill in text with typing effect
     function typeWriterText(contentMap) {
         clearAllText();
         typingFinished = false;
         index = 0;
-
+    
         Object.entries(contentMap).forEach(([key, fullText]) => {
             if (textElements[key]) {
                 let i = 0;
@@ -5568,24 +5568,22 @@ document.addEventListener("DOMContentLoaded", function () {
                     if (i < fullText.length) {
                         textElements[key].textContent += fullText.charAt(i);
                         i++;
-                        typewriterTimeouts.push(setTimeout(typeChar, 30)); //controlls the speed of the typewriter effect
+                        typewriterTimeouts.push(setTimeout(typeChar, 30)); // Controls the speed of the typewriter effect
                     } else {
                         typingFinished = true;
                         if (nextScene) setTimeout(loadNextScene, 1000);
                     }
                 }
-
-                
                 typeChar();
             }
         });
     }
-
+    
     function displayFullText() {
         if (!typingFinished) {
             typewriterTimeouts.forEach(clearTimeout);
             typingFinished = true;
-            if (typeof text === 'object') {
+            if (typeof text === "object") {
                 Object.entries(text).forEach(([key, value]) => {
                     if (textElements[key]) {
                         textElements[key].textContent = value;
@@ -5599,31 +5597,40 @@ document.addEventListener("DOMContentLoaded", function () {
             goToNextScene();
         }
     }
-
+    
     function loadNextScene() {
         if (!nextScene) return;
-
+    
+        // Check if we're on scene 6 and need to load the timing bar game
+        if (currentSceneNumber === 6) {
+            displayTimingBarGame(); // Show the timing bar game
+            return; // Prevent loading the next scene until the game is completed
+        }
+    
         nameElement.textContent = nextScene.name;
         updateBackground(sceneSetName, currentSceneNumber); // or sceneNumber if you're incrementing there
-
+    
         name = nextScene.name;
         text = nextScene.text;
         typingFinished = false;
         index = 0;
-
-        if (typeof text === 'object') {
+    
+        if (typeof text === "object") {
             typeWriterText(text);
         } else {
             typeWriterText({ dialog: text });
         }
     }
-
+    
     function goToNextScene() {
         currentSceneNumber++;
-        const totalScenes = Object.keys(currentSceneSet).filter(key => key !== 'redirectLink').length;
-
+        const totalScenes = Object.keys(currentSceneSet).filter(
+            (key) => key !== "redirectLink"
+        ).length;
+    
         if (currentSceneNumber > totalScenes) {
-            const redirectUrl = currentSceneSet.redirectLink || "default-endpage.html";
+            const redirectUrl =
+                currentSceneSet.redirectLink || "default-endpage.html";
             window.location.href = redirectUrl;
         } else {
             scene = currentSceneSet[currentSceneNumber];
@@ -5631,82 +5638,163 @@ document.addEventListener("DOMContentLoaded", function () {
             text = scene.text;
             background = scene.background;
             nextScene = scene.nextScene || null;
-
-            nameElement.textContent = name;
-            updateBackground(sceneSetName, currentSceneNumber);
-            preloadImages(sceneSetName, currentSceneNumber, 2);
-
-            if (typeof text === 'object') {
-                typeWriterText(text);
+    
+            // Handle scene-specific actions
+            if (currentSceneNumber === 6) {
+                displayTimingBarGame();
             } else {
-                typeWriterText({ dialog: text });
-            }
-
-             //THIS WILL HELP IZZY A LOT
-             // 👇 Only show button on scene 3
-            const buttonContainer = document.getElementById("scene-button-container");
-            const bookImage = document.getElementById("book");
-            const rope = document.getElementById("rope");
-
-            if (buttonContainer) {
-                buttonContainer.style.display = (currentSceneNumber === 4) ? "block" : "none";
-            }
-
-            if (bookImage) {
-                bookImage.style.display = (currentSceneNumber === 44) ? "block" : "none";
-            }
-
-            if (rope) {
-                rope.style.display = (currentSceneNumber === 2) ? "block" : "none";
-            }
-
-            //add acheivements here
-            const achievement1Container = document.getElementById("achievement1-container");
-
-            if (achievement1Container) {
-                if (currentSceneNumber === 3) {
-                   achievement1Container.style.display = "block";
+                nameElement.textContent = name;
+                updateBackground(sceneSetName, currentSceneNumber);
+                preloadImages(sceneSetName, currentSceneNumber, 2);
+    
+                if (typeof text === "object") {
+                    typeWriterText(text);
                 } else {
-                   achievement1Container.style.display = "none";
+                    typeWriterText({ dialog: text });
                 }
-           }
-           const achievement2Container = document.getElementById("achievement2-container");
-
-           if (achievement2Container) {
-               if (currentSceneNumber === 3) {
-                  achievement2Container.style.display = "block";
-               } else {
-                  achievement2Container.style.display = "none";
-               }
-          }
-          const achievement3Container = document.getElementById("achievement3-container");
-
-          if (achievement3Container) {
-              if (currentSceneNumber === 5) {
-                 achievement3Container.style.display = "block";
-              } else {
-                 achievement3Container.style.display = "none";
-              }
-         }
-
+            }
         }
     }
+    
+    // Timing Bar Game Functions
+    let gameActive = false;
+    let intervalId;
+    let position = 0;
+    let direction = 1; // 1 = right, -1 = left
+    
+    function displayTimingBarGame() {
+        document.querySelector(".game-container").style.display = "block"; // Show the timing bar game
+        disableSceneAdvancement(); // Disable progression during the game
+    
+        // Reset the timing bar game
+        resultDisplay.textContent = "";
+        startButton.textContent = "Start";
+        startGame();
+    
+        startButton.onclick = function () {
+            if (gameActive) {
+                stopGame();
+            } else if (resultDisplay.textContent.includes("Perfect")) {
+                proceedAfterGameWin(); // Allow progression after winning
+            } else {
+                startGame(); // Restart the game
+            }
+        };
+    }
+    
+    function startGame() {
+        position = 0;
+        direction = 1;
+        movingBar.style.left = "0%";
+        resultDisplay.textContent = "";
+        gameActive = true;
+        intervalId = setInterval(updateBar, 10);
+    
+        startButton.textContent = "Stop";
+        startButton.onclick = stopGame;
+    }
+    
+    function updateBar() {
+        if (!gameActive) return;
+    
+        position += direction;
+    
+        if (position >= 95) {
+            direction = -1;
+        } else if (position <= 0) {
+            direction = 1;
+        }
+    
+        movingBar.style.left = position + "%";
+    }
+    
+    function stopGame() {
+        clearInterval(intervalId);
+        gameActive = false;
+    
+        const barLeft = position;
+        const barRight = position + 5; // width of red bar
+        const targetStart = 45;
+        const targetEnd = 55;
+    
+        if (barLeft >= targetStart && barRight <= targetEnd) {
+            resultDisplay.textContent = "Perfect! You landed in the zone!";
+            startButton.textContent = "Continue";
+            startButton.addEventListener("click", nextScene());
+        } else {
+            resultDisplay.textContent = "Missed! Try again.";
+            startButton.textContent = "Restart";
 
+        }
+    
+        startButton.onclick = startGame;
+    }
+    
+    function proceedAfterGameWin() {
+        document.querySelector(".game-container").style.display = "none"; // Hide the timing bar game
+        enableSceneAdvancement(); // Re-enable progression
+        goToNextScene(); // Proceed to the next scene
+    }
+    
+    function disableSceneAdvancement() {
+        document.removeEventListener("click", displayFullText);
+        document.removeEventListener("keydown", displayFullText);
+    }
+    
+    function enableSceneAdvancement() {
+        document.addEventListener("click", displayFullText);
+        document.addEventListener("keydown", displayFullText);
+    }
+    
+    // Helper for achievements and scene-specific UI
+    const buttonContainer = document.getElementById("scene-button-container");
+    const bookImage = document.getElementById("book");
+    const rope = document.getElementById("rope");
+    
+    if (buttonContainer) {
+        buttonContainer.style.display = currentSceneNumber === 4 ? "block" : "none";
+    }
+    
+    if (bookImage) {
+        bookImage.style.display = currentSceneNumber === 44 ? "block" : "none";
+    }
+    
+    if (rope) {
+        rope.style.display = currentSceneNumber === 2 ? "block" : "none";
+    }
+    
+    const achievement1Container = document.getElementById("achievement1-container");
+    if (achievement1Container) {
+        achievement1Container.style.display =
+            currentSceneNumber === 3 ? "block" : "none";
+    }
+    
+    const achievement2Container = document.getElementById("achievement2-container");
+    if (achievement2Container) {
+        achievement2Container.style.display =
+            currentSceneNumber === 3 ? "block" : "none";
+    }
+    
+    const achievement3Container = document.getElementById("achievement3-container");
+    if (achievement3Container) {
+        achievement3Container.style.display =
+            currentSceneNumber === 5 ? "block" : "none";
+    }
+    
+    // Event Listeners for advancing text
     document.addEventListener("click", displayFullText);
     document.addEventListener("keydown", displayFullText);
-
-    if (typeof text === 'object') {
+    
+    if (typeof text === "object") {
         typeWriterText(text);
     } else {
         typeWriterText({ dialog: text });
     }
-});
-
-// in hopes this will make the mobile part not have overflowing text
-
-window.addEventListener("resize", () => {
-    document.body.style.height = window.innerHeight + "px";
-});
+    
+    // Adjust height for mobile
+    window.addEventListener("resize", () => {
+        document.body.style.height = window.innerHeight + "px";
+    });
 
 
 
@@ -5778,6 +5866,4 @@ link.type = 'image/jpeg';  // Specify the type as JPEG (or "image/jpg")
 link.href = '/intro/images/andy-walking.gif'; // Path to the image in the 'assets' folder
 
 // Append the <link> element to the <head> section
-document.head.appendChild(link);
-
-
+document.head.appendChild(link);})
