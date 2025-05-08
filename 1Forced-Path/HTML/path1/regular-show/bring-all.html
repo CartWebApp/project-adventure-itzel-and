@@ -23,7 +23,7 @@
             display: flex;
             justify-content: center;
         }
-        
+
         .game-container {
             text-align: center;
             letter-spacing: .1vw;
@@ -100,7 +100,9 @@ button:hover {
   font-weight: bold;
 }
 
-       
+.hide{
+  display: none;
+}  
         
     </style>
 </head>
@@ -131,7 +133,7 @@ button:hover {
 </body>
 </html>
 <script>
-    const movingBar = document.getElementById('movingBar');
+const movingBar = document.getElementById('movingBar');
 const startButton = document.getElementById('startButton');
 const resultDisplay = document.getElementById('result');
 let intervalId;
@@ -180,8 +182,8 @@ function stopGame() {
 
   if (barLeft >= targetStart && barRight <= targetEnd) {
     resultDisplay.textContent = 'Perfect! You landed in the zone!';
-    startButton.textContent = "Continue";
-    startButton.addEventListener("click", nextScene());
+    startButton.classList.add("hide");
+    proceedAfterGameWin();
   } else {
     resultDisplay.textContent = 'Missed! Try again.';
     startButton.textContent = 'Restart';

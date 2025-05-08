@@ -1375,7 +1375,7 @@ document.addEventListener("DOMContentLoaded", function () {
             },
             12: {
                 name: "Andy",
-                text: "“ owie owie owieeeee that hurt”",
+                text: "*(Health bar 100% ->75%)*“owie owie owieeeee that hurt”",
                 background: "",
             },
             13: {
@@ -4660,7 +4660,7 @@ document.addEventListener("DOMContentLoaded", function () {
             },
             15: {
                 name: "Andy",
-                text: "“Yup… that's going to leave a mark for sure…”",
+                text: "*Health bar 75% -> 50%* “Yup… that's going to leave a mark for sure…”",
                 background: "",
             },
             16: {
@@ -4797,7 +4797,7 @@ document.addEventListener("DOMContentLoaded", function () {
             },
             4: {
                 name: "Fin",
-                text: "“Fin yells out the incantation”",
+                text: "*Health bar drops to 50%* “Fin yells out the incantation”",
                 background: "",
             },
             5: {
@@ -5003,7 +5003,7 @@ document.addEventListener("DOMContentLoaded", function () {
             },
             9: {
                 name: "Andy",
-                text: "Ha I knew I could do it",
+                text: "*(Health bar 50% -> 100%)* Ha I knew I could do it",
                 background: "",
             },
             10: {
@@ -5602,7 +5602,24 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!nextScene) return;
     
         // Check if we're on scene 6 and need to load the timing bar game
-        if (currentSceneNumber === 6) {
+        if (sceneSetName === "regularShowBringAll" && currentSceneNumber === 6) {
+            displayTimingBarGame(); // Show the timing bar game
+            return; // Prevent loading the next scene until the game is completed
+        }
+
+        if (sceneSetName === "regularShowBringSkips" && currentSceneNumber === 11) {
+            displayTimingBarGame(); // Show the timing bar game
+            return; // Prevent loading the next scene until the game is completed
+        }
+        if (sceneSetName === "adventureTimeIfPlayerHasFlashlight" && currentSceneNumber === 14) {
+            displayTimingBarGame(); // Show the timing bar game
+            return; // Prevent loading the next scene until the game is completed
+        }
+        if (sceneSetName === "adventureTimeAndyTakesOutAllHisMilk" && currentSceneNumber === 3) {
+            displayTimingBarGame(); // Show the timing bar game
+            return; // Prevent loading the next scene until the game is completed
+        }
+        if (sceneSetName === "adventureTimeShouldUseReginPower" && currentSceneNumber === 8) {
             displayTimingBarGame(); // Show the timing bar game
             return; // Prevent loading the next scene until the game is completed
         }
@@ -5640,9 +5657,25 @@ document.addEventListener("DOMContentLoaded", function () {
             nextScene = scene.nextScene || null;
     
             // Handle scene-specific actions
-            if (currentSceneNumber === 6) {
+            if (sceneSetName === "regularShowBringAll" && currentSceneNumber === 6) {
                 displayTimingBarGame();
-            } else {
+            } 
+            else if (sceneSetName === "regularShowBringSkips" && currentSceneNumber === 11) {
+                displayTimingBarGame();
+            } 
+            else if (sceneSetName === "adventureTimeIfPlayerHasFlashlight" && currentSceneNumber === 14) {
+                displayTimingBarGame();
+                
+            } 
+            else if (sceneSetName === "adventureTimeAndyTakesOutAllHisMilk" && currentSceneNumber === 3) {
+                displayTimingBarGame();
+                
+            }
+            else if (sceneSetName === "adventureTimeShouldUseReginPower" && currentSceneNumber === 8) {
+                displayTimingBarGame();
+                
+            }
+            else {
                 nameElement.textContent = name;
                 updateBackground(sceneSetName, currentSceneNumber);
                 preloadImages(sceneSetName, currentSceneNumber, 2);
@@ -5663,24 +5696,38 @@ document.addEventListener("DOMContentLoaded", function () {
     let direction = 1; // 1 = right, -1 = left
     
     function displayTimingBarGame() {
-        document.querySelector(".game-container").style.display = "block"; // Show the timing bar game
-        disableSceneAdvancement(); // Disable progression during the game
+        const gameContainer = document.querySelector(".game-container");
+        if (gameContainer) {
+            gameContainer.style.display = "block"; // Show the game
+            gameActive = true; // Mark the game as active
     
-        // Reset the timing bar game
-        resultDisplay.textContent = "";
-        startButton.textContent = "Start";
-        startGame();
-    
-        startButton.onclick = function () {
-            if (gameActive) {
-                stopGame();
-            } else if (resultDisplay.textContent.includes("Perfect")) {
-                proceedAfterGameWin(); // Allow progression after winning
-            } else {
-                startGame(); // Restart the game
-            }
-        };
+            // Pause any ongoing dialogue or scene progression
+            // (Optional, depending on your implementation)
+            console.log("Timing bar game started. Scene progression paused.");
     }
+
+    if (gameActive) {
+        disableSceneAdvancement(); // Disable progression during the game
+            document.querySelector(".game-container").style.display = "block"; // Show the timing bar game
+ 
+        
+            // Reset the timing bar game
+            resultDisplay.textContent = "";
+            startButton.textContent = "Start";
+            startGame();
+        
+            startButton.onclick = function () {
+                if (gameActive) {
+                    stopGame();
+                } else if (resultDisplay.textContent.includes("Perfect")) {
+                    proceedAfterGameWin(); // Allow progression after winning
+                } else {
+                    startGame(); // Restart the game
+                }
+            };
+        }
+    }
+
     
     function startGame() {
         position = 0;
@@ -5719,8 +5766,8 @@ document.addEventListener("DOMContentLoaded", function () {
     
         if (barLeft >= targetStart && barRight <= targetEnd) {
             resultDisplay.textContent = "Perfect! You landed in the zone!";
-            startButton.textContent = "Continue";
-            startButton.addEventListener("click", nextScene());
+            startButton.classList.add("hide");
+            proceedAfterGameWin();
         } else {
             resultDisplay.textContent = "Missed! Try again.";
             startButton.textContent = "Restart";
@@ -5730,11 +5777,20 @@ document.addEventListener("DOMContentLoaded", function () {
         startButton.onclick = startGame;
     }
     
-    function proceedAfterGameWin() {
-        document.querySelector(".game-container").style.display = "none"; // Hide the timing bar game
-        enableSceneAdvancement(); // Re-enable progression
-        goToNextScene(); // Proceed to the next scene
+    async function proceedAfterGameWin() {
+        console.log("Game completed. Proceeding to next scene...");
+        await delay(1000); // Allow the user to see the success message
+    
+        // Hide the timing bar game and re-enable scene progression
+        document.querySelector(".game-container").style.display = "none";
+        gameActive = false; // Mark game as inactive
+        enableSceneAdvancement(); // Re-enable scene progression
+    
+        goToNextScene(); // Trigger the next scene
     }
+    function delay(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+      }      
     
     function disableSceneAdvancement() {
         document.removeEventListener("click", displayFullText);
@@ -5742,8 +5798,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     
     function enableSceneAdvancement() {
+        delay (1000);
         document.addEventListener("click", displayFullText);
-        document.addEventListener("keydown", displayFullText);
+        document.addEventListener("keydown", displayFullText);        
     }
     
     // Helper for achievements and scene-specific UI

@@ -1,155 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>The Multiverse Paradox</title>
-  <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
-  <style>
-body {
-  font-family: "Jersey 10", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  background-color: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Multiverse Paradox</title>
+    <link rel="stylesheet" href="../../../CSS/dialogOne.css">
+    <script src="../../../../forcedPath.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url();
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            margin: 0;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
 
-.game-container {
-  text-align: center;
-  letter-spacing: .1vw;
-}
+        /* Bar game styles */
+        .game-container2 {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .game-container {
+            text-align: center;
+            letter-spacing: .1vw;
+            display: none; /* Initially hidden */
+            background-color: rgba(255, 255, 255, 0.6);
+            width: 30vw;
+        }
 
-.game-container h1 {
-  font-size: 2vw;
-}
+        .game-container h1 {
+            font-size: 2vw;
+            font-family: "Jersey 10", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            letter-spacing: .1vw;
+        }
 
-.bar-background {
-  position: relative;
-  width: 20vw; /* 400px converted to vw */
-  height: 1.5vw; /* 30px converted to vw */
-  background-color: #eee;
-  border-radius: 0.75vw; /* 15px converted to vw */
-  border: 0.1vw solid #000;
-  margin: 1vw auto; /* 20px converted to vw */
-  overflow: hidden;
-}
+        .bar-background {
+            position: relative;
+            width: 20vw;
+            height: 1.5vw;
+            background-color: #eee;
+            border-radius: 0.75vw;
+            border: 0.1vw solid #000;
+            margin: 1vw auto;
+            overflow: hidden;
+        }
 
-.target-zone {
-  position: absolute;
-  left: 45%;
-  width: 10%;
-  height: 100%;
-  background-color: #4caf50;
-  z-index: 1;
-}
+        .target-zone {
+            position: absolute;
+            left: 45%;
+            width: 10%;
+            height: 100%;
+            background-color: #4caf50;
+            z-index: 1;
+        }
 
-.moving-bar {
-  position: absolute;
-  width: 5%;
-  height: 100%;
-  background-color: red;
-  z-index: 2;
-  left: 0;
-  transition: left 0.02s linear;
-}
+        .moving-bar {
+            position: absolute;
+            width: 5%;
+            height: 100%;
+            background-color: red;
+            z-index: 2;
+            left: 0;
+            transition: left 0.02s linear;
+        }
 
-button {
-  padding: 0.5vw 1vw; /* 10px 20px converted to vw */
-  font-size: 0.8vw; /* 16px converted to vw */
-  font-family: "Jersey 10", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  letter-spacing: .1vw;
-  cursor: pointer;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 0.25vw; /* 5px converted to vw */
-}
+        button {
+            padding: 0.5vw 1vw;
+            font-size: 0.8vw;
+            font-family: "Jersey 10", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            letter-spacing: .1vw;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 0.25vw;
+        }
 
-button:hover {
-  background-color: #0056b3;
-}
+        button:hover {
+            background-color: #0056b3;
+        }
 
-#result {
-  margin-top: 0.75vw; /* 15px converted to vw */
-  font-size: 1.5vw; /* 18px converted to vw */
-  letter-spacing: .1vw;
-  font-weight: bold;
-}
-  </style>
+        #result {
+            margin-top: 0.75vw;
+            font-size: 1.5vw;
+            font-family: "Jersey 10", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            letter-spacing: .1vw;
+            font-weight: bold;
+        }
+
+        .hide {
+            display: none;
+        }
+    </style>
 </head>
-<body>
-  <div class="game-container">
-    <h1>Land in the green zone!</h1>
-    <div class="bar-background" id="barArea">
-      <div class="target-zone"></div>
-      <div id="movingBar" class="moving-bar"></div>
+<body data-path="adventureTimeIfPlayerDoesentHaveFlashlight" data-scene="1">
+    <div class="container">
+        <div class="name"><p></p></div>
+        <div class="containerfp one">
+            <p id="character-description" class="text two three" data-fulltext=""></p>
+            <p id="character-description2" class="text two three" data-fulltext=""></p>
+            <p id="character-description3" class="text three" data-fulltext=""></p>
+            <div class="triangle"></div>
+        </div>
     </div>
-    <button id="startButton">Start</button>
-    <p id="result"></p>
-  </div>
 
-  <script>
-    const movingBar = document.getElementById('movingBar');
-const startButton = document.getElementById('startButton');
-const resultDisplay = document.getElementById('result');
-let intervalId;
-let position = 0;
-let direction = 1; // 1 = right, -1 = left
-let gameActive = false;
+    <!-- Timing Bar Game HTML -->
+    <div class="game-container2">
+        <div class="game-container">
+            <h1>Land in the green zone!</h1>
+            <div class="bar-background" id="barArea">
+                <div class="target-zone"></div>
+                <div id="movingBar" class="moving-bar"></div>
+            </div>
+            <button id="startButton">Start</button>
+            <p id="result"></p>
+        </div>
+    </div>
 
-function updateBar() {
-  if (!gameActive) return;
+    <script src="../../../../forcedPath.js"></script>
+    <script>
+        // Timing bar game logic
+        document.addEventListener("DOMContentLoaded", () => {
+            const movingBar = document.getElementById("movingBar");
+            const startButton = document.getElementById("startButton");
+            const resultDisplay = document.getElementById("result"); // Ensure this exists
+            let intervalId;
+            let position = 0;
+            let direction = 1; // 1 = right, -1 = left
+            let gameActive = false;
 
-  position += direction * 1;
+            function updateBar() {
+                if (!gameActive) return;
 
-  if (position >= 95) {
-    direction = -1;
-  } else if (position <= 0) {
-    direction = 1;
-  }
+                position += direction * 1;
 
-  movingBar.style.left = position + '%';
-}
+                if (position >= 95) {
+                    direction = -1;
+                } else if (position <= 0) {
+                    direction = 1;
+                }
 
-function startGame() {
-  position = 0;
-  direction = 1;
-  movingBar.style.left = '0%';
-  resultDisplay.textContent = '';
-  gameActive = true;
-  intervalId = setInterval(updateBar, 10);
+                movingBar.style.left = position + "%";
+            }
 
-  startButton.textContent = 'Stop';
-  startButton.onclick = stopGame;
-}
+            function startGame() {
+                position = 0;
+                direction = 1;
+                movingBar.style.left = "0%";
+                resultDisplay.textContent = "";
+                gameActive = true;
+                intervalId = setInterval(updateBar, 10);
 
-function stopGame() {
-  clearInterval(intervalId);
-  gameActive = false;
+                startButton.textContent = "Stop";
+                startButton.onclick = stopGame;
+            }
 
-  const barLeft = position;
-  const barRight = position + 5; // width of red bar
-  const targetStart = 45;
-  const targetEnd = 55;
+            function stopGame() {
+                clearInterval(intervalId);
+                gameActive = false;
 
-  if (barLeft >= targetStart && barRight <= targetEnd) {
-    resultDisplay.textContent = 'Perfect! You landed in the zone!';
-  } else {
-    resultDisplay.textContent = 'Missed! Try again.';
-  }
+                const barLeft = position;
+                const barRight = position + 5; // width of red bar
+                const targetStart = 45;
+                const targetEnd = 55;
 
-  startButton.textContent = 'Restart';
-  startButton.onclick = startGame;
-}
+                if (barLeft >= targetStart && barRight <= targetEnd) {
+                    resultDisplay.textContent = "Perfect! You landed in the zone!";
+                    startButton.textContent = "Continue";
+                    startButton.onclick = proceedAfterGameWin; // Properly handle progression
+                } else {
+                    resultDisplay.textContent = "Missed! Try again.";
+                    startButton.textContent = "Restart";
+                    startButton.onclick = startGame; // Restart the game
+                }
+            }
 
-startButton.onclick = startGame;
+            async function proceedAfterGameWin() {
+                document.querySelector(".game-container").style.display = "none"; // Hide the timing bar game
+                console.log("Proceeding to the next scene...");
+                goToNextScene(); // Proceed to the next scene
+            }
 
-//diaable clicking to the next page
-  </script>
+            startButton.onclick = startGame;
+        });
+    </script>
 </body>
 </html>
